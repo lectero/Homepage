@@ -1,3 +1,5 @@
+---
+---
 # 3.2 Email som beslutsyta snarare än informationskanal
 
 I teorin kan email beskrivas som ett asynkront textbaserat kommunikationsmedium. I praktiken fungerar email i organisationer ofta som:

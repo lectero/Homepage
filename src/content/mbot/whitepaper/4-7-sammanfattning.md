@@ -1,3 +1,5 @@
+---
+---
 # 4.7 Sammanfattning
 
 De felslut som analyserats i detta avsnitt är inte resultatet av okunskap, utan ofta av förenklade mentala modeller för hur teknik skapar nytta i organisationer. Gemensamt för dem är att de underskattar den roll som ansvar, tolkning och förväntningar spelar i servicekommunikation.

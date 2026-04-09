@@ -1,3 +1,5 @@
+---
+---
 # 3.3 Asynkronicitet, tolkning och risk
 
 Email är asynkront. Detta är både dess styrka och dess risk.

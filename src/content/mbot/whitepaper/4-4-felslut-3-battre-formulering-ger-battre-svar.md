@@ -1,3 +1,5 @@
+---
+---
 # 4.4 Felslut 3: ”Bättre formulering ger bättre svar”
 
 Generativa språkmodeller är exceptionellt bra på att producera välformulerad text. Detta leder ibland till slutsatsen att ett mer välformulerat svar också är ett bättre svar. I servicekommunikation är detta ett farligt antagande!

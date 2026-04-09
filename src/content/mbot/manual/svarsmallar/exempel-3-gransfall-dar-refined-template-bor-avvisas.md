@@ -1,3 +1,5 @@
+---
+---
 # Exempel 3: gränsfall där refined-template bör avvisas
 
 ### Steg 1. Användarens initiala mall 

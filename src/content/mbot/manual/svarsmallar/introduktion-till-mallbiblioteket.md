@@ -1,3 +1,5 @@
+---
+---
 # Introduktion till mallbiblioteket
 
 Mallbiblioteket är en central del av HMB, men det ska inte förstås som en samling färdiga standardsvar. Mallarna i biblioteket är i stället strukturerade byggstenar som uttrycker hur klubben vill resonera och kommunicera i återkommande situationer.

@@ -1,3 +1,5 @@
+---
+---
 # Serverdelens funktioner i HMB (översikt)
 Serverdelen i HMB fungerar som ett analys- och stödlager. Den utför följande funktioner:
 - Tar emot **anonymiserat och avidentifierat innehåll** från klienten för vidare bearbetning. Servern får aldrig tillgång till avsändarens namn, e-postadress eller andra identifierande uppgifter.

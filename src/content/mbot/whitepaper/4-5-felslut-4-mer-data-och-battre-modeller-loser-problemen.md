@@ -1,3 +1,5 @@
+---
+---
 # 4.5 Felslut 4: ”Mer data och bättre modeller löser problemen”
 
 Ett fjärde felslut är tron att de problem som observeras i AI-baserad servicekommunikation huvudsakligen beror på otillräcklig modellkapacitet. Följaktligen antas att större modeller, mer data eller bättre finjustering kommer att eliminera riskerna.

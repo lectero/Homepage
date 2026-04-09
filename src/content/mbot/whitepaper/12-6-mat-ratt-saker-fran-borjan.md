@@ -1,3 +1,5 @@
+---
+---
 # 12.6 Mät rätt saker från början
 
 En annan vanlig fallgrop är att mäta fel saker. I tidiga skeden är det sällan meningsfullt att fokusera på:

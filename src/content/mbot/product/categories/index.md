@@ -1,3 +1,5 @@
+---
+---
 # Ärendekategorier
 
 Den här delen beskriver HMB bots ärendekategorier så som de är definierade i excel-filen. Tanken är att en person i kansli eller styrelse ska kunna förstå, diskutera och ändra strukturen utan att behöva läsa kod.

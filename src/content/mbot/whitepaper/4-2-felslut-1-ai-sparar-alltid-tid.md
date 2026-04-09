@@ -1,3 +1,5 @@
+---
+---
 # 4.2 Felslut 1: ”AI sparar alltid tid”
 
 Ett av de vanligaste argumenten för att införa AI i serviceorganisationer är att tekniken förväntas spara tid. Antagandet är ofta linjärt: om ett system kan generera svar snabbare än en människa, kommer den totala arbetsbelastningen att minska.

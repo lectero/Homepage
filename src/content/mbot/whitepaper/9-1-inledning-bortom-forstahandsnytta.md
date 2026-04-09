@@ -1,3 +1,5 @@
+---
+---
 # 9.1 Inledning: bortom förstahandsnytta
 
 En återkommande brist i utvärderingar av AI-system är fokus på **förstahandsnytta**: hur snabbt ett svar genereras, hur mycket manuell tid som sparas per ärende, eller hur väl systemet presterar på ett avgränsat testfall. Dessa mått är inte irrelevanta, men de är otillräckliga.

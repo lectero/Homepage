@@ -1,3 +1,5 @@
+---
+---
 # HMB ChatGPT Context Keeper – Code Generation (v1.0)
 *(Upload this file into ChatGPT at the start of a coding session)*
 

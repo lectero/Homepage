@@ -1,3 +1,5 @@
+---
+---
 # HMB Mailbot – Python Coding Guidelines
 *(Gemensam norm)*
 

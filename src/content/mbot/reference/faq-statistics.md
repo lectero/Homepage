@@ -1,3 +1,5 @@
+---
+---
 # Varför samlar HMB Mailbot statistik?
 
 HMB Mailbot samlar statistik för transparens, självinsikt och lärande.

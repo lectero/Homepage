@@ -1,3 +1,5 @@
+---
+---
 # HMB Arbetsflöde
 HMB hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
 - minska manuellt rutinarbete,

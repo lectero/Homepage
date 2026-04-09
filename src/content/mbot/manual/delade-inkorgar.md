@@ -1,3 +1,5 @@
+---
+---
 # Arbete i delade inkorgar
 I många klubbar bevakas en gemensam inkorg, till exempel info@...-gk.se, av flera personer med olika roller och ansvarsområden. Detta skapar särskilda krav på tydlighet, samordning och ansvar, som HMB är utformat för att stödja.
 I en delad inkorg är den största utmaningen sällan brist på information, utan osäkerhet kring vem som bör hantera vad. Utan stöd riskerar samma ärende att tolkas av flera personer, eller att bli liggande eftersom ingen upplever sig ha ett tydligt ansvar. HMB adresserar detta genom att tidigt i processen strukturera ärendet utifrån både innehåll och ansvarsfunktion.

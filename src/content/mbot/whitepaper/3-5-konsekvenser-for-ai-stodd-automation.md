@@ -1,3 +1,5 @@
+---
+---
 # 3.5 Konsekvenser för AI-stödd automation
 
 Utifrån ovanstående kan flera designimplikationer härledas:

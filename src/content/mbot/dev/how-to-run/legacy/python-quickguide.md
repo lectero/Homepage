@@ -1,3 +1,5 @@
+---
+---
 # Python QuickGuide – Dennis & Anders
 *(HMB Mailbot – skriv Python som en C#/Java-utvecklare, fast i Python)*
 

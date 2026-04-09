@@ -1,3 +1,5 @@
+---
+---
 # Ingen autoupdate initialt
 
 ## Beslut

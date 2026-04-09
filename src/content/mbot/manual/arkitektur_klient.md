@@ -1,3 +1,5 @@
+---
+---
 # Klientens roll och ansvar i HMB
 I HMB är klienten avsiktligt utformad som en tunn och självständig komponent, med ett tydligt och begränsat ansvar. Den är endast löst kopplad till serverdelen och fungerar som den enda delen av systemet som har direkt tillgång till klubbens e-postmiljö.
 Det är alltid klienten som autentiserar sig mot Microsoft 365 och som har behörighet att läsa och skriva i klubbens brevlådor. Serverdelen har ingen egen åtkomst till e-postsystemet och har aldrig tillgång till lösenord, tokens eller andra autentiseringsuppgifter. Den kan inte läsa e-post på egen hand och kan inte initiera någon kommunikation mot brevlådan.

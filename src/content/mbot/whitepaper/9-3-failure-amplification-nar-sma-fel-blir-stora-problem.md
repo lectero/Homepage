@@ -1,3 +1,5 @@
+---
+---
 # 9.3 Failure amplification: när små fel blir stora problem
 
 Begreppet *failure amplification* används för att beskriva situationer där ett systems fel inte bara leder till ett lokalt misslyckande, utan förstärks genom efterföljande processer. I servicekommunikation tar detta ofta följande form:

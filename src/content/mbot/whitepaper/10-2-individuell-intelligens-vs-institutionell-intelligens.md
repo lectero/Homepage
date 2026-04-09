@@ -1,3 +1,5 @@
+---
+---
 # 10.2 Individuell intelligens vs institutionell intelligens
 
 En välkänd distinktion inom organisationsforskning är skillnaden mellan individuell och institutionell intelligens. Individuell intelligens avser vad enskilda medarbetare vet och kan göra; institutionell intelligens avser vad organisationen som helhet kan reproducera oberoende av individer.

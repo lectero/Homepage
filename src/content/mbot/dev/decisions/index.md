@@ -1,3 +1,5 @@
+---
+---
 # Designbeslut
 
 Denna sektion innehåller korta, spårbara designbeslut för HMB Mailbot.

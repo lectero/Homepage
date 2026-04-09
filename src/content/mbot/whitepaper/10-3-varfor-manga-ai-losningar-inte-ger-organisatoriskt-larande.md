@@ -1,3 +1,5 @@
+---
+---
 # 10.3 Varför många AI-lösningar inte ger organisatoriskt lärande
 
 Trots att generativa AI-system hanterar stora mängder text och interaktioner leder de ofta inte till organisatoriskt lärande. Det finns flera skäl till detta.

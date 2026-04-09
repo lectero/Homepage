@@ -1,3 +1,5 @@
+---
+---
 # 5.1 Inledning
 
 Begreppet *human-in-the-loop* (HITL) används ofta slentrianmässigt i diskussioner om AI-system, ibland som en tillfällig försäkring, ibland som en efterhandskonstruktion när helautomatisering visat sig problematisk. I detta kapitel argumenteras för en mer stringent position: **human-in-the-loop är i många organisatoriska sammanhang inte en kompromiss, utan en nödvändig designprincip**.

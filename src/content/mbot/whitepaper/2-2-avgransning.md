@@ -1,3 +1,5 @@
+---
+---
 # 2.2 Avgränsning
 
 Detta dokument gör flera medvetna avgränsningar. Det behandlar inte:

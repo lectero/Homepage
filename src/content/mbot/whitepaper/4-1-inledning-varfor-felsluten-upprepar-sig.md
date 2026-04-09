@@ -1,3 +1,5 @@
+---
+---
 # 4.1 Inledning: varför felsluten upprepar sig
 
 Trots ett växande forskningsunderlag och en snabbt växande mängd praktiska erfarenheter upprepar sig ett antal grundläggande felslut i organisationers användning av AI i service- och kommunikationsintensiva verksamheter. Dessa felslut är inte i första hand tekniska, utan kognitiva och organisatoriska. Gemensamt för dem är att de:

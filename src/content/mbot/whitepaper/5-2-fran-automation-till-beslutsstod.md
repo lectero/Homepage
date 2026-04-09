@@ -1,3 +1,5 @@
+---
+---
 # 5.2 Från automation till beslutsstöd
 
 En central distinktion i litteraturen om intelligenta system är skillnaden mellan **automation** och **decision support**. Automation syftar till att ersätta mänskligt arbete genom att låta systemet utföra uppgifter autonomt. Beslutsstödssystem (Decision Support Systems, DSS) syftar i stället till att förbättra kvaliteten i mänskliga beslut genom analys, strukturering och presentation av relevant information.

@@ -1,3 +1,5 @@
+---
+---
 # Spårbarhet och statistik
 
 Om du inte kan se vad systemet gör kan du inte styra risk. Då har du bara automation.

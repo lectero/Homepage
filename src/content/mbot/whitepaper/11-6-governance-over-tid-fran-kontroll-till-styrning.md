@@ -1,3 +1,5 @@
+---
+---
 # 11.6 Governance över tid: från kontroll till styrning
 
 En viktig poäng är att governance inte är statisk. I takt med att organisationen lär sig mer om sina egna kommunikationsmönster kan styrningen förfinas. I mailbot-scenariot innebär detta att:

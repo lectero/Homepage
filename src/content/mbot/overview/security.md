@@ -1,3 +1,5 @@
+---
+---
 # Säkerhet och kontroll
 
 Säkerhet handlar inte bara om kryptering. Det handlar om att minimera konsekvenser när något blir fel.

@@ -1,3 +1,5 @@
+---
+---
 # Dataskydd och GDPR
 
 HMB är konstruerat för att uppfylla GDPR genom hur systemet hanterar data, inte genom efterhandsåtgärder eller användarberoende rutiner. Den grundläggande principen är att personuppgifter aldrig lämnar klubbens Microsoft 365-miljö i samband med AI-bearbetning.

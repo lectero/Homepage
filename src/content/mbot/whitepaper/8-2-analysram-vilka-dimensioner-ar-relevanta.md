@@ -1,3 +1,5 @@
+---
+---
 # 8.2 Analysram: vilka dimensioner är relevanta?
 
 För att undvika anekdotisk jämförelse används följande analysdimensioner genomgående:

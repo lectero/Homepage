@@ -1,3 +1,5 @@
+---
+---
 # Varför HMB
 
 Epost är ett märkligt gränssnitt. Det är en blandning av uppgifter, frågor, känslor, och krav, men utan struktur. För en klubb blir det snabbt en flaskhals där små beslut blir dyra.

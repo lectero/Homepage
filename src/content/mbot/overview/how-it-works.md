@@ -1,3 +1,5 @@
+---
+---
 # Hur det fungerar
 
 HMB bot är uppbyggd som en pipeline. Varje steg är tydligt, loggat, och utbytbart. Det gör att systemet kan utvecklas utan att bli ett enda stort svart hål.

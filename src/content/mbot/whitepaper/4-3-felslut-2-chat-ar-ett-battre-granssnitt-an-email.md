@@ -1,3 +1,5 @@
+---
+---
 # 4.3 Felslut 2: ”Chat är ett bättre gränssnitt än email”
 
 Ett annat vanligt antagande är att chatbaserade gränssnitt är mer ”naturliga” och därmed bättre lämpade för servicekommunikation än email. Detta leder ofta till slutsatsen att chatbotar är ett naturligt förstaval.

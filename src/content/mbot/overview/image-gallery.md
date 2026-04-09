@@ -1,3 +1,5 @@
+---
+---
 # Bildgalleri
 
 Här ligger de bilder som används i dokumentationen.

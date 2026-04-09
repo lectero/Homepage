@@ -1,3 +1,5 @@
+---
+---
 # Mailbox-analyzer
 
 Mailbox-analyzer används för att analysera historisk inbox och ge volymer per typ, fokus på låg tokenkostnad.

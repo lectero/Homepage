@@ -1,3 +1,5 @@
+---
+---
 # Mallar och policy
 
 Mallar är inte bara text. Mallar är ett styrmedel. De förhindrar att en draft glider iväg och blir kreativ när kreativitet är en risk.

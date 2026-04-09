@@ -1,3 +1,5 @@
+---
+---
 # 6.3 Funktionell uppdelning: analys, bedömning, förslag
 
 En central arkitektonisk princip är **funktionell separation**. Mailboten delas upp i tre logiska steg som hålls så oberoende som möjligt:

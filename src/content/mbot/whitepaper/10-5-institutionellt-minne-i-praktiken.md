@@ -1,3 +1,5 @@
+---
+---
 # 10.5 Institutionellt minne i praktiken
 
 Institutionellt minne handlar inte enbart om arkivering, utan om **återanvändbar förståelse**. I mailbot-scenariot manifesteras detta bland annat genom:

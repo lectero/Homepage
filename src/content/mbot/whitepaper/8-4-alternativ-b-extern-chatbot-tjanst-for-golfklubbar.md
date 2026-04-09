@@ -1,3 +1,5 @@
+---
+---
 # 8.4 Alternativ B: Extern chatbot-tjänst för golfklubbar
 
 ### 8.4.1 Standardiseringens pris

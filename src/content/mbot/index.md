@@ -1,3 +1,5 @@
+---
+---
 # HMB Mailbot
 
 ![](/mbot/assets/images/icon_256x256.png)

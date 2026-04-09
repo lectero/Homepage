@@ -1,3 +1,5 @@
+---
+---
 # 1.1 AI i serviceorganisationer: ett förskjutet problem
 
 Under de senaste åren har generativa språkmodeller fått ett genomslag som få andra teknologier i modern tid. För många organisationer har detta skapat ett tryck att snabbt identifiera användningsområden, ofta med fokus på kund- och medlemskommunikation. Chatbotar, automatiserade svar och intern AI-assistans framstår som naturliga tillämpningar.

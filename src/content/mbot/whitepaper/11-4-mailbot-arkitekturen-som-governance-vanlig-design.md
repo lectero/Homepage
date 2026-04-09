@@ -1,3 +1,5 @@
+---
+---
 # 11.4 Mailbot-arkitekturen som governance-vänlig design
 
 Mailbot-arkitekturen adresserar ovanstående utmaningar genom flera medvetna designval.

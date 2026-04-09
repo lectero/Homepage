@@ -1,3 +1,5 @@
+---
+---
 # 9.2 Vad menas med second-order effects?
 
 Med *second-order effects* avses här konsekvenser som inte uppstår direkt av systemets primära funktion, utan av hur systemet:

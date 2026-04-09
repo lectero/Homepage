@@ -1,3 +1,5 @@
+---
+---
 # Manual
 
 Detta är den externa manualen för HMB Mailbot, publicerad som webbsidor för att vara sökbar och lätt att underhålla.

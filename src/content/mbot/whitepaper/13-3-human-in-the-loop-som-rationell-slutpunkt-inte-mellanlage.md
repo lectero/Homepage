@@ -1,3 +1,5 @@
+---
+---
 # 13.3 Human-in-the-loop som rationell slutpunkt, inte mellanläge
 
 En central poäng i dokumentet är att *human-in-the-loop* inte bör betraktas som ett övergångsstadium på väg mot full automation. I många organisatoriska domäner är det tvärtom en stabil slutpunkt.

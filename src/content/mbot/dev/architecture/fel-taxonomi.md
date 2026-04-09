@@ -1,3 +1,5 @@
+---
+---
 # Fel-taxonomi
 
 Denna sida är avsedd att innehålla fel-taxonomin som styr hur klient och server ska agera vid olika typer av fel.
