@@ -22,4 +22,4 @@ Individidentitet hålls i Outlook-flödet; HMB använder klubbidentitet för sys
 
 ## Se även
 
-- [Tokenmodell och nyckellivscykel](tokenmodell.md)
+- [Tokenmodell och nyckellivscykel](../tokenmodell/)

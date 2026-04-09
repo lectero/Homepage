@@ -1,7 +1,7 @@
 ---
 ---
 !!! note "Status"
-    Den här sidan är kvar för historik och komplettering. Primär Git-dokumentation finns nu i **[Git](git.md)** och **[Git fusklapp](git-fusklapp.md)**.
+    Den här sidan är kvar för historik och komplettering. Primär Git-dokumentation finns nu i **[Git](../git/)** och **[Git fusklapp](../git-fusklapp/)**.
 
 # Git – konflikter utan panik
 

@@ -27,4 +27,4 @@ Detaljerad felhantering styrs av fel-taxonomin.
 
 ## Se även
 
-- [Idempotens och dubbelhantering](idempotens.md)
+- [Idempotens och dubbelhantering](../idempotens/)
