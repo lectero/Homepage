@@ -30,4 +30,4 @@ Systemet är ett stöd för e-posthantering, inte en självständig aktör i per
 
 Mer detaljer om klient och server, samt hur anonymisering och ansvarsfördelning fungerar, finns i manualen.
 
-- [Manual: Klient och server](../manual/arkitektur_klient.md)
+- [Manual: Klient och server](../../manual/arkitektur_klient/)
