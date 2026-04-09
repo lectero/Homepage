@@ -1,3 +1,5 @@
+---
+---
 # 6.1 Inledning
 
 De föregående avsnitten har etablerat två centrala utgångspunkter:

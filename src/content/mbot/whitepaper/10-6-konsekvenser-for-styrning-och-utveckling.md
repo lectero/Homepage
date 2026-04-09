@@ -1,3 +1,5 @@
+---
+---
 # 10.6 Konsekvenser för styrning och utveckling
 
 När organisationen får bättre synlighet i sina egna kommunikationsmönster uppstår också nya möjligheter för styrning och förbättring. Exempelvis kan ledningen:

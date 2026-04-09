@@ -1,3 +1,5 @@
+---
+---
 # 3.4 Email som bärare av organisatorisk praxis
 
 En ofta förbisedd aspekt av email är dess roll som bärare av lokal praxis. Till skillnad från formella regelverk och policydokument innehåller emailkommunikation:

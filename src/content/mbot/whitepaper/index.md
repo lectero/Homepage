@@ -1,3 +1,5 @@
+---
+---
 # Whitepaper
 
 Whitepaper finns här både som webbsidor och som nedladdningsbar [PDF](../assets/pdfs/WhitePaper-HITL-mailbot-dec2025.pdf).

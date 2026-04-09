@@ -1,3 +1,5 @@
+---
+---
 # 5.7 Sammanfattning
 
 I detta kapitel har vi argumenterat för att human-in-the-loop inte bör förstås som en teknisk kompromiss, utan som ett medvetet designval i domäner där beslut är kontextberoende, ansvarsbärande och relationspåverkande.

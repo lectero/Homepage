@@ -1,3 +1,5 @@
+---
+---
 # 2.3 Angreppssätt
 
 Angreppssättet i dokumentet är analytiskt och syntetiserande snarare än empiriskt i snäv mening. Resonemangen bygger på:

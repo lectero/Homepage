@@ -1,3 +1,5 @@
+---
+---
 # Kriterier för bra mallar
 
 Följande kriterier används både:

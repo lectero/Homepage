@@ -1,3 +1,5 @@
+---
+---
 # Medlemskap
 
 Nuvarande eller framtida medlemskap i klubben.

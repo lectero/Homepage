@@ -1,3 +1,5 @@
+---
+---
 # Reset och state
 
 Den här sidan beskriver hur du nollställer state på ett kontrollerat sätt när du vill provköra igen.

@@ -1,3 +1,5 @@
+---
+---
 # CLI exit codes
 
 Exit code signalerar processutfall, inte varje enskilt email.

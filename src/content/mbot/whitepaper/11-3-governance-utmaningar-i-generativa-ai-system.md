@@ -1,3 +1,5 @@
+---
+---
 # 11.3 Governance-utmaningar i generativa AI-system
 
 Generativa AI-system introducerar flera specifika governance-utmaningar:

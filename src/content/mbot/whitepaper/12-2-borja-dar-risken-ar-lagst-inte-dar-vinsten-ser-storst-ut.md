@@ -1,3 +1,5 @@
+---
+---
 # 12.2 Börja där risken är lägst, inte där vinsten ser störst ut
 
 Ett vanligt misstag i AI-initiativ är att börja med de mest synliga eller imponerande tillämpningarna. Detta skapar ofta initial entusiasm men medför samtidigt hög risk.

@@ -1,3 +1,5 @@
+---
+---
 # 8.5 Alternativ C: Manuell användning av ChatGPT eller Claude
 
 ### 8.5.1 Individuell effektivitet vs organisatorisk effektivitet

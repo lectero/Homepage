@@ -1,3 +1,5 @@
+---
+---
 !!! note "Status"
     Den här sidan är kvar för historik och komplettering. Primär Git-dokumentation finns nu i **[Git](git.md)** och **[Git fusklapp](git-fusklapp.md)**.
 

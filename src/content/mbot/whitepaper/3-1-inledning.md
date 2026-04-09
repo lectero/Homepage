@@ -1,3 +1,5 @@
+---
+---
 # 3.1 Inledning
 
 I många organisationer betraktas email fortfarande som ett sekundärt kommunikationsmedium, ett arv från en tidigare teknisk era, gradvis ersatt av chattverktyg, portaler och appar. I praktiken fungerar email dock i stora delar av serviceorganisationer som ett organisatoriskt nervsystem: det är genom email som förfrågningar initieras, beslut kommuniceras, ansvar tillskrivs och relationer upprätthålls.

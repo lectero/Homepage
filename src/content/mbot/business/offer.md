@@ -1,3 +1,5 @@
+---
+---
 # Erbjudande och prismodeller
 
 HMB erbjuds som kapacitet per månad, snarare än som ett styckpris per mail. Det gör att modellen kan spegla säsongsvariation, där vissa månader är lugna och andra har tydliga toppar.

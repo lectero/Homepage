@@ -1,3 +1,5 @@
+---
+---
 # 7.3 Mailbotens analysfas i praktiken
 
 När ett email anländer initierar mailboten sin analysfas. I study case-scenariot innebär detta att systemet extraherar och strukturerar information såsom:

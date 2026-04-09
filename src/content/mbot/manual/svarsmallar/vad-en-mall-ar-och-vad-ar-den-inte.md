@@ -1,3 +1,5 @@
+---
+---
 # Vad en mall är (och vad är den inte)
 
 En mall i Mailbot är **inte** ett färdigt standardsvar som skickas rakt av till mottagaren. Den är inte heller en generell ”text som brukar fungera”.

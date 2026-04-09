@@ -1,3 +1,5 @@
+---
+---
 # 11.5 Spårbarhet, transparens och revision
 
 En ofta förbisedd aspekt av AI-system är behovet av **revision**, inte bara i teknisk mening, utan organisatoriskt.

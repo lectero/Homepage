@@ -1,3 +1,5 @@
+---
+---
 # 9.4 Auktoritet och språklig övertygelse
 
 Språkmodeller har en egenskap som är central i sammanhanget: de producerar välformulerad, sammanhängande och ofta självsäker text. Detta är en styrka i många tillämpningar, men i servicekommunikation innebär det också en risk.

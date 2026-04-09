@@ -1,3 +1,5 @@
+---
+---
 # 5.3 Varför mänsklig bedömning inte kan elimineras
 
 Ett återkommande argument för ökad automation är att språkmodeller snabbt förbättras och närmar sig, eller i vissa avseenden överträffar, mänsklig prestation. Detta är i grunden korrekt i snäva uppgifter som mönsterigenkänning eller textproduktion. Det missar dock en avgörande aspekt: **problemet är inte främst modellernas språkliga förmåga, utan domänens karaktär**.

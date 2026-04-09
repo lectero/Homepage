@@ -1,3 +1,5 @@
+---
+---
 # Licens och IP
 
 Om produkten ska kunna användas av flera organisationer måste du kunna kontrollera spridning, och samtidigt hålla installationen enkel.

@@ -1,3 +1,5 @@
+---
+---
 # 5.5 Risk, ansvar och legitimitet
 
 En aspekt som ofta underbetonas i tekniska diskussioner är **ansvarsfrågan**. I serviceorganisationer är det inte tillräckligt att ett svar är tekniskt korrekt; det måste också vara legitimt. Legitimitet uppstår när mottagaren upplever att:

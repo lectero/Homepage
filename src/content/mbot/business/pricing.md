@@ -1,3 +1,5 @@
+---
+---
 # Prismodeller
 
 Det finns flera rimliga modeller. Det viktiga är att modellen uppfattas som rättvis, och att kostnad kopplar till nytta och risk.

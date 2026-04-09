@@ -1,3 +1,5 @@
+---
+---
 # Ansvar och åtgärd per kategori
 
 Den här tabellen kommer från bladet **Ärende-Ansvar-Åtgärd** och beskriver vilken funktion som normalt bör äga ärendet, samt rekommenderad hantering.

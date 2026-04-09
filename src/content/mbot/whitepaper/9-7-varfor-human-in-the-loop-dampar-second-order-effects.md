@@ -1,3 +1,5 @@
+---
+---
 # 9.7 Varför human-in-the-loop dämpar second-order effects
 
 Human-in-the-loop-design fungerar som en **dämpningsmekanism** mot flera av de second-order effects som beskrivits ovan. Genom att:

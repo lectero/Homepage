@@ -1,3 +1,5 @@
+---
+---
 # 9.6 Belastningsförskjutning snarare än belastningsminskning
 
 Ett återkommande empiriskt fynd i studier av AI i kund- och medlemsservice är att automation sällan eliminerar arbete; i stället **förskjuts arbetet**. Typiska mönster inkluderar:

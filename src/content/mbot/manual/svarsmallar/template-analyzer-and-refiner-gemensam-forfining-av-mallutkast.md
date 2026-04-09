@@ -1,3 +1,5 @@
+---
+---
 # Template ANALYZER AND refiner: gemensam förfining av mallutkast
 
 När en användare har skrivit ett mallutkast kan Mailbot erbjuda en **förfinad version**, en så kallad *refined template*. Den ersätter inte användarens text, utan fungerar som ett alternativ som kan accepteras, justeras eller avvisas.

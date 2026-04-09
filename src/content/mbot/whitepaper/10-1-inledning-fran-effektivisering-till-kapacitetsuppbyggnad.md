@@ -1,3 +1,5 @@
+---
+---
 # 10.1 Inledning: från effektivisering till kapacitetsuppbyggnad
 
 Mycket av diskussionen kring AI i organisationer kretsar kring effektivisering: snabbare svar, färre handläggningstimmar, reducerade kostnader. Dessa aspekter är inte irrelevanta, men de fångar endast en begränsad del av den långsiktiga potentialen, och lika ofta av riskerna.

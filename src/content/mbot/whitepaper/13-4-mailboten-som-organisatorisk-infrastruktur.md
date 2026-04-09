@@ -1,3 +1,5 @@
+---
+---
 # 13.4 Mailboten som organisatorisk infrastruktur
 
 Sett i ett längre perspektiv framträder mailboten inte primärt som ett verktyg för att hantera email, utan som en form av organisatorisk infrastruktur.

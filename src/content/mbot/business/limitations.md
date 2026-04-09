@@ -1,3 +1,5 @@
+---
+---
 # Begränsningar och ansvar
 
 Det här är en produkt som arbetar med mänsklig kommunikation. Den blir aldrig felfri.

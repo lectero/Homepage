@@ -1,3 +1,5 @@
+---
+---
 # Mail-injector
 
 Mail-injectorn används för att skicka in ett antal testmail för att provköra hela pipelinen.

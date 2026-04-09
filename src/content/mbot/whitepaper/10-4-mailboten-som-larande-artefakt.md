@@ -1,3 +1,5 @@
+---
+---
 # 10.4 Mailboten som lärande artefakt
 
 I kontrast till ovanstående är mailbot-arkitekturen designad för att fungera som en **lärande artefakt** i organisationen.

@@ -1,3 +1,5 @@
+---
+---
 # HMB Python Development & ChatGPT Usage Guidelines (v1.2)
 *(Gemensam norm för Python-kod och AI-stödd kodgenerering i HMB Mailbot)*
 

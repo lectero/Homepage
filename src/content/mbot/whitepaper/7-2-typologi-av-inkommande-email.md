@@ -1,3 +1,5 @@
+---
+---
 # 7.2 Typologi av inkommande email
 
 Ett första analytiskt steg är att förstå **vilken typ av ärenden** som faktiskt inkommer via email. I praktiken kan dessa grovt delas in i följande kategorier:

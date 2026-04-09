@@ -1,3 +1,5 @@
+---
+---
 # 11.2 Ansvar kan inte delegeras bort
 
 En central princip inom både organisationsstyrning och rättsteori är att ansvar inte kan automatiseras bort. Även när beslut fattas med tekniskt stöd förblir ansvaret mänskligt och organisatoriskt.

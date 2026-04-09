@@ -1,3 +1,5 @@
+---
+---
 # Idempotens och dubbelhantering
 
 Idempotens betyder att samma input kan behandlas flera gånger utan att resultatet blir dubbelt.

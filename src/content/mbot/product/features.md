@@ -1,3 +1,5 @@
+---
+---
 # Funktioner
 
 Det här är produktens kärnförmågor. Texten är avsiktligt konkret.

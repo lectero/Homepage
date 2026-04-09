@@ -1,3 +1,5 @@
+---
+---
 # 9.5 Förväntningsglidning över tid
 
 En särskilt viktig second-order effect är **förväntningsglidning**. När organisationer inför AI-stöd som svarar snabbt och till synes kompetent, förändras gradvis användarnas förväntningar:

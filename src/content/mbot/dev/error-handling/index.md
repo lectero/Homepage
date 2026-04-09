@@ -1,3 +1,5 @@
+---
+---
 # Felhantering
 
 Detta avsnitt beskriver HMB Mailbots fel-taxonomi, exit codes och hur exceptions ska hanteras konsekvent.

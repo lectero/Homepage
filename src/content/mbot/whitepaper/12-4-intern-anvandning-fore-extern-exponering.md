@@ -1,3 +1,5 @@
+---
+---
 # 12.4 Intern användning före extern exponering
 
 En central rekommendation i detta white paper är att **hålla AI-stödet internt under införandets första faser**.

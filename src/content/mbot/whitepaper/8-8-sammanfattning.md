@@ -1,3 +1,5 @@
+---
+---
 # 8.8 Sammanfattning
 
 Den systematiska jämförelsen visar att många AI-lösningar som framstår som attraktiva på ytan introducerar betydande organisatorisk komplexitet och risk när de sätts i drift. Särskilt gäller detta lösningar som:

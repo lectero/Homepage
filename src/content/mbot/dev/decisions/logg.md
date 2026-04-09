@@ -1,3 +1,5 @@
+---
+---
 # Beslutslogg
 
 Detta är en översikt över designbeslut i HMB Mailbot.

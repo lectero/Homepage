@@ -1,3 +1,5 @@
+---
+---
 # 7.1 Inledning och avgränsning
 
 Detta avsnitt presenterar ett *study case* som konkretiserar den mailbot-arkitektur som beskrivits tidigare, applicerad på en golfklubb som serviceorganisation. Avsikten är inte att redovisa en empirisk fallstudie i strikt metodologisk mening, utan att använda en realistisk och tekniskt konsistent kontext för att analysera hur arkitekturen fungerar, vilka beslutspunkter som uppstår och hur human-in-the-loop realiseras i praktiken.

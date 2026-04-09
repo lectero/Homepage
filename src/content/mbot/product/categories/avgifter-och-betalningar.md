@@ -1,3 +1,5 @@
+---
+---
 # Avgifter och betalningar
 
 Ekonomiska frågor utanför ren greenfee.

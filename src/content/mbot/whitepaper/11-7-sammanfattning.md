@@ -1,3 +1,5 @@
+---
+---
 # 11.7 Sammanfattning
 
 Styrning, ansvar och governance är inte sekundära frågor i AI-stödd servicekommunikation, utan centrala designkriterier. System som saknar tydliga ansvarslinjer, spårbarhet och mänsklig beslutsförankring riskerar att skapa organisatorisk osäkerhet även när de fungerar tekniskt.

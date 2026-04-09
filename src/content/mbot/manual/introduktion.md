@@ -1,3 +1,5 @@
+---
+---
 # Introduktion
 
 HMB (Human-in-the-loop Mail Bot) är ett system för kontrollerad, AI-stödd hantering av inkommande e-post.

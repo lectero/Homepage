@@ -1,3 +1,5 @@
+---
+---
 # 7.4 Riskbedömning och eskalering
 
 I nästa steg sker riskbedömningen. Här operationaliseras de principer som diskuterats i tidigare avsnitt. I study case-scenariot klassificeras risk längs flera axlar, exempelvis:

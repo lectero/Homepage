@@ -1,3 +1,5 @@
+---
+---
 # 5.4 Human-in-the-loop som arkitektur, inte funktion
 
 I många implementationer behandlas HITL som en funktionell detalj: ett godkännandeklick, en fallback-mekanism eller en manuell override. I detta white paper används begreppet i en striktare bemärkelse.

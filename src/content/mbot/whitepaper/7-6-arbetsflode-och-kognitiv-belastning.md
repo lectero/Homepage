@@ -1,3 +1,5 @@
+---
+---
 # 7.6 Arbetsflöde och kognitiv belastning
 
 Ett återkommande problem med många AI-stödda verktyg är att de introducerar nya arbetsmoment snarare än att integreras i befintliga flöden. I study case-scenariot är mailboten därför designad för att:

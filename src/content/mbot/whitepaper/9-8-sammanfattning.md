@@ -1,3 +1,5 @@
+---
+---
 # 9.8 Sammanfattning
 
 Second-order effects och failure amplification utgör ofta den avgörande skillnaden mellan AI-system som fungerar i pilotprojekt och system som fungerar i långvarig drift. I servicekommunikation, och särskilt i emailbaserade flöden, tenderar dessa effekter att vara både kraftfulla och svåra att reversera.

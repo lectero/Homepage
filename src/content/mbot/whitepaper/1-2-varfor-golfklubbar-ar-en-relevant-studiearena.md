@@ -1,3 +1,5 @@
+---
+---
 # 1.2 Varför golfklubbar är en relevant studiearena
 
 Golfklubbar utgör en intressant och ofta underskattad studiearena för AI i serviceorganisationer. De kombinerar flera egenskaper som gör dem representativa för en större klass av organisationer:

@@ -1,3 +1,5 @@
+---
+---
 # 7.5 Generering av svarsförslag i låg- och medelriskärenden
 
 För ärenden som bedöms som låg eller medel risk genererar mailboten ett eller flera svarsförslag. I study case-scenariot innebär detta att:

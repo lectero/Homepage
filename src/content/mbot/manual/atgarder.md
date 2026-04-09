@@ -1,3 +1,5 @@
+---
+---
 # Möjliga åtgärder på e-post
 Efter klassificering och analys kan HMB föreslå en åtgärd för ett e-postmeddelande. Åtgärden anger hur ärendet bör hanteras vidare, inte vad svaret ska innehålla. Vilka åtgärder som används är konfigurerbart per kategori.
 Följande åtgärder används i nuläget:

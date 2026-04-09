@@ -1,3 +1,5 @@
+---
+---
 # 8.1 Inledning: varför jämförelsen måste tas på allvar
 
 I diskussioner om AI i organisationer reduceras valet av lösning ofta till en fråga om teknisk kapabilitet: vilken modell är bäst, vilken lösning är mest avancerad, vilken ger snabbast svar. Detta avsnitt tar en annan utgångspunkt.

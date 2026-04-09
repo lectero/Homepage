@@ -1,3 +1,5 @@
+---
+---
 # 6.2 Arkitekturens grundantaganden
 
 Mailbot-arkitekturen vilar på ett antal explicita antaganden. Dessa är inte neutrala, utan uttrycker medvetna designval.

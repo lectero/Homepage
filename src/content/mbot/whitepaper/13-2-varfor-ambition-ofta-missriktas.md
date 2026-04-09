@@ -1,3 +1,5 @@
+---
+---
 # 13.2 Varför ambition ofta missriktas
 
 Ett återkommande tema i diskussioner om AI är att organisationer tenderar att överskatta värdet av autonomi och underskatta kostnaden för konsekvenser. I synnerhet gäller detta för lösningar som:

@@ -1,3 +1,5 @@
+---
+---
 # 13.1 Från teknikval till designval
 
 Detta white paper har medvetet undvikit att formulera frågan som ett val mellan olika tekniska lösningar. I stället har analysen konsekvent utgått från hur AI-system fungerar som delar av sociotekniska helheter, där teknik, organisation, ansvar och praktik samverkar.

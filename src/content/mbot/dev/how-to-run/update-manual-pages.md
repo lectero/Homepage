@@ -1,3 +1,5 @@
+---
+---
 # Hur manualsidor uppdateras
 
 Denna sida beskriver rekommenderad arbetsrutin för att uppdatera manualer,

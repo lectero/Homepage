@@ -1,3 +1,5 @@
+---
+---
 # Exempel 4: två system-föreslagna varianter beroende på riskprofil
 ### Steg 1. Användarens initiala mall (rå draft)
 ***“Mallens syfte***

@@ -1,3 +1,5 @@
+---
+---
 # Dokument
 
 Här kan du lägga material som whitepaper, manual, och annan referens. Du kan välja mellan att länka till PDF eller att konvertera till Markdown.

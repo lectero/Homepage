@@ -1,3 +1,5 @@
+---
+---
 # 4.6 Felslut 5: ”Automation är alltid ett steg framåt”
 
 Ett mer subtilt felslut är den normativa föreställningen att automation per definition representerar framsteg. I denna logik blir varje steg bort från mänsklig inblandning ett tecken på teknisk mognad.

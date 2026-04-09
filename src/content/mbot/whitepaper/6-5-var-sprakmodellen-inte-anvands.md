@@ -1,3 +1,5 @@
+---
+---
 # 6.5 Var språkmodellen inte används
 
 En lika viktig del av arkitekturen är var språkmodellen **inte** används. Den används inte för att:

@@ -1,3 +1,5 @@
+---
+---
 # 13.5 Konservatism som designprincip
 
 Ett ord som återkommer implicit i detta dokument är *konservatism*, inte i politisk mening, utan i ingenjörsmässig. Den föreslagna arkitekturen är konservativ genom att:

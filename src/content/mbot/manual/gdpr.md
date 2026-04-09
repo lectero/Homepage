@@ -1,3 +1,5 @@
+---
+---
 # Dataskydd och GDPR
 HMB är konstruerat för att uppfylla GDPR genom hur systemet hanterar data, inte genom efterhandsåtgärder eller användarberoende rutiner. Den grundläggande principen är att personuppgifter aldrig lämnar klubbens Microsoft 365-miljö i samband med AI-bearbetning.
 All e-post som hanteras av HMB ligger kvar i klubbens Microsoft 365-miljö. Systemet skapar inga externa kopior av e-post, bilagor eller metadata för lagring eller analys. Klubben är fortsatt personuppgiftsansvarig för all e-posthantering, på samma sätt som utan HMB, och detta ansvar förändras inte av systemets användning.

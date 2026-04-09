@@ -1,3 +1,5 @@
+---
+---
 # 12.5 Utbildning som kalibrering, inte som träning
 
 Införande av ett human-in-the-loop-system kräver utbildning, men inte i traditionell mening. Det handlar mindre om att lära användarna *hur systemet fungerar tekniskt*, och mer om att kalibrera deras förståelse för:

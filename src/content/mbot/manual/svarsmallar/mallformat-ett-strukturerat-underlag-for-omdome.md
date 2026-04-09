@@ -1,3 +1,5 @@
+---
+---
 # Mallformat, ett strukturerat underlag för omdöme
 
 I Mailbot skrivs mallar inte som fria texter, utan som strukturerade utkast. Syftet är inte att begränsa uttrycket, utan att säkerställa att relevanta dimensioner alltid övervägs.

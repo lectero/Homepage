@@ -1,3 +1,5 @@
+---
+---
 # ÄrendeKategorier för klassificering av inkommande e-post i HMB
 
 HMB klassificerar inkommande e-post i ett antal huvudkategorier utifrån ärendetyp med tillhörande underkategorier. Klassificeringen används för att styra analys, mallmatchning och beslut om hur ärendet ska hanteras vidare.

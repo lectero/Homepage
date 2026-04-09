@@ -1,3 +1,5 @@
+---
+---
 # 12.1 Inledning: varför införandet är ett systemproblem
 
 Införandet av ett AI-stött system i en serviceorganisation är inte primärt en teknisk fråga. De flesta tekniska komponenter kan göras fungerande relativt snabbt. Det som avgör utfallet är i stället hur införandet påverkar:
