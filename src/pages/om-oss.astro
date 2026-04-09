@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Base title="Om oss" description="Om Lectero — vilka vi är och vad vi tror på">
+  <Hero
+    title="Om Lectero"
+    subtitle="Vi bygger digitala verktyg som hjälper organisationer att bli effektivare och mer hållbara."
+  />
+
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div class="space-y-16">
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-4">Vår vision</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Lectero grundades med övertygelsen att teknik ska vara ett verktyg för positiv förändring.
+          Vi utvecklar system som gör det enklare för organisationer att arbeta hållbart, kommunicera
+          effektivt och fatta datadrivna beslut — utan att det kräver stora IT-avdelningar eller
+          dyra konsultinsatser.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-4">Vad vi tror på</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Enkelhet</h3>
+            <p class="text-sm text-gray-600">Komplexa problem ska inte kräva komplexa verktyg. Vi bygger för användaren, inte för specifikationen.</p>
+          </div>
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Tillförlitlighet</h3>
+            <p class="text-sm text-gray-600">System som bara fungerar — varje dag, utan överraskningar. Robusthet är inte förhandlingsbart.</p>
+          </div>
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Transparens</h3>
+            <p class="text-sm text-gray-600">Öppenhet i hur våra system fungerar, vilka data de använder och hur beslut fattas.</p>
+          </div>
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Hållbarhet</h3>
+            <p class="text-sm text-gray-600">Inte bara som produkt utan som princip — i hur vi bygger, driftar och utvecklar våra system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

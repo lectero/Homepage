@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  cta?: { label: string; href: string };
+}
+
+const { title, subtitle, cta } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-gradient-to-br from-primary to-primary-light text-white">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 text-center relative z-10">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 animate-fade-in">
+      {title}
+    </h1>
+    <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
+      {subtitle}
+    </p>
+    {cta && (
+      <a
+        href={cta.href}
+        class="inline-block bg-accent hover:bg-accent-light text-white font-semibold px-8 py-3 rounded-lg transition-all hover:scale-105"
+      >
+        {cta.label}
+      </a>
+    )}
+  </div>
+
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+</style>

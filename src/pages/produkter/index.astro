@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+---
+
+<Base title="Produkter" description="Lecteros produkter — GreenOps och HMB Mailbot">
+  <Hero
+    title="Våra produkter"
+    subtitle="Verktyg byggda för att lösa verkliga utmaningar inom hållbarhet och kommunikation."
+  />
+
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-2 gap-8">
+      <FeatureCard
+        title="GreenOps"
+        description="Hållbarhetsrapportering för organisationer. Samla in, beräkna och rapportera miljödata enligt etablerade ramverk — enkelt och transparent."
+        icon="🌿"
+        href="/produkter/greenops"
+      />
+      <FeatureCard
+        title="HMB Mailbot"
+        description="AI-driven e-posthantering för svenska golfklubbar. Klassificerar, prioriterar och föreslår svar automatiskt — så att ingen fråga faller mellan stolarna."
+        icon="🤖"
+        href="/produkter/mbot"
+      />
+    </div>
+  </section>
+</Base>

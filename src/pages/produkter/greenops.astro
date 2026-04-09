@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+---
+
+<Base title="GreenOps" description="GreenOps — Hållbarhetsrapportering för organisationer">
+  <Hero
+    title="GreenOps"
+    subtitle="Hållbarhetsrapportering som är enkel att använda och svår att göra fel."
+    cta={{ label: 'Kontakta oss för demo', href: '/kontakt' }}
+  />
+
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div class="space-y-16">
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-4">Vad är GreenOps?</h2>
+        <p class="text-gray-600 leading-relaxed">
+          GreenOps är ett verktyg för hållbarhetsrapportering byggt i Blazor och .NET. Det hjälper
+          organisationer att samla in miljödata, beräkna nyckeltal och generera rapporter enligt
+          etablerade ramverk — utan komplicerade kalkylark eller dyra konsulter.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-6">Funktioner</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Datainsamling</h3>
+            <p class="text-sm text-gray-600">Strukturerad inmatning av miljödata med validering och spårbarhet.</p>
+          </div>
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Beräkningar</h3>
+            <p class="text-sm text-gray-600">Automatiska beräkningar av utsläpp och nyckeltal baserat på etablerade emissionsfaktorer.</p>
+          </div>
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Rapportering</h3>
+            <p class="text-sm text-gray-600">Generera rapporter anpassade efter vedertagna ramverk och standarder.</p>
+          </div>
+          <div class="bg-surface rounded-lg p-5">
+            <h3 class="font-semibold text-primary mb-2">Dashboard</h3>
+            <p class="text-sm text-gray-600">Överblick över organisationens hållbarhetsprestanda i realtid.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

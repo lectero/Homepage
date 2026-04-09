@@ -1,0 +1,36 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary-dark text-gray-300">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white font-bold text-lg mb-3">Lectero</h3>
+        <p class="text-sm leading-relaxed">
+          Digitala verktyg som driver hållbarhet och effektivitet.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-3">Produkter</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/produkter/greenops" class="hover:text-accent transition-colors">GreenOps</a></li>
+          <li><a href="/produkter/mbot" class="hover:text-accent transition-colors">HMB Mailbot</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-3">Kontakt</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/kontakt" class="hover:text-accent transition-colors">Kontakta oss</a></li>
+          <li><a href="/om-oss" class="hover:text-accent transition-colors">Om Lectero</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-gray-700 text-sm text-center">
+      &copy; {year} Lectero. Alla rättigheter förbehållna.
+    </div>
+  </div>
+</footer>
