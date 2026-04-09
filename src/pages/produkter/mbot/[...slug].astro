@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('mbot');
+  return entries.map((entry) => ({
+    params: { slug: entry.id === 'index' ? undefined : entry.id.replace(/\.md$/, '').replace(/\/index$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// Extract title from first heading in the content, or use the id
+const titleFromId = entry.id
+  .replace(/\.md$/, '')
+  .split('/')
+  .pop()
+  ?.replace(/-/g, ' ')
+  .replace(/^\w/, (c: string) => c.toUpperCase()) ?? 'HMB Mailbot';
+---
+
+<Base title={`${titleFromId} — HMB Mailbot`} description="HMB Mailbot dokumentation">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Breadcrumb navigation -->
+    <nav class="mb-8 text-sm text-gray-500">
+      <a href="/produkter/mbot" class="hover:text-accent transition-colors">HMB Mailbot</a>
+      {entry.id !== 'index' && entry.id.includes('/') && (
+        <>
+          <span class="mx-2">/</span>
+          <a
+            href={`/produkter/mbot/${entry.id.split('/')[0]}`}
+            class="hover:text-accent transition-colors"
+          >
+            {entry.id.split('/')[0].replace(/-/g, ' ').replace(/^\w/, (c: string) => c.toUpperCase())}
+          </a>
+        </>
+      )}
+    </nav>
+
+    <!-- Sidebar + Content layout -->
+    <article class="prose prose-lg max-w-none prose-headings:text-primary prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md">
+      <Content />
+    </article>
+
+    <!-- Back navigation -->
+    <div class="mt-12 pt-6 border-t border-gray-200">
+      <a href="/produkter/mbot" class="text-accent hover:underline text-sm">
+        &larr; Tillbaka till HMB Mailbot
+      </a>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,63 @@
+:root {
+  --md-default-fg-color: rgba(0, 0, 0, 0.87);
+}
+
+/* Make the front page feel more like a product site */
+.hero {
+  padding: 2.2rem 0 1.2rem 0;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.hero p.lead {
+  font-size: 1.05rem;
+  max-width: 56rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 0 0;
+}
+
+.card {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.6);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0 0 0.6rem 0;
+  opacity: 0.92;
+}
+
+.card a {
+  font-weight: 600;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.badge {
+  font-size: 0.78rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+}
