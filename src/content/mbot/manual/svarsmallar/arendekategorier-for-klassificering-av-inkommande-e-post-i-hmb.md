@@ -19,22 +19,22 @@ Tabell XXX: Beskrivning av huvudkategorier.
 
 Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan anpassas och utökas. Om inget annat anges så är det dessa kategorier som används som default.
 
-<table style="width:100%;">
+<table class="w-full">
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 36%" />
-<col style="width: 45%" />
+<col class="w-[18%]" />
+<col class="w-[36%]" />
+<col class="w-[45%]" />
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><strong>Huvudgrupp</strong></th>
+<th class="text-center"><strong>Huvudgrupp</strong></th>
 <th><strong>Undergrupp</strong></th>
 <th><strong>Beskrivning</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="6" style="text-align: center;"><strong>Medlemskap</strong></td>
+<td rowspan="6" class="text-center"><strong>Medlemskap</strong></td>
 <td>Ansökan</td>
 <td>Ansökan om medlemskap</td>
 </tr>
@@ -59,7 +59,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td>Allmänna frågor om rättigheter/skyldigheter som medlem</td>
 </tr>
 <tr>
-<td rowspan="5" style="text-align: center;"><strong>Bokning &amp; spel</strong></td>
+<td rowspan="5" class="text-center"><strong>Bokning &amp; spel</strong></td>
 <td>Bokning</td>
 <td>Bokning av starttid</td>
 </tr>
@@ -80,7 +80,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td>Spelrätt och bokningsregler</td>
 </tr>
 <tr>
-<td rowspan="4" style="text-align: center;"><strong>Greenfee &amp; gäster</strong></td>
+<td rowspan="4" class="text-center"><strong>Greenfee &amp; gäster</strong></td>
 <td>Greenfeepris</td>
 <td>Frågor om greenfee-priser</td>
 </tr>
@@ -97,7 +97,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td>Greenfee-relaterade undantag eller kampanjer</td>
 </tr>
 <tr>
-<td rowspan="4" style="text-align: center;"><strong>Avgifter &amp; betalningar</strong></td>
+<td rowspan="4" class="text-center"><strong>Avgifter &amp; betalningar</strong></td>
 <td>Fakturor och betalningsstatus</td>
 <td> </td>
 </tr>
@@ -114,7 +114,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td>Övriga avgifter (t.ex. skåp, vagn, träning)</td>
 </tr>
 <tr>
-<td rowspan="5" style="text-align: center;"><strong>Tävlingar &amp; aktiviteter</strong></td>
+<td rowspan="5" class="text-center"><strong>Tävlingar &amp; aktiviteter</strong></td>
 <td>Anmälningar</td>
 <td>Anmälan till tävling</td>
 </tr>
@@ -135,7 +135,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td>Övriga aktiviteter arrangerade av klubben</td>
 </tr>
 <tr>
-<td rowspan="4" style="text-align: center;"><strong>Träning &amp; golfskola</strong></td>
+<td rowspan="4" class="text-center"><strong>Träning &amp; golfskola</strong></td>
 <td>Bokning av lektioner</td>
 <td> </td>
 </tr>
@@ -151,7 +151,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td colspan="2">Avbokning/ändring av träningstillfällen</td>
 </tr>
 <tr>
-<td rowspan="5" style="text-align: center;"><strong>Bana &amp; anläggning</strong></td>
+<td rowspan="5" class="text-center"><strong>Bana &amp; anläggning</strong></td>
 <td>Banförhållanden</td>
 <td> </td>
 </tr>
@@ -172,7 +172,7 @@ Kategorierna som presenteras i tabell XXX och YYY är bas-kategorier. Dessa kan 
 <td> </td>
 </tr>
 <tr>
-<td rowspan="4" style="text-align: center;"><strong>Administration &amp; övrigt</strong></td>
+<td rowspan="4" class="text-center"><strong>Administration &amp; övrigt</strong></td>
 <td>Allmänna frågor</td>
 <td> </td>
 </tr>
