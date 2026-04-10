@@ -2,7 +2,7 @@
 ---
 # Utvecklingsidéer (Epics)
 
-Denna sida samlar större utvecklingsidéer (epics) för HMB Mailbot.
+Denna sida samlar större utvecklingsidéer (epics) för MBot.
 
 Epics är avsedda att fungera som sammanhållna utvecklingsspår snarare än
 funktionella backlog-poster. De beskriver riktning, motiv, avgränsningar
@@ -21,7 +21,7 @@ Administrativa system, GIT, ekonomisystem och klientmiljöer körs nästan allti
 på Windows. En dedikerad Windows-klient skapar därför både igenkänning och
 professionell trovärdighet.
 
-Samtidigt är HMB Mailbot medvetet byggd kring Outlook som primärt
+Samtidigt är MBot medvetet byggd kring Outlook som primärt
 arbetsgränssnitt. Klienten ska därför inte ersätta eller konkurrera
 med Outlook, utan fungera som en stabil och diskret lokal agent.
 
@@ -29,7 +29,7 @@ med Outlook, utan fungera som en stabil och diskret lokal agent.
 En (1) klubb-lokal klient kör kontinuerligt och:
 
 - bevakar definierade inkorgar
-- kommunicerar med HMB-servern
+- kommunicerar med MBot-servern
 - hanterar autentisering och nycklar
 - signalerar systemets status
 
@@ -63,11 +63,11 @@ Interaktion sker främst vid:
 
 ### Bakgrund och motiv
 Ett system som upplevs som instabilt underminerar snabbt förtroendet hos
-kanslipersonal. För HMB Mailbot är därför tillgänglighet ett högre
+kanslipersonal. För MBot är därför tillgänglighet ett högre
 prioriterat krav än maximal säkerhetshärdning.
 
 ### Grundidé
-HMB Mailbot ska från skarp drift använda flera servrar för att:
+MBot ska från skarp drift använda flera servrar för att:
 
 - undvika single points of failure
 - möjliggöra planerade och oplanerade avbrott
@@ -120,7 +120,7 @@ En klubb är ett första-klassens domänobjekt med:
 ## Epic: Statistik för transparens och lärande
 
 ### Bakgrund och motiv
-Statistik i HMB Mailbot är inte till för övervakning,
+Statistik i MBot är inte till för övervakning,
 utan för att skapa förståelse och gemensam insikt.
 
 ### Grundidé
@@ -128,7 +128,7 @@ Statistik används för:
 
 - driftövervakning
 - dialog under onboarding
-- gemensamt lärande mellan HMB och klubb
+- gemensamt lärande mellan MBot och klubb
 
 ### Användningsnivåer
 - Operativ: toppar, avvikelser, fel
@@ -136,7 +136,7 @@ Statistik används för:
 
 ### Designprinciper
 - Fokus på mönster, inte individer
-- Samma bild för HMB och klubbens tekniskt ansvariga
+- Samma bild för MBot och klubbens tekniskt ansvariga
 - On-demand snarare än kontinuerlig presentation
 
 ### Avgränsningar
@@ -151,7 +151,7 @@ Statistik används för:
 Automation utan förklarbarhet skapar osäkerhet och motstånd.
 
 ### Grundidé
-HMB Mailbot ska kunna förklara sitt beteende när användaren vill,
+MBot ska kunna förklara sitt beteende när användaren vill,
 utan att belasta det dagliga flödet.
 
 ### Exempel
@@ -175,7 +175,7 @@ en gemensam lärandeperiod.
 Onboarding ses som en dialog där:
 
 - klubben lär sig systemets logik
-- HMB lär sig klubbarnas verkliga behov
+- MBot lär sig klubbarnas verkliga behov
 
 ### Användning av statistik
 Statistik används aktivt för att:

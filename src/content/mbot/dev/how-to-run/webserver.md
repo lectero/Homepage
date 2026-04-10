@@ -1,8 +1,8 @@
 ---
 ---
-# Starta webservern (HMB Mailbot)
+# Starta webservern (MBot)
 
-Denna sida beskriver hur webbplatsen för HMB Mailbot körs på Mac mini för internt bruk och test.
+Denna sida beskriver hur webbplatsen för MBot körs på Mac mini för internt bruk och test.
 
 ## Snabb rutin
 

@@ -27,7 +27,7 @@ Säkerhet handlar inte bara om kryptering. Det handlar om att minimera konsekven
 
 ## Kontrollerbarhet
 
-All automation i HMB bot kan beskrivas som en funktion av:
+All automation i MBot bot kan beskrivas som en funktion av:
 
 - Policy, som organisationen äger.
 - Data, det vill säga inkommande mail.

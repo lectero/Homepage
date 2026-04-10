@@ -2,18 +2,18 @@
 ---
 # Manual
 
-Detta är den externa manualen för HMB Mailbot, publicerad som webbsidor för att vara sökbar och lätt att underhålla.
+Detta är den externa manualen för MBot, publicerad som webbsidor för att vara sökbar och lätt att underhålla.
 
 ## Innehåll
 
 - [Introduktion](introduktion/)
-- [HMB Arbetsflöde](hmb-arbetsflode/)
+- [MBot Arbetsflöde](hmb-arbetsflode/)
 - [Dataskydd och GDPR](dataskydd-och-gdpr/)
-- [ÄrendeKategorier för klassificering av inkommande e-post i HMB](arendekategorier/)
+- [ÄrendeKategorier för klassificering av inkommande e-post i MBot](arendekategorier/)
 
 ## Svarsmallar
 
-- [ÄrendeKategorier för klassificering av inkommande e-post i HMB](svarsmallar/arendekategorier-for-klassificering-av-inkommande-e-post-i-hmb/)
+- [ÄrendeKategorier för klassificering av inkommande e-post i MBot](svarsmallar/arendekategorier-for-klassificering-av-inkommande-e-post-i-hmb/)
 - [Exempel \#1](svarsmallar/exempel-1/)
 - [Exempel \#2: policykänsligt ärende (pris/avgift)](svarsmallar/exempel-2-policykansligt-arende-pris-avgift/)
 - [Exempel 3: gränsfall där refined-template bör avvisas](svarsmallar/exempel-3-gransfall-dar-refined-template-bor-avvisas/)

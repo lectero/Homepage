@@ -2,7 +2,7 @@
 ---
 # Tokenmodell och nyckellivscykel
 
-Denna sida beskriver en föreslagen tokenmodell för HMB Mailbot när flera klubbar och flera servrar används.
+Denna sida beskriver en föreslagen tokenmodell för MBot när flera klubbar och flera servrar används.
 
 ## Principer
 

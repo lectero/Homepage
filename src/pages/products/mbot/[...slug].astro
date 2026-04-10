@@ -25,7 +25,7 @@ const titleFromId = entry.id
   .split('/')
   .pop()
   ?.replace(/-/g, ' ')
-  .replace(/^\w/, (c: string) => c.toUpperCase()) ?? 'HMB Mailbot';
+  .replace(/^\w/, (c: string) => c.toUpperCase()) ?? 'MBot';
 
 // Build breadcrumb parts, only linking sections that have an index page
 const parts = entry.id.split('/');
@@ -42,11 +42,11 @@ if (entry.id !== 'index' && parts.length > 1) {
 }
 ---
 
-<Base title={`${titleFromId} — HMB Mailbot`} description="HMB Mailbot dokumentation">
+<Base title={`${titleFromId} — MBot`} description="MBot dokumentation">
   <div class="max-w-4xl mx-auto px-6 py-16">
     <!-- Breadcrumb navigation -->
     <nav class="mb-8 flex items-center gap-2 text-sm">
-      <a href="/products/mbot/" class="text-accent hover:underline font-medium transition-colors">HMB Mailbot</a>
+      <a href="/products/mbot/" class="text-accent hover:underline font-medium transition-colors">MBot</a>
       {breadcrumbs.map((bc) => (
         <>
           <span class="text-gray-400">/</span>
@@ -67,7 +67,7 @@ if (entry.id !== 'index' && parts.length > 1) {
     <!-- Back navigation -->
     <div class="mt-16 pt-6 border-t border-gray-200">
       <a href="/products/mbot/" class="inline-flex items-center gap-1 text-accent hover:underline text-sm font-medium transition-colors">
-        &larr; Tillbaka till HMB Mailbot
+        &larr; Tillbaka till MBot
       </a>
     </div>
   </div>

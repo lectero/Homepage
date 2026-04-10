@@ -51,7 +51,7 @@ Use this structure:
 - failure modes
 
 Example prompt:
-“Use HMB ChatGPT Context Keeper v1.0.
+“Use MBot ChatGPT Context Keeper v1.0.
 Modify `hmb-mail-injector/src/injector.py` to support reading `.json` email files.
 Constraints: explicit loops, type hints, no clever comprehensions, log decisions not data.
 Add tests in `tests/test_injector.py` for 2 valid files and 2 invalid files.

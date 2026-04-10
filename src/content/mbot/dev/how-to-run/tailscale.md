@@ -1,8 +1,8 @@
 ---
 ---
-# Tailscale – åtkomst till HMB Mailbot
+# Tailscale – åtkomst till MBot
 
-Tailscale används för att ge säker åtkomst till HMB Mailbots webbplats utan domän, port forwarding eller ISP-konfiguration.
+Tailscale används för att ge säker åtkomst till MBots webbplats utan domän, port forwarding eller ISP-konfiguration.
 
 ## Grundidé
 Tailscale skapar ett privat, krypterat nät mellan godkända enheter. Alla anslutna datorer beter sig som om de vore på samma lokala nät.

@@ -30,9 +30,9 @@ rm -f mailbot.sqlite mailbot.sqlite-wal mailbot.sqlite-shm
 
 Starta sedan servern igen så att tabeller återskapas.
 
-## Reset av HMB-kategorier i mailbox
+## Reset av MBot-kategorier i mailbox
 
-Det finns ett reset-script som tar bort våra HMB-statuskategorier från inboxen för en ren teststart.
+Det finns ett reset-script som tar bort våra MBot-statuskategorier från inboxen för en ren teststart.
 
 Exempel:
 
@@ -40,7 +40,7 @@ Exempel:
 python -m client.reset_hmb_state --mailbox peg@skovdegk.se --limit 500
 ```
 
-Den tar bort statuskategorier, men ska inte ta bort `Request_AI_Help-(HMB)`.
+Den tar bort statuskategorier, men ska inte ta bort `Request_AI_Help-(MBot)`.
 
 ## Reset av kumulativa räknare i klienten
 

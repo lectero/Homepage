@@ -3,7 +3,7 @@
 # Statistik och observability
 
 ## Syfte
-Statistik i HMB Mailbot är till för:
+Statistik i MBot är till för:
 - transparens
 - självinsikt
 - onboardingdialog
@@ -19,7 +19,7 @@ Den är inte till för individövervakning.
 Människor ska hämta statistik när de vill, inte exponeras för konstant brus.
 
 ## Gemensam bild i dialog
-Klubbens tekniskt ansvariga ska kunna se samma typ av bild som HMB använder, för att dialogen ska vara faktabaserad.
+Klubbens tekniskt ansvariga ska kunna se samma typ av bild som MBot använder, för att dialogen ska vara faktabaserad.
 
 ## Avgränsning
 Inga personliga KPI:er, ingen profilering.

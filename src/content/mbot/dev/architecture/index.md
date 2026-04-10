@@ -2,7 +2,7 @@
 ---
 # Arkitektur
 
-Här samlas arkitekturöversikter för HMB Mailbot, med fokus på:
+Här samlas arkitekturöversikter för MBot, med fokus på:
 - gränser mellan komponenter
 - ansvar och risk
 - driftbarhet

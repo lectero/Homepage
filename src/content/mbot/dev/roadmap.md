@@ -2,7 +2,7 @@
 ---
 # Roadmap
 
-Denna roadmap anger riktning och fokus för HMB Mailbot.
+Denna roadmap anger riktning och fokus för MBot.
 
 ---
 

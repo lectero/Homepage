@@ -1,6 +1,6 @@
 ---
 ---
-# Git-manual för HMB Mailbot
+# Git-manual för MBot
 *(server, klient, api-kontrakt, testverktyg)*
 
 Denna manual är skriven för utvecklare som **inte förutsätts ha läst någon Git‑bok**.
@@ -46,12 +46,12 @@ Separata repos = isolerade risker.
 
 ### macOS
 ```text
-~/GIT/HMB-Mailbot/
+~/GIT/MBot-Mailbot/
 ```
 
 ### Windows (Git Bash eller PowerShell)
 ```text
-C:\GIT\HMB-Mailbot\
+C:\GIT\MBot-Mailbot\
 ```
 
 Alla repos ligger bredvid varandra, inte inuti varandra.

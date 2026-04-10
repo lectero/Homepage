@@ -2,7 +2,7 @@
 ---
 # Designbeslut
 
-Denna sektion innehåller korta, spårbara designbeslut för HMB Mailbot.
+Denna sektion innehåller korta, spårbara designbeslut för MBot.
 
 Syftet är att undvika att viktiga principer och avgränsningar försvinner i
 diskussioner, kod och enskilda implementationer.

@@ -1,9 +1,9 @@
 ---
 ---
 # Server Access & Escalation Policy
-*(HMB Mailbot – normativt dokument)*
+*(MBot – normativt dokument)*
 
-Detta dokument är **bindande** för alla som arbetar med HMB Mailbot.
+Detta dokument är **bindande** för alla som arbetar med MBot.
 
 Syftet är att:
 - skydda server-IP

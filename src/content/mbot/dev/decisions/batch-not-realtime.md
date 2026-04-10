@@ -3,7 +3,7 @@
 # Batch-orienterad handläggning
 
 ## Beslut
-HMB Mailbot optimeras för planerad handläggning i batch, inte reaktiv realtidsreaktion på varje inkommande mail.
+MBot optimeras för planerad handläggning i batch, inte reaktiv realtidsreaktion på varje inkommande mail.
 
 ## Motiv
 - Syftet är att minska kognitiv friktion och skapa arbetsro.

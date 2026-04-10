@@ -3,7 +3,7 @@
 # Multi-server och failover
 
 ## Översikt
-Vid skarp drift bortom pilot körs HMB Mailbot mot flera servrar för att undvika single points of failure.
+Vid skarp drift bortom pilot körs MBot mot flera servrar för att undvika single points of failure.
 
 Klienten känner till flera servrar och kan välja en alternativ endpoint vid behov.
 

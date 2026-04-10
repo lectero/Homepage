@@ -5,13 +5,13 @@
 
 ## Introduktion till mallbiblioteket
 
-Mallbiblioteket är en central del av HMB, men det ska inte förstås som en samling färdiga standardsvar. Mallarna i biblioteket är i stället strukturerade byggstenar som uttrycker hur klubben vill resonera och kommunicera i återkommande situationer.
+Mallbiblioteket är en central del av MBot, men det ska inte förstås som en samling färdiga standardsvar. Mallarna i biblioteket är i stället strukturerade byggstenar som uttrycker hur klubben vill resonera och kommunicera i återkommande situationer.
 
 Syftet med mallbiblioteket är inte att täcka alla tänkbara frågor i detalj, utan att skapa ett gemensamt ramverk som gör e-posthanteringen mer konsekvent, mer förutsägbar och mindre beroende av individuella formuleringar från gång till gång. En bra mall fångar det väsentliga i ett ärende utan att låsa svaret hårdare än nödvändigt.
 
 Mallarna är avsiktligt skrivna för att fungera som underlag för utkast. De är inte färdiga svar och är inte tänkta att skickas utan granskning. De anger tonläge, struktur och fokus, men lämnar utrymme för att anpassa innehållet till det enskilda ärendet. På så sätt fungerar mallbiblioteket som ett gemensamt språk snarare än som ett regelverk.
 
-Ett genomtänkt mallbibliotek är oftast mindre än man först tror. Färre mallar med tydlig intention och hög intern kvalitet ger bättre stöd än ett stort antal snarlika varianter. När flera mallar bara skiljer sig i formulering, men inte i innehåll eller ansvar, skapas lätt osäkerhet snarare än effektivitet. HMB är därför byggt för att uppmuntra återanvändning och justering snarare än ständig nyproduktion av mallar.
+Ett genomtänkt mallbibliotek är oftast mindre än man först tror. Färre mallar med tydlig intention och hög intern kvalitet ger bättre stöd än ett stort antal snarlika varianter. När flera mallar bara skiljer sig i formulering, men inte i innehåll eller ansvar, skapas lätt osäkerhet snarare än effektivitet. MBot är därför byggt för att uppmuntra återanvändning och justering snarare än ständig nyproduktion av mallar.
 
 Mallbiblioteket är inte statiskt. Det utvecklas över tid i takt med att klubben ser vilka formuleringar som fungerar väl och vilka som behöver justeras. Små förändringar i mallar kan få stor effekt i praktiken, eftersom de påverkar många ärenden över tid. Det gör arbetet med mallbiblioteket till ett av de viktigaste verktygen för att förbättra kvalitet och konsekvens i kommunikationen.
 
@@ -21,9 +21,9 @@ I praktiken fungerar mallbiblioteket bäst när det ses som en levande resurs so
 
 ### Rekommenderad strategi för att bygga upp ett bibliotek med svarsmallar
 
-Ett välfungerande mallbibliotek uppstår sällan genom att man försöker tänka ut alla tänkbara frågor i förväg. I HMB är utgångspunkten i stället att mallbiblioteket bör växa fram **ur faktisk användning**, baserat på vilka typer av ärenden som verkligen förekommer och i vilka volymer.
+Ett välfungerande mallbibliotek uppstår sällan genom att man försöker tänka ut alla tänkbara frågor i förväg. I MBot är utgångspunkten i stället att mallbiblioteket bör växa fram **ur faktisk användning**, baserat på vilka typer av ärenden som verkligen förekommer och i vilka volymer.
 
-Eftersom HMB kan analysera historisk e-post i en inbox finns möjlighet att bygga mallbiblioteket på ett empiriskt underlag snarare än på antaganden. Genom att se vilka ärendetyper som dominerar, vilka frågor som återkommer och vilka variationer som finns inom samma kategori, kan arbetet med mallar fokuseras där det ger störst effekt. Detta minskar risken för att lägga tid på mallar som sällan används eller som bara täcker marginalfall.
+Eftersom MBot kan analysera historisk e-post i en inbox finns möjlighet att bygga mallbiblioteket på ett empiriskt underlag snarare än på antaganden. Genom att se vilka ärendetyper som dominerar, vilka frågor som återkommer och vilka variationer som finns inom samma kategori, kan arbetet med mallar fokuseras där det ger störst effekt. Detta minskar risken för att lägga tid på mallar som sällan används eller som bara täcker marginalfall.
 
 En rimlig strategi är därför att börja med de mest frekventa och minst kontroversiella ärendena. Det handlar ofta om informationsförfrågningar, praktiska frågor och återkommande rutiner. Mallar för dessa ärenden ger snabbt nytta, både genom tidsbesparing och genom ökad konsekvens i kommunikationen. Samtidigt är de oftast lättare att skriva på ett sätt som inte kräver omfattande undantag eller policytolkning.
 
@@ -35,11 +35,11 @@ Arbetet med mallbiblioteket bör ses som iterativt snarare än som ett projekt m
 
 Samtidigt finns det ett värde i återhållsamhet. Ett mallbibliotek som växer okontrollerat riskerar att bli svåröverskådligt och motverka sitt eget syfte. Historisk volymanalys kan därför också användas för att ifrågasätta befintliga mallar. Om en mall sällan används, eller om den bara skiljer sig marginellt från andra, kan den ofta slås samman eller tas bort utan att funktionalitet går förlorad.
 
-Sammanfattningsvis är den rekommenderade strategin att låta mallbiblioteket spegla verklig efterfrågan snarare än hypotetiska behov. Genom att kombinera historisk analys av inkommande e-post med löpande justering utifrån faktisk användning kan biblioteket byggas upp på ett sätt som är både effektivt, hållbart och lätt att förvalta. HMB är utformat för att stödja just detta arbetssätt, där data används för att prioritera, och erfarenhet används för att förfina.
+Sammanfattningsvis är den rekommenderade strategin att låta mallbiblioteket spegla verklig efterfrågan snarare än hypotetiska behov. Genom att kombinera historisk analys av inkommande e-post med löpande justering utifrån faktisk användning kan biblioteket byggas upp på ett sätt som är både effektivt, hållbart och lätt att förvalta. MBot är utformat för att stödja just detta arbetssätt, där data används för att prioritera, och erfarenhet används för att förfina.
 
 ### Hur man arbetar praktiskt med utkast (drafts)
 
-I HMB används utkast som ett gemensamt arbetsunderlag mellan system och användare. Ett utkast är inte ett färdigt svar, men inte heller ett löst förslag. Det är ett strukturerat resultat av analys, mallar och tillgänglig kontext, avsett att granskas och vid behov justeras innan ett svar skickas.
+I MBot används utkast som ett gemensamt arbetsunderlag mellan system och användare. Ett utkast är inte ett färdigt svar, men inte heller ett löst förslag. Det är ett strukturerat resultat av analys, mallar och tillgänglig kontext, avsett att granskas och vid behov justeras innan ett svar skickas.
 
 Utkast ska alltid läsas som preliminära. Systemet visar en möjlig formulering baserad på det underlag som finns, men gör inga antaganden om att detta underlag är komplett eller slutgiltigt. Det är därför användarens ansvar att bedöma om utkastet är korrekt, tillräckligt och lämpligt i det aktuella ärendet.
 
@@ -508,9 +508,9 @@ Det här är exakt den punkt där ett AI-stöd slutar kännas som ett regelverk 
 
 **Appendix: Arkitektoniska säkerhetsprinciper och klientens roll**
 
-Detta appendix riktar sig till läsare som vill förstå de tekniska och säkerhetsmässiga principer som ligger bakom HMB:s utformning. Avsnittet är inte nödvändigt för att använda systemet, men kan vara relevant för klubbchefer, IT-ansvariga eller andra som vill kunna bedöma lösningen på en mer strukturell nivå.
+Detta appendix riktar sig till läsare som vill förstå de tekniska och säkerhetsmässiga principer som ligger bakom MBot:s utformning. Avsnittet är inte nödvändigt för att använda systemet, men kan vara relevant för klubbchefer, IT-ansvariga eller andra som vill kunna bedöma lösningen på en mer strukturell nivå.
 
-HMB är uppbyggt enligt en klient–server-arkitektur där ansvar och åtkomst är strikt separerade. En grundläggande princip i designen är att all åtkomst till klubbens e-postmiljö är koncentrerad till klienten, medan serverdelen saknar teknisk möjlighet att läsa, skriva eller autentisera sig mot brevlådor.
+MBot är uppbyggt enligt en klient–server-arkitektur där ansvar och åtkomst är strikt separerade. En grundläggande princip i designen är att all åtkomst till klubbens e-postmiljö är koncentrerad till klienten, medan serverdelen saknar teknisk möjlighet att läsa, skriva eller autentisera sig mot brevlådor.
 
 Klienten autentiserar sig mot Microsoft 365 med de behörigheter som klubben själv tilldelar. Serverdelen har aldrig tillgång till lösenord, tokens eller andra autentiseringsuppgifter och kan inte initiera någon egen kontakt med Exchange eller Outlook-miljön. Detta är inte en policyfråga utan en arkitektonisk avgränsning: servern saknar helt den information och de mekanismer som skulle krävas för att få sådan åtkomst.
 
@@ -524,11 +524,11 @@ Kopplingen mellan klient och server är lös i den meningen att klienten inte be
 
 Som ett ytterligare förtroendeskapande inslag kan klientkoden göras tillgänglig för granskning av klubbar som så önskar. Det gör det möjligt för tekniskt kunniga att verifiera hur anonymisering sker och att säkerställa att lösenord, e-postadresser och andra identifierande uppgifter aldrig skickas vidare. Transparens i klienten är därmed ett medvetet designval som kompletterar den tekniska avgränsningen.
 
-Sammanfattningsvis bygger HMB:s säkerhet inte på antaganden om godartat beteende i alla delar av systemet, utan på en arkitektur där kritiska möjligheter helt enkelt inte finns. Serverdelen kan inte läsa e-post, kan inte identifiera avsändare och kan inte agera självständigt. All sådan förmåga är koncentrerad till klienten, där klubbens kontroll redan finns och där mänskligt ansvar alltid är närvarande.
+Sammanfattningsvis bygger MBot:s säkerhet inte på antaganden om godartat beteende i alla delar av systemet, utan på en arkitektur där kritiska möjligheter helt enkelt inte finns. Serverdelen kan inte läsa e-post, kan inte identifiera avsändare och kan inte agera självständigt. All sådan förmåga är koncentrerad till klienten, där klubbens kontroll redan finns och där mänskligt ansvar alltid är närvarande.
 
-## ÄrendeKategorier för klassificering av inkommande e-post i HMB
+## ÄrendeKategorier för klassificering av inkommande e-post i MBot
 
-HMB klassificerar inkommande e-post i ett antal huvudkategorier utifrån ärendetyp med tillhörande underkategorier. Klassificeringen används för att styra analys, mallmatchning och beslut om hur ärendet ska hanteras vidare.
+MBot klassificerar inkommande e-post i ett antal huvudkategorier utifrån ärendetyp med tillhörande underkategorier. Klassificeringen används för att styra analys, mallmatchning och beslut om hur ärendet ska hanteras vidare.
 
 | Huvudkategorier | Beskrivning av epost som berör |
 |---|---|
@@ -589,31 +589,31 @@ Tabell YYY: Huvud- och underkategorier.
 
 ### Arbete i delade inkorgar
 
-I många klubbar bevakas en gemensam inkorg, till exempel info@...-gk.se, av flera personer med olika roller och ansvarsområden. Detta skapar särskilda krav på tydlighet, samordning och ansvar, som HMB är utformat för att stödja.
+I många klubbar bevakas en gemensam inkorg, till exempel info@...-gk.se, av flera personer med olika roller och ansvarsområden. Detta skapar särskilda krav på tydlighet, samordning och ansvar, som MBot är utformat för att stödja.
 
-I en delad inkorg är den största utmaningen sällan brist på information, utan osäkerhet kring vem som bör hantera vad. Utan stöd riskerar samma ärende att tolkas av flera personer, eller att bli liggande eftersom ingen upplever sig ha ett tydligt ansvar. HMB adresserar detta genom att tidigt i processen strukturera ärendet utifrån både innehåll och ansvarsfunktion.
+I en delad inkorg är den största utmaningen sällan brist på information, utan osäkerhet kring vem som bör hantera vad. Utan stöd riskerar samma ärende att tolkas av flera personer, eller att bli liggande eftersom ingen upplever sig ha ett tydligt ansvar. MBot adresserar detta genom att tidigt i processen strukturera ärendet utifrån både innehåll och ansvarsfunktion.
 
-När ett e-postmeddelande kommer in till den gemensamma inkorgen analyserar HMB innehållet och föreslår vilken typ av ärende det rör sig om. Parallellt kan systemet föreslå vilken funktion i organisationen som normalt hanterar denna typ av fråga. För användaren innebär detta att e-posten inte bara presenteras som “ännu ett mejl”, utan som ett ärende med en rimlig nästa åtgärd.
+När ett e-postmeddelande kommer in till den gemensamma inkorgen analyserar MBot innehållet och föreslår vilken typ av ärende det rör sig om. Parallellt kan systemet föreslå vilken funktion i organisationen som normalt hanterar denna typ av fråga. För användaren innebär detta att e-posten inte bara presenteras som “ännu ett mejl”, utan som ett ärende med en rimlig nästa åtgärd.
 
 I praktiken kan detta användas på flera sätt. En person i receptionen kan snabbt se att ett ärende rör ekonomi och därför bör lämnas vidare, utan att själv behöva sätta sig in i detaljerna. En person på kansliet kan se att ett tävlingsärende sannolikt hör hemma hos tävlingskommittén och välja att vidarebefordra det direkt. På så sätt minskar behovet av intern koordinering via separata mejl eller muntliga avstämningar.
 
-Det är viktigt att betona att HMB inte inför ett nytt beslutsflöde för vem som “äger” ett ärende. Systemet föreslår, men det är alltid användaren som avgör om ett ärende ska hanteras direkt, skickas vidare eller tas över manuellt. Detta gör att systemet kan användas även i organisationer där ansvarsfördelningen är informell eller situationsberoende.
+Det är viktigt att betona att MBot inte inför ett nytt beslutsflöde för vem som “äger” ett ärende. Systemet föreslår, men det är alltid användaren som avgör om ett ärende ska hanteras direkt, skickas vidare eller tas över manuellt. Detta gör att systemet kan användas även i organisationer där ansvarsfördelningen är informell eller situationsberoende.
 
-I delade inkorgar bidrar HMB också till att skapa spårbarhet. När ett ärende vidarebefordras eller markeras för manuell hantering sker detta med ett tydligt sammanhang, snarare än som ett frikopplat mejl. Det gör det lättare att i efterhand förstå vad som hänt och varför.
+I delade inkorgar bidrar MBot också till att skapa spårbarhet. När ett ärende vidarebefordras eller markeras för manuell hantering sker detta med ett tydligt sammanhang, snarare än som ett frikopplat mejl. Det gör det lättare att i efterhand förstå vad som hänt och varför.
 
-Sammanfattningsvis är HMB i delade inkorgar ett stöd för att göra ansvar synligt, utan att centralisera eller automatisera bort mänsklig bedömning. Systemet hjälper användarna att snabbt orientera sig, fatta rimliga beslut om nästa steg och undvika onödigt dubbelarbete, samtidigt som den gemensamma inkorgen fortsätter att fungera som en gemensam kontaktpunkt för klubben.
+Sammanfattningsvis är MBot i delade inkorgar ett stöd för att göra ansvar synligt, utan att centralisera eller automatisera bort mänsklig bedömning. Systemet hjälper användarna att snabbt orientera sig, fatta rimliga beslut om nästa steg och undvika onödigt dubbelarbete, samtidigt som den gemensamma inkorgen fortsätter att fungera som en gemensam kontaktpunkt för klubben.
 
 ### Möjliga åtgärder på e-post
 
-Efter klassificering och analys kan HMB föreslå en åtgärd för ett e-postmeddelande. Åtgärden anger hur ärendet bör hanteras vidare, inte vad svaret ska innehålla. Vilka åtgärder som används är konfigurerbart per kategori.
+Efter klassificering och analys kan MBot föreslå en åtgärd för ett e-postmeddelande. Åtgärden anger hur ärendet bör hanteras vidare, inte vad svaret ska innehålla. Vilka åtgärder som används är konfigurerbart per kategori.
 
 Följande åtgärder används i nuläget:
 
 - **Skapa utkast till svar****: **Ett eller flera utkast genereras baserat på mallar och analys.
 - **Vidarebefordra till ansvarig funktion eller person****: **E-posten bör hanteras av en annan funktion, till exempel ekonomi, tävlingsledning eller tränarverksamhet.
 - **Markera för manuell hantering****: **Ärendet bedöms olämpligt för systemstöd och kräver full manuell handläggning.
-- **Ingen åtgärd****: **Om en kategori är markerad som *Ingen åtgärd* vidtas ingen åtgärd alls. Detta innebär att: (i) inget utkast skapas, (ii) ingen vidarebefordran föreslås, och (iii) ärendet lämnas orört av HMB efter klassificering.
-Denna inställning är avsedd för kategorier som klubben medvetet valt att inte hantera via systemet, till exempel informationskopior, interna meddelanden eller ärenden som alltid hanteras utanför HMB:s arbetsflöde.
+- **Ingen åtgärd****: **Om en kategori är markerad som *Ingen åtgärd* vidtas ingen åtgärd alls. Detta innebär att: (i) inget utkast skapas, (ii) ingen vidarebefordran föreslås, och (iii) ärendet lämnas orört av MBot efter klassificering.
+Denna inställning är avsedd för kategorier som klubben medvetet valt att inte hantera via systemet, till exempel informationskopior, interna meddelanden eller ärenden som alltid hanteras utanför MBot:s arbetsflöde.
 
 Tabellen ZZZ visar exempel på hur kategorier kan kopplas till olika åtgärder.Tabellen illustrerar tre saker:
 
@@ -639,7 +639,7 @@ Tabell ZZZ: Ärendekategori vs ansvarsfunktion vs rekommenderad åtgärd.
 
 ### Tillstånd, rekommenderade åtgärder och faktisk hantering
 
-I HMB är det viktigt att skilja mellan **tillstånd**, **rekommenderade åtgärder** och **vad som faktiskt sker i hanteringen av ett ärende**. Dessa tre begrepp hänger ihop, men är inte samma sak.
+I MBot är det viktigt att skilja mellan **tillstånd**, **rekommenderade åtgärder** och **vad som faktiskt sker i hanteringen av ett ärende**. Dessa tre begrepp hänger ihop, men är inte samma sak.
 
 Ett **tillstånd** beskriver var ett e-postärende befinner sig i hanteringsprocessen. En **rekommenderad åtgärd** är systemets förslag på vad som bör göras härnäst. Den faktiska hanteringen kan däremot innebära flera steg och flera åtgärder, även om endast en åtgärd initialt rekommenderas.
 
@@ -653,11 +653,11 @@ På motsvarande sätt kan ett ärende rekommenderas för manuell hantering, men 
 
 Tillstånd används för att göra dessa situationer tydliga för användaren. Ett ärende kan exempelvis vara klassificerat, analyserat och markerat för manuell hantering, samtidigt som en rekommenderad åtgärd är att skicka det vidare till ekonomi eller tävlingsledning. Tillståndet beskriver alltså **läget**, medan åtgärden beskriver **nästa rimliga steg**.
 
-Detta sätt att separera tillstånd och åtgärder gör att HMB kan hantera komplexa och realistiska arbetsflöden utan att bli svåröverskådligt. Systemet kan försöka ge stöd där det är möjligt, falla tillbaka till manuell hantering när det behövs och samtidigt hjälpa användaren att snabbt avgöra vem som bör ta över ett ärende.
+Detta sätt att separera tillstånd och åtgärder gör att MBot kan hantera komplexa och realistiska arbetsflöden utan att bli svåröverskådligt. Systemet kan försöka ge stöd där det är möjligt, falla tillbaka till manuell hantering när det behövs och samtidigt hjälpa användaren att snabbt avgöra vem som bör ta över ett ärende.
 
-**Översikt****: ****typiska**** ****tillståndsövergångar**** ****i**** HMB**
+**Översikt****: ****typiska**** ****tillståndsövergångar**** ****i**** MBot**
 
-Ett e-postärende i HMB rör sig normalt genom följande övergripande steg:
+Ett e-postärende i MBot rör sig normalt genom följande övergripande steg:
 
 **Steg 1: E-post ****i****nkommet**
 
@@ -743,4 +743,4 @@ v
 
 #6: E-post besvarad/avslutad
 
-Sammanfattningsvis är rekommenderade åtgärder i HMB vägledande, inte deterministiska. Ett ärende kan genomgå flera interna steg och tillstånd även när endast en åtgärd initialt föreslås. Det är genom denna flexibilitet som systemet kan fungera i praktiken, utan att låsa användaren till ett förenklat eller idealiserat arbetsflöde.
+Sammanfattningsvis är rekommenderade åtgärder i MBot vägledande, inte deterministiska. Ett ärende kan genomgå flera interna steg och tillstånd även när endast en åtgärd initialt föreslås. Det är genom denna flexibilitet som systemet kan fungera i praktiken, utan att låsa användaren till ett förenklat eller idealiserat arbetsflöde.

@@ -2,4 +2,4 @@
 ---
 # How-to-run
 
-Denna sektion beskriver hur HMB Mailbot körs i praktiken.
+Denna sektion beskriver hur MBot körs i praktiken.

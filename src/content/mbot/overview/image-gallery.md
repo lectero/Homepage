@@ -12,15 +12,15 @@ Här ligger de bilder som används i dokumentationen.
 
 ![](/mbot/assets/images/GoflRobot.png)
 
-**HMB tillstand floede**
+**MBot tillstand floede**
 
 ![](/mbot/assets/images/HMB_tillstand_floede.png)
 
-**HMB tillstand floede v2**
+**MBot tillstand floede v2**
 
 ![](/mbot/assets/images/HMB_tillstand_floede_v2.png)
 
-**HMB tillstandsflode ren**
+**MBot tillstandsflode ren**
 
 ![](/mbot/assets/images/HMB_tillstandsflode_ren.png)
 

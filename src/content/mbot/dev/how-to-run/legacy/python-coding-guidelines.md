@@ -1,6 +1,6 @@
 ---
 ---
-# HMB Mailbot – Python Coding Guidelines
+# MBot – Python Coding Guidelines
 *(Gemensam norm)*
 
 Syftet är **förutsägbarhet, läsbarhet och säkerhet**.

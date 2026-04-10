@@ -4,7 +4,7 @@
 
 Idempotens betyder att samma input kan behandlas flera gånger utan att resultatet blir dubbelt.
 
-I HMB Mailbot är detta centralt eftersom dubbelhantering:
+I MBot är detta centralt eftersom dubbelhantering:
 - slösar aktiv tid hos personal
 - underminerar förtroende
 - kan skapa motstridiga drafts och status
