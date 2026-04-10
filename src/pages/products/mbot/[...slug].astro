@@ -37,7 +37,7 @@ if (entry.id !== 'index' && parts.length > 1) {
   const sectionHasIndex = allIds.has(section) || allIds.has(sectionIndexId);
   breadcrumbs.push({
     label: sectionLabel,
-    href: sectionHasIndex ? `/produkter/mbot/${section}/` : undefined,
+    href: sectionHasIndex ? `/products/mbot/${section}/` : undefined,
   });
 }
 ---
@@ -46,7 +46,7 @@ if (entry.id !== 'index' && parts.length > 1) {
   <div class="max-w-4xl mx-auto px-6 py-16">
     <!-- Breadcrumb navigation -->
     <nav class="mb-8 flex items-center gap-2 text-sm">
-      <a href="/produkter/mbot/" class="text-accent hover:underline font-medium transition-colors">HMB Mailbot</a>
+      <a href="/products/mbot/" class="text-accent hover:underline font-medium transition-colors">HMB Mailbot</a>
       {breadcrumbs.map((bc) => (
         <>
           <span class="text-gray-400">/</span>
@@ -66,7 +66,7 @@ if (entry.id !== 'index' && parts.length > 1) {
 
     <!-- Back navigation -->
     <div class="mt-16 pt-6 border-t border-gray-200">
-      <a href="/produkter/mbot/" class="inline-flex items-center gap-1 text-accent hover:underline text-sm font-medium transition-colors">
+      <a href="/products/mbot/" class="inline-flex items-center gap-1 text-accent hover:underline text-sm font-medium transition-colors">
         &larr; Tillbaka till HMB Mailbot
       </a>
     </div>

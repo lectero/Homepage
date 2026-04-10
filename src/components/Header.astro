@@ -1,16 +1,27 @@
 ---
 const navItems = [
-  { label: 'Om oss', href: '/om-oss/' },
-  { label: 'Kontakt', href: '/kontakt/' },
+  { label: 'Om oss', href: '/about/' },
+  { label: 'Kontakt', href: '/contact/' },
 ];
 
 const currentPath = Astro.url.pathname;
+
+// Show product name instead of "Lectero" on product pages
+const productBranding: Record<string, { name: string; href: string }> = {
+  '/products/mbot/': { name: 'HMB Mailbot', href: '/products/mbot/' },
+  '/products/greenops/': { name: 'GreenOps', href: '/products/greenops/' },
+};
+
+const matchedProduct = Object.entries(productBranding).find(([prefix]) =>
+  currentPath.startsWith(prefix)
+);
+const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' };
 ---
 
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="text-xl font-bold text-primary">
-      Lectero
+    <a href={brand.href} class="text-xl font-bold text-primary">
+      {brand.name}
     </a>
 
     <!-- Desktop nav -->
