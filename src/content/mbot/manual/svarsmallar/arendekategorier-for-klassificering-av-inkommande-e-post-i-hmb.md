@@ -1,8 +1,8 @@
 ---
 ---
-# ÄrendeKategorier för klassificering av inkommande e-post i HMB
+# ÄrendeKategorier för klassificering av inkommande e-post i MBot
 
-HMB klassificerar inkommande e-post i ett antal huvudkategorier utifrån ärendetyp med tillhörande underkategorier. Klassificeringen används för att styra analys, mallmatchning och beslut om hur ärendet ska hanteras vidare.
+MBot klassificerar inkommande e-post i ett antal huvudkategorier utifrån ärendetyp med tillhörande underkategorier. Klassificeringen används för att styra analys, mallmatchning och beslut om hur ärendet ska hanteras vidare.
 
 | **Huvudkategorier** | **Beskrivning av epost som berör** |
 |----|----|
@@ -195,23 +195,23 @@ Tabell YYY: Huvud- och underkategorier.
 
 ### Arbete i delade inkorgar
 
-I många klubbar bevakas en gemensam inkorg, till exempel info@...-gk.se, av flera personer med olika roller och ansvarsområden. Detta skapar särskilda krav på tydlighet, samordning och ansvar, som HMB är utformat för att stödja.
+I många klubbar bevakas en gemensam inkorg, till exempel info@...-gk.se, av flera personer med olika roller och ansvarsområden. Detta skapar särskilda krav på tydlighet, samordning och ansvar, som MBot är utformat för att stödja.
 
-I en delad inkorg är den största utmaningen sällan brist på information, utan osäkerhet kring vem som bör hantera vad. Utan stöd riskerar samma ärende att tolkas av flera personer, eller att bli liggande eftersom ingen upplever sig ha ett tydligt ansvar. HMB adresserar detta genom att tidigt i processen strukturera ärendet utifrån både innehåll och ansvarsfunktion.
+I en delad inkorg är den största utmaningen sällan brist på information, utan osäkerhet kring vem som bör hantera vad. Utan stöd riskerar samma ärende att tolkas av flera personer, eller att bli liggande eftersom ingen upplever sig ha ett tydligt ansvar. MBot adresserar detta genom att tidigt i processen strukturera ärendet utifrån både innehåll och ansvarsfunktion.
 
-När ett e-postmeddelande kommer in till den gemensamma inkorgen analyserar HMB innehållet och föreslår vilken typ av ärende det rör sig om. Parallellt kan systemet föreslå vilken funktion i organisationen som normalt hanterar denna typ av fråga. För användaren innebär detta att e-posten inte bara presenteras som “ännu ett mejl”, utan som ett ärende med en rimlig nästa åtgärd.
+När ett e-postmeddelande kommer in till den gemensamma inkorgen analyserar MBot innehållet och föreslår vilken typ av ärende det rör sig om. Parallellt kan systemet föreslå vilken funktion i organisationen som normalt hanterar denna typ av fråga. För användaren innebär detta att e-posten inte bara presenteras som “ännu ett mejl”, utan som ett ärende med en rimlig nästa åtgärd.
 
 I praktiken kan detta användas på flera sätt. En person i receptionen kan snabbt se att ett ärende rör ekonomi och därför bör lämnas vidare, utan att själv behöva sätta sig in i detaljerna. En person på kansliet kan se att ett tävlingsärende sannolikt hör hemma hos tävlingskommittén och välja att vidarebefordra det direkt. På så sätt minskar behovet av intern koordinering via separata mejl eller muntliga avstämningar.
 
-Det är viktigt att betona att HMB inte inför ett nytt beslutsflöde för vem som “äger” ett ärende. Systemet föreslår, men det är alltid användaren som avgör om ett ärende ska hanteras direkt, skickas vidare eller tas över manuellt. Detta gör att systemet kan användas även i organisationer där ansvarsfördelningen är informell eller situationsberoende.
+Det är viktigt att betona att MBot inte inför ett nytt beslutsflöde för vem som “äger” ett ärende. Systemet föreslår, men det är alltid användaren som avgör om ett ärende ska hanteras direkt, skickas vidare eller tas över manuellt. Detta gör att systemet kan användas även i organisationer där ansvarsfördelningen är informell eller situationsberoende.
 
-I delade inkorgar bidrar HMB också till att skapa spårbarhet. När ett ärende vidarebefordras eller markeras för manuell hantering sker detta med ett tydligt sammanhang, snarare än som ett frikopplat mejl. Det gör det lättare att i efterhand förstå vad som hänt och varför.
+I delade inkorgar bidrar MBot också till att skapa spårbarhet. När ett ärende vidarebefordras eller markeras för manuell hantering sker detta med ett tydligt sammanhang, snarare än som ett frikopplat mejl. Det gör det lättare att i efterhand förstå vad som hänt och varför.
 
-Sammanfattningsvis är HMB i delade inkorgar ett stöd för att göra ansvar synligt, utan att centralisera eller automatisera bort mänsklig bedömning. Systemet hjälper användarna att snabbt orientera sig, fatta rimliga beslut om nästa steg och undvika onödigt dubbelarbete, samtidigt som den gemensamma inkorgen fortsätter att fungera som en gemensam kontaktpunkt för klubben.
+Sammanfattningsvis är MBot i delade inkorgar ett stöd för att göra ansvar synligt, utan att centralisera eller automatisera bort mänsklig bedömning. Systemet hjälper användarna att snabbt orientera sig, fatta rimliga beslut om nästa steg och undvika onödigt dubbelarbete, samtidigt som den gemensamma inkorgen fortsätter att fungera som en gemensam kontaktpunkt för klubben.
 
 ### Möjliga åtgärder på e-post
 
-Efter klassificering och analys kan HMB föreslå en åtgärd för ett e-postmeddelande. Åtgärden anger hur ärendet bör hanteras vidare, inte vad svaret ska innehålla. Vilka åtgärder som används är konfigurerbart per kategori.
+Efter klassificering och analys kan MBot föreslå en åtgärd för ett e-postmeddelande. Åtgärden anger hur ärendet bör hanteras vidare, inte vad svaret ska innehålla. Vilka åtgärder som används är konfigurerbart per kategori.
 
 Följande åtgärder används i nuläget:
 
@@ -221,9 +221,9 @@ Följande åtgärder används i nuläget:
 
 - **Markera för manuell hantering:** Ärendet bedöms olämpligt för systemstöd och kräver full manuell handläggning.
 
-- **Ingen åtgärd:** Om en kategori är markerad som *Ingen åtgärd* vidtas ingen åtgärd alls. Detta innebär att: (i) inget utkast skapas, (ii) ingen vidarebefordran föreslås, och (iii) ärendet lämnas orört av HMB efter klassificering.
+- **Ingen åtgärd:** Om en kategori är markerad som *Ingen åtgärd* vidtas ingen åtgärd alls. Detta innebär att: (i) inget utkast skapas, (ii) ingen vidarebefordran föreslås, och (iii) ärendet lämnas orört av MBot efter klassificering.
 
-Denna inställning är avsedd för kategorier som klubben medvetet valt att inte hantera via systemet, till exempel informationskopior, interna meddelanden eller ärenden som alltid hanteras utanför HMB:s arbetsflöde.
+Denna inställning är avsedd för kategorier som klubben medvetet valt att inte hantera via systemet, till exempel informationskopior, interna meddelanden eller ärenden som alltid hanteras utanför MBot:s arbetsflöde.
 
 Tabellen ZZZ visar exempel på hur kategorier kan kopplas till olika åtgärder.Tabellen illustrerar tre saker:
 
@@ -251,7 +251,7 @@ Tabell ZZZ: Ärendekategori vs ansvarsfunktion vs rekommenderad åtgärd.
 
 ### Tillstånd, rekommenderade åtgärder och faktisk hantering
 
-I HMB är det viktigt att skilja mellan **tillstånd**, **rekommenderade åtgärder** och **vad som faktiskt sker i hanteringen av ett ärende**. Dessa tre begrepp hänger ihop, men är inte samma sak.
+I MBot är det viktigt att skilja mellan **tillstånd**, **rekommenderade åtgärder** och **vad som faktiskt sker i hanteringen av ett ärende**. Dessa tre begrepp hänger ihop, men är inte samma sak.
 
 Ett **tillstånd** beskriver var ett e-postärende befinner sig i hanteringsprocessen. En **rekommenderad åtgärd** är systemets förslag på vad som bör göras härnäst. Den faktiska hanteringen kan däremot innebära flera steg och flera åtgärder, även om endast en åtgärd initialt rekommenderas.
 
@@ -265,11 +265,11 @@ På motsvarande sätt kan ett ärende rekommenderas för manuell hantering, men 
 
 Tillstånd används för att göra dessa situationer tydliga för användaren. Ett ärende kan exempelvis vara klassificerat, analyserat och markerat för manuell hantering, samtidigt som en rekommenderad åtgärd är att skicka det vidare till ekonomi eller tävlingsledning. Tillståndet beskriver alltså **läget**, medan åtgärden beskriver **nästa rimliga steg**.
 
-Detta sätt att separera tillstånd och åtgärder gör att HMB kan hantera komplexa och realistiska arbetsflöden utan att bli svåröverskådligt. Systemet kan försöka ge stöd där det är möjligt, falla tillbaka till manuell hantering när det behövs och samtidigt hjälpa användaren att snabbt avgöra vem som bör ta över ett ärende.
+Detta sätt att separera tillstånd och åtgärder gör att MBot kan hantera komplexa och realistiska arbetsflöden utan att bli svåröverskådligt. Systemet kan försöka ge stöd där det är möjligt, falla tillbaka till manuell hantering när det behövs och samtidigt hjälpa användaren att snabbt avgöra vem som bör ta över ett ärende.
 
-**Översikt: typiska tillståndsövergångar i HMB**
+**Översikt: typiska tillståndsövergångar i MBot**
 
-Ett e-postärende i HMB rör sig normalt genom följande övergripande steg:
+Ett e-postärende i MBot rör sig normalt genom följande övergripande steg:
 
 > **Steg 1: E-post inkommet**
 >
@@ -356,4 +356,4 @@ Ett e-postärende i HMB rör sig normalt genom följande övergripande steg:
 >
 > \#6: E-post besvarad/avslutad
 
-Sammanfattningsvis är rekommenderade åtgärder i HMB vägledande, inte deterministiska. Ett ärende kan genomgå flera interna steg och tillstånd även när endast en åtgärd initialt föreslås. Det är genom denna flexibilitet som systemet kan fungera i praktiken, utan att låsa användaren till ett förenklat eller idealiserat arbetsflöde.
+Sammanfattningsvis är rekommenderade åtgärder i MBot vägledande, inte deterministiska. Ett ärende kan genomgå flera interna steg och tillstånd även när endast en åtgärd initialt föreslås. Det är genom denna flexibilitet som systemet kan fungera i praktiken, utan att låsa användaren till ett förenklat eller idealiserat arbetsflöde.

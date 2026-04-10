@@ -1,8 +1,8 @@
 ---
 ---
-# HMB Arbetsflöde
+# MBot Arbetsflöde
 
-HMB hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
+MBot hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
 
 - minska manuellt rutinarbete,
 
@@ -10,7 +10,7 @@ HMB hanterar e-post som en sekventiell process, inte som isolerade med-delanden.
 
 - och samtidigt behålla mänsklig kontroll över beslut och kommunikation.
 
-Grundprincipen är att HMB:s arbetsflöde är byggt för att:
+Grundprincipen är att MBot:s arbetsflöde är byggt för att:
 
 - separera analys från beslut,
 
@@ -22,7 +22,7 @@ Detta är en förutsättning både för kvalitet i vardagen och för eventuell f
 
 ### Steg 1: Mottagning och grundläggande registrering
 
-När ett e-postmeddelande tas på en mail-adress som HMB bevakar, registreras det av HMB. I detta skede har ingen tolkning eller bedömning gjorts, och ingen åtgärd är ännu initierad. Syftet med detta steg är spårbarhet och ordning, inte klassificering.
+När ett e-postmeddelande tas på en mail-adress som MBot bevakar, registreras det av MBot. I detta skede har ingen tolkning eller bedömning gjorts, och ingen åtgärd är ännu initierad. Syftet med detta steg är spårbarhet och ordning, inte klassificering.
 
 ### Steg 2: Innehållsanalys och kontextidentifiering
 
@@ -80,9 +80,9 @@ Allt ansvar för innehåll och utskick ligger i detta steg hos användaren.
 
 När användaren godkänner ett svar skickas det, och ärendet markeras som avslutat enligt gällande rutin. Informationen sparas för spårbarhet, uppföljning och lärande.
 
-**E-postens tillstånd och kategorier i HMB**
+**E-postens tillstånd och kategorier i MBot**
 
-HMB arbetar med e-post som en process, inte som enskilda meddelanden. Varje inkommande e-post befinner sig därför i ett tydligt **tillstånd**, vilket hjälper användaren att förstå vad som är gjort, vad som återstår och vilket ansvar som ligger var.
+MBot arbetar med e-post som en process, inte som enskilda meddelanden. Varje inkommande e-post befinner sig därför i ett tydligt **tillstånd**, vilket hjälper användaren att förstå vad som är gjort, vad som återstår och vilket ansvar som ligger var.
 
 **Inkommet**
 

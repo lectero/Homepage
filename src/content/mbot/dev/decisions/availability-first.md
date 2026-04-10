@@ -3,7 +3,7 @@
 # Tillgänglighet prioriteras
 
 ## Beslut
-Tillgänglighet prioriteras högre än maximal säkerhetshärdning. Systemet bygger på avidentifiering och rimligt förtroende mellan HMB och klubbar.
+Tillgänglighet prioriteras högre än maximal säkerhetshärdning. Systemet bygger på avidentifiering och rimligt förtroende mellan MBot och klubbar.
 
 ## Motiv
 - Instabilitet underminerar förtroende snabbare än de flesta andra brister.

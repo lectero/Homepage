@@ -3,7 +3,7 @@
 # Klient och server
 
 ## Översikt
-HMB Mailbot bygger på en klient–server-arkitektur där åtkomst och ansvar är strikt separerade.
+MBot bygger på en klient–server-arkitektur där åtkomst och ansvar är strikt separerade.
 
 - Klienten är den enda komponenten med åtkomst till klubbens Microsoft 365-miljö.
 - Servern är ett analys- och resonemangslager utan åtkomst till brevlådor och utan personidentifierande data.

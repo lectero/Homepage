@@ -2,7 +2,7 @@
 ---
 # Utvecklingsarea
 
-Detta är intern dokumentation för utveckling av HMB Mailbot.
+Detta är intern dokumentation för utveckling av MBot.
 
 Syftet är att samla tekniska resonemang, praktiska körinstruktioner och beslut, utan att blanda ihop detta med produktdokumentationen.
 

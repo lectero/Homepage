@@ -2,7 +2,7 @@
 ---
 # Beslutslogg
 
-Detta är en översikt över designbeslut i HMB Mailbot.
+Detta är en översikt över designbeslut i MBot.
 
 Syftet är att göra det lätt att:
 - se vilka principer som är gällande

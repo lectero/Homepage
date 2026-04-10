@@ -1,7 +1,7 @@
 ---
 ---
-# Serverdelens funktioner i HMB (översikt)
-Serverdelen i HMB fungerar som ett analys- och stödlager. Den utför följande funktioner:
+# Serverdelens funktioner i MBot (översikt)
+Serverdelen i MBot fungerar som ett analys- och stödlager. Den utför följande funktioner:
 - Tar emot **anonymiserat och avidentifierat innehåll** från klienten för vidare bearbetning. Servern får aldrig tillgång till avsändarens namn, e-postadress eller andra identifierande uppgifter.
 - Utför **semantisk analys av e-postens innehåll** för att förstå ärendets karaktär, exempelvis om det rör medlemskap, bokning, avgifter, tider eller allmän information.
 - Utför en analys av e-postens innehåll utifrån **ärendekomplexitet** och **tydlighet** gällande avsändarens intension.

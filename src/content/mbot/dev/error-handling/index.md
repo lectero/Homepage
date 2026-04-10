@@ -2,7 +2,7 @@
 ---
 # Felhantering
 
-Detta avsnitt beskriver HMB Mailbots fel-taxonomi, exit codes och hur exceptions ska hanteras konsekvent.
+Detta avsnitt beskriver MBots fel-taxonomi, exit codes och hur exceptions ska hanteras konsekvent.
 
 Målet är att:
 - undvika spretig felrapportering (print/logg på “fel ställe”),

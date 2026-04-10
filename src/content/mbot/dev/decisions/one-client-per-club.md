@@ -3,7 +3,7 @@
 # En klient per klubb
 
 ## Beslut
-HMB-klienten körs som en klubb-lokal agent, en (1) instans per klubb, inte per användare.
+MBot-klienten körs som en klubb-lokal agent, en (1) instans per klubb, inte per användare.
 
 ## Motiv
 - Delade inkorgar och få brevlådor gör per-användar-klienter till en concurrency-risk.

@@ -1,6 +1,6 @@
 ---
 ---
-# HMB ChatGPT Context Keeper – Code Generation (v1.0)
+# MBot ChatGPT Context Keeper – Code Generation (v1.0)
 *(Upload this file into ChatGPT at the start of a coding session)*
 
 ## Purpose
@@ -11,7 +11,7 @@ This file constrains ChatGPT outputs so the team gets:
 - consistent Git workflow (no history rewrites)
 - predictable deliverables (complete files, not fragments)
 
-## Project context (HMB Mailbot)
+## Project context (MBot)
 The system consists of multiple repositories:
 - hmb-server (owner-controlled, sensitive IP; developers do not release/deploy)
 - hmb-client
@@ -70,4 +70,4 @@ Avoid (unless explicitly approved):
 - Keep explanations short but sufficient for a C#/Java developer learning Python.
 
 ## Quick prompt template to use (copy/paste)
-“Follow HMB ChatGPT Context Keeper v1.0. Generate readable Python (no clever one-liners), with type hints and basic tests. Provide complete file(s). No rebase/force-push suggestions. Use placeholders for secrets.”
+“Follow MBot ChatGPT Context Keeper v1.0. Generate readable Python (no clever one-liners), with type hints and basic tests. Provide complete file(s). No rebase/force-push suggestions. Use placeholders for secrets.”

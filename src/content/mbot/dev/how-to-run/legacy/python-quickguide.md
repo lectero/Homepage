@@ -1,9 +1,9 @@
 ---
 ---
 # Python QuickGuide – Dennis & Anders
-*(HMB Mailbot – skriv Python som en C#/Java-utvecklare, fast i Python)*
+*(MBot – skriv Python som en C#/Java-utvecklare, fast i Python)*
 
-Detta är en **1-sidig norm** för Python-kod i HMB.
+Detta är en **1-sidig norm** för Python-kod i MBot.
 Målet är att koden ska vara:
 - lätt att förstå
 - lätt att reviewa

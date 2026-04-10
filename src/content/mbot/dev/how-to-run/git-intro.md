@@ -5,7 +5,7 @@
 
 # Kort intro till Git
 
-Git används för att versionssätta dokumentation och webbsidor i HMB Mailbot.
+Git används för att versionssätta dokumentation och webbsidor i MBot.
 
 ## Grundidé
 Du arbetar alltid lokalt och delar ändringar först när du själv väljer det.

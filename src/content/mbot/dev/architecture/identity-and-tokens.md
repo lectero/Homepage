@@ -17,7 +17,7 @@ Grace-period används för att undvika onödiga driftstopp vid tillfälliga rota
 Detta ska kombineras med tydlig varning och operativ uppföljning.
 
 ## Avgränsning
-Individidentitet hålls i Outlook-flödet; HMB använder klubbidentitet för systemåtkomst.
+Individidentitet hålls i Outlook-flödet; MBot använder klubbidentitet för systemåtkomst.
 
 
 ## Se även

@@ -14,9 +14,9 @@ Det här är exakt den punkt där ett AI-stöd slutar kännas som ett regelverk 
 
 **Appendix: Arkitektoniska säkerhetsprinciper och klientens roll**
 
-Detta appendix riktar sig till läsare som vill förstå de tekniska och säkerhetsmässiga principer som ligger bakom HMB:s utformning. Avsnittet är inte nödvändigt för att använda systemet, men kan vara relevant för klubbchefer, IT-ansvariga eller andra som vill kunna bedöma lösningen på en mer strukturell nivå.
+Detta appendix riktar sig till läsare som vill förstå de tekniska och säkerhetsmässiga principer som ligger bakom MBot:s utformning. Avsnittet är inte nödvändigt för att använda systemet, men kan vara relevant för klubbchefer, IT-ansvariga eller andra som vill kunna bedöma lösningen på en mer strukturell nivå.
 
-HMB är uppbyggt enligt en klient–server-arkitektur där ansvar och åtkomst är strikt separerade. En grundläggande princip i designen är att all åtkomst till klubbens e-postmiljö är koncentrerad till klienten, medan serverdelen saknar teknisk möjlighet att läsa, skriva eller autentisera sig mot brevlådor.
+MBot är uppbyggt enligt en klient–server-arkitektur där ansvar och åtkomst är strikt separerade. En grundläggande princip i designen är att all åtkomst till klubbens e-postmiljö är koncentrerad till klienten, medan serverdelen saknar teknisk möjlighet att läsa, skriva eller autentisera sig mot brevlådor.
 
 Klienten autentiserar sig mot Microsoft 365 med de behörigheter som klubben själv tilldelar. Serverdelen har aldrig tillgång till lösenord, tokens eller andra autentiseringsuppgifter och kan inte initiera någon egen kontakt med Exchange eller Outlook-miljön. Detta är inte en policyfråga utan en arkitektonisk avgränsning: servern saknar helt den information och de mekanismer som skulle krävas för att få sådan åtkomst.
 
@@ -30,4 +30,4 @@ Kopplingen mellan klient och server är lös i den meningen att klienten inte be
 
 Som ett ytterligare förtroendeskapande inslag kan klientkoden göras tillgänglig för granskning av klubbar som så önskar. Det gör det möjligt för tekniskt kunniga att verifiera hur anonymisering sker och att säkerställa att lösenord, e-postadresser och andra identifierande uppgifter aldrig skickas vidare. Transparens i klienten är därmed ett medvetet designval som kompletterar den tekniska avgränsningen.
 
-Sammanfattningsvis bygger HMB:s säkerhet inte på antaganden om godartat beteende i alla delar av systemet, utan på en arkitektur där kritiska möjligheter helt enkelt inte finns. Serverdelen kan inte läsa e-post, kan inte identifiera avsändare och kan inte agera självständigt. All sådan förmåga är koncentrerad till klienten, där klubbens kontroll redan finns och där mänskligt ansvar alltid är närvarande.
+Sammanfattningsvis bygger MBot:s säkerhet inte på antaganden om godartat beteende i alla delar av systemet, utan på en arkitektur där kritiska möjligheter helt enkelt inte finns. Serverdelen kan inte läsa e-post, kan inte identifiera avsändare och kan inte agera självständigt. All sådan förmåga är koncentrerad till klienten, där klubbens kontroll redan finns och där mänskligt ansvar alltid är närvarande.

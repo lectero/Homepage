@@ -23,7 +23,7 @@ Mallar är inte bara text. Mallar är ett styrmedel. De förhindrar att en draft
 
 ## Tonlägen
 
-Epost kräver tonträff. HMB bot stödjer att du definierar tonlägen per segment, exempel:
+Epost kräver tonträff. MBot bot stödjer att du definierar tonlägen per segment, exempel:
 
 - medlem, mer familjärt
 - gäst, mer informativt

@@ -3,7 +3,7 @@
 # Hur manualsidor uppdateras
 
 Denna sida beskriver rekommenderad arbetsrutin för att uppdatera manualer,
-how-to-sidor och annan dokumentation i HMB Mailbot.
+how-to-sidor och annan dokumentation i MBot.
 
 ## Grundprincip
 Arbetet sker i tre faser:

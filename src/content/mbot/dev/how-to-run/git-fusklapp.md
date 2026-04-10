@@ -1,7 +1,7 @@
 ---
 ---
 # Git – 1-sidig manual för Dennis & Anders
-*(HMB Mailbot – vardagsarbete)*
+*(MBot – vardagsarbete)*
 
 Detta dokument är **normativt**.  
 Det beskriver **vad ni "får" göra**, **hur ni gör det**, och **vad ni inte ska göra**.
@@ -29,12 +29,12 @@ Servern och release-hantering görs av en person (för närvarande Jörgen). Det
 
 ### macOS (Jörgen)
 ```text
-~/GIT/HMB-Mailbot/
+~/GIT/MBot-Mailbot/
 ```
 
 ### Windows (Dennis & Anders)
 ```text
-C:\GIT\HMB-Mailbot\
+C:\GIT\MBot-Mailbot\
 ```
 
 Exempel:

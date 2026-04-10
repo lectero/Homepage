@@ -1,10 +1,10 @@
 ---
 ---
-# Varför HMB
+# Varför MBot
 
 Epost är ett märkligt gränssnitt. Det är en blandning av uppgifter, frågor, känslor, och krav, men utan struktur. För en klubb blir det snabbt en flaskhals där små beslut blir dyra.
 
-HMB bot försöker inte göra epost magiskt. Den försöker göra den tråkiga delen av eposthantering konsekvent.
+MBot bot försöker inte göra epost magiskt. Den försöker göra den tråkiga delen av eposthantering konsekvent.
 
 ## Grundidé
 
@@ -22,4 +22,4 @@ HMB bot försöker inte göra epost magiskt. Den försöker göra den tråkiga d
 
 ## En obekväm sanning
 
-Om klubben saknar policy, saknar mallar, och saknar enighet om vad som är acceptabel risk, då blir epostautomatisering bara en snabbare väg till fel. HMB bot bygger därför in kravet på explicit policy, och tvingar fram struktur.
+Om klubben saknar policy, saknar mallar, och saknar enighet om vad som är acceptabel risk, då blir epostautomatisering bara en snabbare väg till fel. MBot bot bygger därför in kravet på explicit policy, och tvingar fram struktur.

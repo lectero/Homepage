@@ -1,17 +1,17 @@
 ---
 ---
-# HMB Arbetsflöde
-HMB hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
+# MBot Arbetsflöde
+MBot hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
 - minska manuellt rutinarbete,
 - skapa konsekventa underlag för svar,
 - och samtidigt behålla mänsklig kontroll över beslut och kommunikation.
-Grundprincipen är att HMB:s arbetsflöde är byggt för att:
+Grundprincipen är att MBot:s arbetsflöde är byggt för att:
 - separera analys från beslut,
 - separera förslag från ansvar,
 - och göra varje steg i processen synligt och begripligt för användaren.
 Detta är en förutsättning både för kvalitet i vardagen och för eventuell framtida, kontrollerad och utökad automatisering. Automatisering används där den är meningsfull och säker, men är aldrig implicit.**	**
 ### Steg 1: Mottagning och grundläggande registrering
-När ett e-postmeddelande tas på en mail-adress som HMB bevakar, registreras det av HMB. I detta skede har ingen tolkning eller bedömning gjorts, och ingen åtgärd är ännu initierad. Syftet med detta steg är spårbarhet och ordning, inte klassificering.
+När ett e-postmeddelande tas på en mail-adress som MBot bevakar, registreras det av MBot. I detta skede har ingen tolkning eller bedömning gjorts, och ingen åtgärd är ännu initierad. Syftet med detta steg är spårbarhet och ordning, inte klassificering.
 ### Steg 2: Innehållsanalys och kontextidentifiering
 Systemet analyserar därefter e-postens innehåll för att identifiera:
 - ärendets karaktär,
@@ -40,8 +40,8 @@ Användaren granskar utkastet och avgör hur ärendet ska hanteras. Det kan inne
 Allt ansvar för innehåll och utskick ligger i detta steg hos användaren.
 ### Steg 6: Utskick och avslut
 När användaren godkänner ett svar skickas det, och ärendet markeras som avslutat enligt gällande rutin. Informationen sparas för spårbarhet, uppföljning och lärande.
-**E-postens tillstånd och kategorier i HMB**
-HMB arbetar med e-post som en process, inte som enskilda meddelanden. Varje inkommande e-post befinner sig därför i ett tydligt **tillstånd**, vilket hjälper användaren att förstå vad som är gjort, vad som återstår och vilket ansvar som ligger var.
+**E-postens tillstånd och kategorier i MBot**
+MBot arbetar med e-post som en process, inte som enskilda meddelanden. Varje inkommande e-post befinner sig därför i ett tydligt **tillstånd**, vilket hjälper användaren att förstå vad som är gjort, vad som återstår och vilket ansvar som ligger var.
 **Inkommet**
 E-posten har mottagits av systemet men ännu inte analyserats eller hanterats.
 **Analyserat**

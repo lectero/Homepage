@@ -18,12 +18,12 @@ Rekommenderat mönster:
 
 1. Aktivera venv
 2. Kör injectorn med mailbox och antal mail
-3. Lägg en unik prefix i subject, exempel `[HMB-INJECT]`
+3. Lägg en unik prefix i subject, exempel `[MBot-INJECT]`
 
 Exempel:
 
 ```bash
-python -m tools.mail_injector --mailbox peg@skovdegk.se --count 20 --prefix "[HMB-INJECT]"
+python -m tools.mail_injector --mailbox peg@skovdegk.se --count 20 --prefix "[MBot-INJECT]"
 ```
 
 Om du har flera injectors, dokumentera dem var för sig och håll kvar samma CLI-kontrakt.

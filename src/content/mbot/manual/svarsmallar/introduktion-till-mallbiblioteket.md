@@ -2,13 +2,13 @@
 ---
 # Introduktion till mallbiblioteket
 
-Mallbiblioteket är en central del av HMB, men det ska inte förstås som en samling färdiga standardsvar. Mallarna i biblioteket är i stället strukturerade byggstenar som uttrycker hur klubben vill resonera och kommunicera i återkommande situationer.
+Mallbiblioteket är en central del av MBot, men det ska inte förstås som en samling färdiga standardsvar. Mallarna i biblioteket är i stället strukturerade byggstenar som uttrycker hur klubben vill resonera och kommunicera i återkommande situationer.
 
 Syftet med mallbiblioteket är inte att täcka alla tänkbara frågor i detalj, utan att skapa ett gemensamt ramverk som gör e-posthanteringen mer konsekvent, mer förutsägbar och mindre beroende av individuella formuleringar från gång till gång. En bra mall fångar det väsentliga i ett ärende utan att låsa svaret hårdare än nödvändigt.
 
 Mallarna är avsiktligt skrivna för att fungera som underlag för utkast. De är inte färdiga svar och är inte tänkta att skickas utan granskning. De anger tonläge, struktur och fokus, men lämnar utrymme för att anpassa innehållet till det enskilda ärendet. På så sätt fungerar mallbiblioteket som ett gemensamt språk snarare än som ett regelverk.
 
-Ett genomtänkt mallbibliotek är oftast mindre än man först tror. Färre mallar med tydlig intention och hög intern kvalitet ger bättre stöd än ett stort antal snarlika varianter. När flera mallar bara skiljer sig i formulering, men inte i innehåll eller ansvar, skapas lätt osäkerhet snarare än effektivitet. HMB är därför byggt för att uppmuntra återanvändning och justering snarare än ständig nyproduktion av mallar.
+Ett genomtänkt mallbibliotek är oftast mindre än man först tror. Färre mallar med tydlig intention och hög intern kvalitet ger bättre stöd än ett stort antal snarlika varianter. När flera mallar bara skiljer sig i formulering, men inte i innehåll eller ansvar, skapas lätt osäkerhet snarare än effektivitet. MBot är därför byggt för att uppmuntra återanvändning och justering snarare än ständig nyproduktion av mallar.
 
 Mallbiblioteket är inte statiskt. Det utvecklas över tid i takt med att klubben ser vilka formuleringar som fungerar väl och vilka som behöver justeras. Små förändringar i mallar kan få stor effekt i praktiken, eftersom de påverkar många ärenden över tid. Det gör arbetet med mallbiblioteket till ett av de viktigaste verktygen för att förbättra kvalitet och konsekvens i kommunikationen.
 
@@ -18,9 +18,9 @@ I praktiken fungerar mallbiblioteket bäst när det ses som en levande resurs so
 
 ### Rekommenderad strategi för att bygga upp ett bibliotek med svarsmallar
 
-Ett välfungerande mallbibliotek uppstår sällan genom att man försöker tänka ut alla tänkbara frågor i förväg. I HMB är utgångspunkten i stället att mallbiblioteket bör växa fram **ur faktisk användning**, baserat på vilka typer av ärenden som verkligen förekommer och i vilka volymer.
+Ett välfungerande mallbibliotek uppstår sällan genom att man försöker tänka ut alla tänkbara frågor i förväg. I MBot är utgångspunkten i stället att mallbiblioteket bör växa fram **ur faktisk användning**, baserat på vilka typer av ärenden som verkligen förekommer och i vilka volymer.
 
-Eftersom HMB kan analysera historisk e-post i en inbox finns möjlighet att bygga mallbiblioteket på ett empiriskt underlag snarare än på antaganden. Genom att se vilka ärendetyper som dominerar, vilka frågor som återkommer och vilka variationer som finns inom samma kategori, kan arbetet med mallar fokuseras där det ger störst effekt. Detta minskar risken för att lägga tid på mallar som sällan används eller som bara täcker marginalfall.
+Eftersom MBot kan analysera historisk e-post i en inbox finns möjlighet att bygga mallbiblioteket på ett empiriskt underlag snarare än på antaganden. Genom att se vilka ärendetyper som dominerar, vilka frågor som återkommer och vilka variationer som finns inom samma kategori, kan arbetet med mallar fokuseras där det ger störst effekt. Detta minskar risken för att lägga tid på mallar som sällan används eller som bara täcker marginalfall.
 
 En rimlig strategi är därför att börja med de mest frekventa och minst kontroversiella ärendena. Det handlar ofta om informationsförfrågningar, praktiska frågor och återkommande rutiner. Mallar för dessa ärenden ger snabbt nytta, både genom tidsbesparing och genom ökad konsekvens i kommunikationen. Samtidigt är de oftast lättare att skriva på ett sätt som inte kräver omfattande undantag eller policytolkning.
 
@@ -32,11 +32,11 @@ Arbetet med mallbiblioteket bör ses som iterativt snarare än som ett projekt m
 
 Samtidigt finns det ett värde i återhållsamhet. Ett mallbibliotek som växer okontrollerat riskerar att bli svåröverskådligt och motverka sitt eget syfte. Historisk volymanalys kan därför också användas för att ifrågasätta befintliga mallar. Om en mall sällan används, eller om den bara skiljer sig marginellt från andra, kan den ofta slås samman eller tas bort utan att funktionalitet går förlorad.
 
-Sammanfattningsvis är den rekommenderade strategin att låta mallbiblioteket spegla verklig efterfrågan snarare än hypotetiska behov. Genom att kombinera historisk analys av inkommande e-post med löpande justering utifrån faktisk användning kan biblioteket byggas upp på ett sätt som är både effektivt, hållbart och lätt att förvalta. HMB är utformat för att stödja just detta arbetssätt, där data används för att prioritera, och erfarenhet används för att förfina.
+Sammanfattningsvis är den rekommenderade strategin att låta mallbiblioteket spegla verklig efterfrågan snarare än hypotetiska behov. Genom att kombinera historisk analys av inkommande e-post med löpande justering utifrån faktisk användning kan biblioteket byggas upp på ett sätt som är både effektivt, hållbart och lätt att förvalta. MBot är utformat för att stödja just detta arbetssätt, där data används för att prioritera, och erfarenhet används för att förfina.
 
 ### Hur man arbetar praktiskt med utkast (drafts)
 
-I HMB används utkast som ett gemensamt arbetsunderlag mellan system och användare. Ett utkast är inte ett färdigt svar, men inte heller ett löst förslag. Det är ett strukturerat resultat av analys, mallar och tillgänglig kontext, avsett att granskas och vid behov justeras innan ett svar skickas.
+I MBot används utkast som ett gemensamt arbetsunderlag mellan system och användare. Ett utkast är inte ett färdigt svar, men inte heller ett löst förslag. Det är ett strukturerat resultat av analys, mallar och tillgänglig kontext, avsett att granskas och vid behov justeras innan ett svar skickas.
 
 Utkast ska alltid läsas som preliminära. Systemet visar en möjlig formulering baserad på det underlag som finns, men gör inga antaganden om att detta underlag är komplett eller slutgiltigt. Det är därför användarens ansvar att bedöma om utkastet är korrekt, tillräckligt och lämpligt i det aktuella ärendet.
 

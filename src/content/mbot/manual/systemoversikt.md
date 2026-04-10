@@ -1,51 +1,51 @@
 ---
 ---
-# Introduktion till HMB MAILrobot
+# Introduktion till MBot MAILrobot
 
 
 ## Introduktion
 
-HMB (Human-in-the-loop Mail Bot) är ett system för kontrollerad, AI-stödd hantering av inkommande e-post.
+MBot (Human-in-the-loop Mail Bot) är ett system för kontrollerad, AI-stödd hantering av inkommande e-post.
 
 Systemet är utformat för miljöer där kvalitet, korrekthet och ansvar är viktigare än maximal automatisering.
 
-HMB hjälper användaren att analysera inkommande e-post, föreslå svar baserat på mallar och policy och minska manuellt arbete utan att ta över beslutsfattan-det.
+MBot hjälper användaren att analysera inkommande e-post, föreslå svar baserat på mallar och policy och minska manuellt arbete utan att ta över beslutsfattan-det.
 
-Automatisering i HMB är explicit och selektiv. Systemet genererar förslag, synliggör beroenden och exponerar konsekvenser, men det är alltid användaren som fattar beslut, godkänner svar och bär ansvar för kommunikationen.
+Automatisering i MBot är explicit och selektiv. Systemet genererar förslag, synliggör beroenden och exponerar konsekvenser, men det är alltid användaren som fattar beslut, godkänner svar och bär ansvar för kommunikationen.
 
 ### Systemkrav och tekniska förutsättningar
 
-HMB är designat för att fungera i den IT-miljö som används av svenska golfklubbar i praktiken. Systemet är därför byggt med Microsoft 365 som grundplattform, vilket också är Svenska Golfförbundets valda och rekommenderade IT-system för klubbar anslutna till förbundet.
+MBot är designat för att fungera i den IT-miljö som används av svenska golfklubbar i praktiken. Systemet är därför byggt med Microsoft 365 som grundplattform, vilket också är Svenska Golfförbundets valda och rekommenderade IT-system för klubbar anslutna till förbundet.
 
-HMB förutsätter att klubbens e-post hanteras via Microsoft 365, inklusive:
+MBot förutsätter att klubbens e-post hanteras via Microsoft 365, inklusive:
 
 - Exchange Online (e-post och brevlådor),
 - Microsofts autentiserings- och behörighetsmodell, och
 - Standardiserade konton och grupper inom Microsoft 365-miljön.
 Systemet är inte avsett att användas med fristående e-postlösningar, privata e-postservrar eller andra molnplattformar.
 
-HMB arbetar direkt mot Microsoft 365-miljön på ett sätt som:
+MBot arbetar direkt mot Microsoft 365-miljön på ett sätt som:
 
 - följer Microsofts säkerhetsmodell, t ex använder etablerade säkerhetsmekanismer för autentisering och åtkomst,
 - följer samma principer för loggning och spårbarhet som övrig e-posthantering,
 - respekterar befintliga behörigheter och roller,
 - inte kräver parallella användarkonton eller separata inloggningar, samt
 - verkar inom det som redan gäller för klubbens e-post.
-Att HMB är bundet till Microsoft 365 är ett medvetet designval, inte en tillfällig begränsning. Det möjliggör:
+Att MBot är bundet till Microsoft 365 är ett medvetet designval, inte en tillfällig begränsning. Det möjliggör:
 
 - tät integration med e-postflödet och Microsoft Outlooks klienter
 - konsekvent hantering av ärenden och svar,
 - och minskad komplexitet i drift och support.
 Systemet är alltså inte ett generellt e-postverktyg för alla plattformar, utan ett specialiserat stöd anpassat för den IT-miljö som svenska golfklubbar redan använder.
 
-## HMB Arbetsflöde
+## MBot Arbetsflöde
 
-HMB hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
+MBot hanterar e-post som en sekventiell process, inte som isolerade med-delanden. Varje inkommande e-post passerar genom ett antal steg där analys, strukturering och förslag successivt byggs upp. Systemet är utformat för att:
 
 - minska manuellt rutinarbete,
 - skapa konsekventa underlag för svar,
 - och samtidigt behålla mänsklig kontroll över beslut och kommunikation.
-Grundprincipen är att HMB:s arbetsflöde är byggt för att:
+Grundprincipen är att MBot:s arbetsflöde är byggt för att:
 
 - separera analys från beslut,
 - separera förslag från ansvar,
@@ -54,7 +54,7 @@ Detta är en förutsättning både för kvalitet i vardagen och för eventuell f
 
 ### Steg 1: Mottagning och grundläggande registrering
 
-När ett e-postmeddelande tas på en mail-adress som HMB bevakar, registreras det av HMB. I detta skede har ingen tolkning eller bedömning gjorts, och ingen åtgärd är ännu initierad. Syftet med detta steg är spårbarhet och ordning, inte klassificering.
+När ett e-postmeddelande tas på en mail-adress som MBot bevakar, registreras det av MBot. I detta skede har ingen tolkning eller bedömning gjorts, och ingen åtgärd är ännu initierad. Syftet med detta steg är spårbarhet och ordning, inte klassificering.
 
 ### Steg 2: Innehållsanalys och kontextidentifiering
 
@@ -99,9 +99,9 @@ Allt ansvar för innehåll och utskick ligger i detta steg hos användaren.
 
 När användaren godkänner ett svar skickas det, och ärendet markeras som avslutat enligt gällande rutin. Informationen sparas för spårbarhet, uppföljning och lärande.
 
-**E-postens tillstånd och kategorier i HMB**
+**E-postens tillstånd och kategorier i MBot**
 
-HMB arbetar med e-post som en process, inte som enskilda meddelanden. Varje inkommande e-post befinner sig därför i ett tydligt **tillstånd**, vilket hjälper användaren att förstå vad som är gjort, vad som återstår och vilket ansvar som ligger var.
+MBot arbetar med e-post som en process, inte som enskilda meddelanden. Varje inkommande e-post befinner sig därför i ett tydligt **tillstånd**, vilket hjälper användaren att förstå vad som är gjort, vad som återstår och vilket ansvar som ligger var.
 
 **Inkommet**
 
@@ -145,19 +145,19 @@ Svar har skickats och ärendet betraktas som avslutat.
 
 ## Dataskydd och GDPR
 
-HMB är konstruerat för att uppfylla GDPR genom hur systemet hanterar data, inte genom efterhandsåtgärder eller användarberoende rutiner. Den grundläggande principen är att personuppgifter aldrig lämnar klubbens Microsoft 365-miljö i samband med AI-bearbetning.
+MBot är konstruerat för att uppfylla GDPR genom hur systemet hanterar data, inte genom efterhandsåtgärder eller användarberoende rutiner. Den grundläggande principen är att personuppgifter aldrig lämnar klubbens Microsoft 365-miljö i samband med AI-bearbetning.
 
-All e-post som hanteras av HMB ligger kvar i klubbens Microsoft 365-miljö. Systemet skapar inga externa kopior av e-post, bilagor eller metadata för lagring eller analys. Klubben är fortsatt personuppgiftsansvarig för all e-posthantering, på samma sätt som utan HMB, och detta ansvar förändras inte av systemets användning.
+All e-post som hanteras av MBot ligger kvar i klubbens Microsoft 365-miljö. Systemet skapar inga externa kopior av e-post, bilagor eller metadata för lagring eller analys. Klubben är fortsatt personuppgiftsansvarig för all e-posthantering, på samma sätt som utan MBot, och detta ansvar förändras inte av systemets användning.
 
-När HMB analyserar inkommande e-post och genererar förslag till svarsmallar sker AI-bearbetningen uteslutande på innehåll som är rensat från personidentifierande information. Avsändarens namn, e-postadress och andra identifierande uppgifter kommuniceras aldrig till AI-tjänsten. Systemet skickar inte e-postadresser, namn, medlemsnummer eller andra identifierande fält till externa AI-servrar.
+När MBot analyserar inkommande e-post och genererar förslag till svarsmallar sker AI-bearbetningen uteslutande på innehåll som är rensat från personidentifierande information. Avsändarens namn, e-postadress och andra identifierande uppgifter kommuniceras aldrig till AI-tjänsten. Systemet skickar inte e-postadresser, namn, medlemsnummer eller andra identifierande fält till externa AI-servrar.
 
-Den AI-modell som används i HMB är ChatGPT. ChatGPT används enbart som ett språkstöd för att bearbeta anonymiserat och avidentifierat innehåll i syfte att föreslå svarstexter. Modellen får ingen information om vem avsändaren är, och har ingen möjlighet att identifiera eller särskilja individer.
+Den AI-modell som används i MBot är ChatGPT. ChatGPT används enbart som ett språkstöd för att bearbeta anonymiserat och avidentifierat innehåll i syfte att föreslå svarstexter. Modellen får ingen information om vem avsändaren är, och har ingen möjlighet att identifiera eller särskilja individer.
 
-All behandling av personuppgifter i HMB sker inom samma ändamål som den ordinarie e-posthanteringen, till exempel att besvara frågor, hantera medlemsärenden eller ge serviceinformation. Systemet används inte för profilering, beteendeanalys eller automatiserad bedömning av individer, och det bygger inga separata personregister.
+All behandling av personuppgifter i MBot sker inom samma ändamål som den ordinarie e-posthanteringen, till exempel att besvara frågor, hantera medlemsärenden eller ge serviceinformation. Systemet används inte för profilering, beteendeanalys eller automatiserad bedömning av individer, och det bygger inga separata personregister.
 
-En avgörande del av systemets GDPR-anpassning är att mänsklig kontroll aldrig kringgås. Svar som genereras av HMB är förslag. Det är alltid en användare som granskar, justerar och godkänner innehållet innan ett svar skickas. Därmed fattas inga beslut med faktisk betydelse för en individ av systemet självt.
+En avgörande del av systemets GDPR-anpassning är att mänsklig kontroll aldrig kringgås. Svar som genereras av MBot är förslag. Det är alltid en användare som granskar, justerar och godkänner innehållet innan ett svar skickas. Därmed fattas inga beslut med faktisk betydelse för en individ av systemet självt.
 
-Sammanfattningsvis är HMB GDPR-säkert därför att:
+Sammanfattningsvis är MBot GDPR-säkert därför att:
 
 - personuppgifter aldrig skickas till AI-tjänsten,
 - all e-post ligger kvar i klubbens Microsoft 365-miljö,
@@ -165,9 +165,9 @@ Sammanfattningsvis är HMB GDPR-säkert därför att:
 - och mänskligt ansvar alltid är kvar i besluts- och kommunikationskedjan.
 Systemet är ett stöd för e-posthantering, inte en självständig aktör i personuppgiftsbehandlingen.
 
-### Serverdelens funktioner i HMB (översikt)
+### Serverdelens funktioner i MBot (översikt)
 
-Serverdelen i HMB fungerar som ett analys- och stödlager. Den utför följande funktioner:
+Serverdelen i MBot fungerar som ett analys- och stödlager. Den utför följande funktioner:
 
 - Tar emot **anonymiserat och avidentifierat innehåll** från klienten för vidare bearbetning. Servern får aldrig tillgång till avsändarens namn, e-postadress eller andra identifierande uppgifter.
 - Utför **semantisk analys av e-postens innehåll** för att förstå ärendets karaktär, exempelvis om det rör medlemskap, bokning, avgifter, tider eller allmän information.
@@ -201,9 +201,9 @@ Alla dessa begränsningar är arkitektoniska, inte konfigurationsval.
 
 Serverdelen är ett centralt analys- och resonemangsstöd som avlastar användaren från repetitivt och kognitivt arbete, men som aldrig tar över ansvar, åtkomst eller beslut. Den gör det möjligt att använda avancerat AI-stöd på ett kontrollerat sätt, just därför att dess befogenheter är strikt avgränsade.
 
-### Klientens roll och ansvar i HMB
+### Klientens roll och ansvar i MBot
 
-I HMB är klienten avsiktligt utformad som en tunn och självständig komponent, med ett tydligt och begränsat ansvar. Den är endast löst kopplad till serverdelen och fungerar som den enda delen av systemet som har direkt tillgång till klubbens e-postmiljö.
+I MBot är klienten avsiktligt utformad som en tunn och självständig komponent, med ett tydligt och begränsat ansvar. Den är endast löst kopplad till serverdelen och fungerar som den enda delen av systemet som har direkt tillgång till klubbens e-postmiljö.
 
 Det är alltid klienten som autentiserar sig mot Microsoft 365 och som har behörighet att läsa och skriva i klubbens brevlådor. Serverdelen har ingen egen åtkomst till e-postsystemet och har aldrig tillgång till lösenord, tokens eller andra autentiseringsuppgifter. Den kan inte läsa e-post på egen hand och kan inte initiera någon kommunikation mot brevlådan.
 
@@ -217,4 +217,4 @@ Den lösa kopplingen mellan klient och server innebär också att klienten inte 
 
 Som ett ytterligare förtroendeskapande inslag kan klientkoden hållas tillgänglig för granskning av klubbchefer eller tekniskt sakkunniga. Det gör det möjligt att i praktiken verifiera att klienten inte skickar vidare lösenord, e-postadresser eller identifierande data, och att anonymiseringen faktiskt sker innan någon extern behandling. Transparensen är här ett medvetet designval snarare än ett marknadsargument.
 
-Sammantaget innebär detta att HMB:s säkerhet inte bygger på löften om hur servern beter sig, utan på en arkitektur där servern aldrig får möjlighet att göra något den inte ska. All åtkomst till brevlådan, all hantering av identitet och allt ansvar för utskick är koncentrerat till klienten, där klubbens kontroll redan finns.
+Sammantaget innebär detta att MBot:s säkerhet inte bygger på löften om hur servern beter sig, utan på en arkitektur där servern aldrig får möjlighet att göra något den inte ska. All åtkomst till brevlådan, all hantering av identitet och allt ansvar för utskick är koncentrerat till klienten, där klubbens kontroll redan finns.
