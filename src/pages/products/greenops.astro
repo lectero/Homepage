@@ -1,45 +1,127 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Hero from '../../components/Hero.astro';
+
+const badges = [
+  'Vendoroberoende',
+  'Realtidsövervakning',
+  'Väderintelligens',
+  'Multi-tenant',
+  'Robotklippare & bevattning',
+  'GDPR-redo',
+];
+
+const features = [
+  {
+    title: 'Väderintelligent automation',
+    description: 'Automatisk parkering och återstart av klippare baserat på regn, frost, åska och vind — med konfigurerbara tröskelvärden per anläggning.',
+  },
+  {
+    title: 'Vendoroberoende styrning',
+    description: 'En plattform för Husqvarna, Gardena, Rain Bird, Hunter, Toro och fler. Byt leverantör utan att byta system.',
+  },
+  {
+    title: 'Auto-respons vid fel',
+    description: 'Automatiska regler som hanterar enhetsfel — omstart, eskalering och notifiering utan manuell insats.',
+  },
+  {
+    title: 'Realtidsdashboard',
+    description: 'Webbgränssnitt med live-uppdateringar via SignalR. Se status, position och batteri för alla enheter i realtid.',
+  },
+  {
+    title: 'Mobilapp för fältet',
+    description: 'PWA med offlinestöd. Operatörer kan styra klippare och bevattning direkt från anläggningen.',
+  },
+  {
+    title: 'Notifieringar med eskalering',
+    description: 'Automatisk eskaleringskedja: e-post, röstsamtal, SMS. Varje väderbeslut och enhetsfel loggas med fullständig spårbarhet.',
+  },
+];
 ---
 
-<Base title="GreenOps" description="GreenOps — Hållbarhetsrapportering för organisationer">
+<Base title="GreenOps" description="GreenOps — Vendoroberoende orkestreringsplattform för automatiserad grönyteskötsel">
   <Hero
     title="GreenOps"
-    subtitle="Hållbarhetsrapportering som är enkel att använda och svår att göra fel."
+    subtitle="Vendoroberoende orkestreringsplattform för robotklippare, bevattning och sensorer — en kontrollyta för alla leverantörer."
     cta={{ label: 'Kontakta oss för demo', href: '/contact/' }}
   />
 
   <section class="max-w-4xl mx-auto px-6 py-20">
     <div class="space-y-16">
       <div>
-        <h2 class="text-2xl font-bold text-primary mb-4">Vad är GreenOps?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          GreenOps samlar robotklippare, bevattningssystem och markfuktsensorer från olika leverantörer
+          i en gemensam plattform. Systemet fattar väderstyrda beslut, hanterar enhetsfel automatiskt
+          och ger operatörer full kontroll via webb och mobil — utan att vara låst till en enda leverantör.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-6">
+          {badges.map((badge) => (
+            <span class="bg-accent/10 text-accent text-sm font-medium rounded-full px-3 py-1">
+              {badge}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Target audience -->
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-4">Byggt för stora grönytor</h2>
         <p class="text-gray-600 leading-relaxed">
-          GreenOps är ett verktyg för hållbarhetsrapportering byggt i Blazor och .NET. Det hjälper
-          organisationer att samla in miljödata, beräkna nyckeltal och generera rapporter enligt
-          etablerade ramverk — utan komplicerade kalkylark eller dyra konsulter.
+          Golfbanor, idrottsanläggningar, parker och campus — organisationer som hanterar blandade
+          maskinparker och behöver pålitlig automation med mänsklig kontroll. GreenOps ersätter
+          manuell väderövervakning, leverantörsspecifika appar och reaktiv felhantering med
+          ett samlat system som agerar, loggar och eskalerar automatiskt.
         </p>
       </div>
 
+      <!-- Core principle -->
+      <div class="bg-surface rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-primary mb-4">Sense — Decide — Act — Verify</h2>
+        <div class="grid md:grid-cols-4 gap-4">
+          <div>
+            <h3 class="font-semibold text-primary mb-1">Sense</h3>
+            <p class="text-sm text-gray-600">Väderdata, sensorvärden och enhetsstatus samlas in i realtid.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-1">Decide</h3>
+            <p class="text-sm text-gray-600">Konfigurerbara regler avgör om klippare ska parkeras, bevattning stoppas eller fel eskaleras.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-1">Act</h3>
+            <p class="text-sm text-gray-600">Kommandon skickas till rätt enhet via leverantörens API — oberoende av tillverkare.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary mb-1">Verify</h3>
+            <p class="text-sm text-gray-600">Varje beslut och åtgärd loggas med kontext, tröskelvärden och trace-ID.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
       <div>
         <h2 class="text-2xl font-bold text-primary mb-6">Funktioner</h2>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-surface rounded-lg p-5">
-            <h3 class="font-semibold text-primary mb-2">Datainsamling</h3>
-            <p class="text-sm text-gray-600">Strukturerad inmatning av miljödata med validering och spårbarhet.</p>
-          </div>
-          <div class="bg-surface rounded-lg p-5">
-            <h3 class="font-semibold text-primary mb-2">Beräkningar</h3>
-            <p class="text-sm text-gray-600">Automatiska beräkningar av utsläpp och nyckeltal baserat på etablerade emissionsfaktorer.</p>
-          </div>
-          <div class="bg-surface rounded-lg p-5">
-            <h3 class="font-semibold text-primary mb-2">Rapportering</h3>
-            <p class="text-sm text-gray-600">Generera rapporter anpassade efter vedertagna ramverk och standarder.</p>
-          </div>
-          <div class="bg-surface rounded-lg p-5">
-            <h3 class="font-semibold text-primary mb-2">Dashboard</h3>
-            <p class="text-sm text-gray-600">Överblick över organisationens hållbarhetsprestanda i realtid.</p>
-          </div>
+          {features.map((feature) => (
+            <div class="bg-surface rounded-lg p-5">
+              <h3 class="font-semibold text-primary mb-2">{feature.title}</h3>
+              <p class="text-sm text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Supported vendors -->
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-4">Leverantörer</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Adaptrarna följer ett gemensamt mönster — lägg till nya leverantörer utan att ändra affärslogiken.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          {['Husqvarna Automower', 'Gardena', 'Rain Bird', 'Hunter', 'Toro', 'SoilScout', 'Stiga'].map((vendor) => (
+            <span class="bg-primary/5 text-primary text-sm font-medium rounded-full px-4 py-1.5 border border-primary/10">
+              {vendor}
+            </span>
+          ))}
         </div>
       </div>
     </div>
