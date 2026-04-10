@@ -6,13 +6,16 @@ export async function getStaticPaths() {
   const entries = await getCollection('mbot');
   const allIds = new Set(entries.map((e) => e.id));
 
-  return entries.map((entry) => {
-    const slug = entry.id === 'index' ? undefined : entry.id.replace(/\/index$/, '');
-    return {
-      params: { slug },
-      props: { entry, allIds },
-    };
-  });
+  // Exclude root index — handled by index.astro
+  return entries
+    .filter((entry) => entry.id !== 'index')
+    .map((entry) => {
+      const slug = entry.id.replace(/\/index$/, '');
+      return {
+        params: { slug },
+        props: { entry, allIds },
+      };
+    });
 }
 
 const { entry, allIds } = Astro.props;
