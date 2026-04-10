@@ -284,5 +284,3 @@ Den lösa kopplingen mellan klient och server innebär också att klienten inte 
 Som ett ytterligare förtroendeskapande inslag kan klientkoden hållas tillgänglig för granskning av klubbchefer eller tekniskt sakkunniga. Det gör det möjligt att i praktiken verifiera att klienten inte skickar vidare lösenord, e-postadresser eller identifierande data, och att anonymiseringen faktiskt sker innan någon extern behandling. Transparensen är här ett medvetet designval snarare än ett marknadsargument.
 
 Sammantaget innebär detta att HMB:s säkerhet inte bygger på löften om hur servern beter sig, utan på en arkitektur där servern aldrig får möjlighet att göra något den inte ska. All åtkomst till brevlådan, all hantering av identitet och allt ansvar för utskick är koncentrerat till klienten, där klubbens kontroll redan finns.
-
-<span id="_Toc217527444" class="anchor"></span>
