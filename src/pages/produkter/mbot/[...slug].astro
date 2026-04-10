@@ -43,17 +43,17 @@ if (entry.id !== 'index' && parts.length > 1) {
 ---
 
 <Base title={`${titleFromId} — HMB Mailbot`} description="HMB Mailbot dokumentation">
-  <div class="max-w-4xl mx-auto px-6 py-12">
+  <div class="max-w-4xl mx-auto px-6 py-16">
     <!-- Breadcrumb navigation -->
-    <nav class="mb-8 text-sm text-gray-500">
-      <a href="/produkter/mbot/" class="hover:text-accent transition-colors">HMB Mailbot</a>
+    <nav class="mb-8 flex items-center gap-2 text-sm">
+      <a href="/produkter/mbot/" class="text-accent hover:underline font-medium transition-colors">HMB Mailbot</a>
       {breadcrumbs.map((bc) => (
         <>
-          <span class="mx-2">/</span>
+          <span class="text-gray-400">/</span>
           {bc.href ? (
-            <a href={bc.href} class="hover:text-accent transition-colors">{bc.label}</a>
+            <a href={bc.href} class="text-accent hover:underline font-medium transition-colors">{bc.label}</a>
           ) : (
-            <span>{bc.label}</span>
+            <span class="text-gray-600 font-medium">{bc.label}</span>
           )}
         </>
       ))}
@@ -65,8 +65,8 @@ if (entry.id !== 'index' && parts.length > 1) {
     </article>
 
     <!-- Back navigation -->
-    <div class="mt-12 pt-6 border-t border-gray-200">
-      <a href="/produkter/mbot/" class="text-accent hover:underline text-sm">
+    <div class="mt-16 pt-6 border-t border-gray-200">
+      <a href="/produkter/mbot/" class="inline-flex items-center gap-1 text-accent hover:underline text-sm font-medium transition-colors">
         &larr; Tillbaka till HMB Mailbot
       </a>
     </div>
