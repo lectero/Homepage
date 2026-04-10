@@ -1,0 +1,83 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Hero from '../../../components/Hero.astro';
+
+const badges = [
+  'Human-in-the-loop',
+  'Microsoft 365',
+  'Riskstyrd automation',
+  'Spårbarhet',
+  'GDPR via arkitektur',
+];
+
+const cards = [
+  {
+    title: 'Produkt',
+    description: 'Vad HMB Mailbot gör, hur risklogiken fungerar, och hur mallar och policy hänger ihop.',
+    href: '/produkter/mbot/product/features/',
+  },
+  {
+    title: 'Manual',
+    description: 'Extern dokumentation som beskriver arbetsflöde, arkitektur, tillstånd och mallarbete.',
+    href: '/produkter/mbot/manual/',
+  },
+  {
+    title: 'Whitepaper',
+    description: 'Whitepaper som webbsidor, med möjlighet att ladda ner PDF för arkivering och delning.',
+    href: '/produkter/mbot/whitepaper/',
+  },
+  {
+    title: 'GDPR',
+    description: 'Dataskydd genom design: ingen personidentifierande information skickas till AI-tjänsten.',
+    href: '/produkter/mbot/overview/gdpr/',
+  },
+  {
+    title: 'Priser',
+    description: 'Erbjudande, kvotnivåer, rollover, buffert, och hur överkapacitet hanteras.',
+    href: '/produkter/mbot/business/offer/',
+  },
+  {
+    title: 'FAQ',
+    description: 'Vanliga frågor, begränsningar, och vad som är ett rimligt användningssätt.',
+    href: '/produkter/mbot/reference/faq/',
+  },
+];
+---
+
+<Base title="HMB Mailbot" description="HMB Mailbot — AI-driven e-posthantering för svenska golfklubbar">
+  <Hero
+    title="HMB Mailbot"
+    subtitle="Kontrollerad, AI-stödd e-posthantering för verksamheter där korrekthet, spårbarhet och ansvar är viktigare än maximal automation."
+    cta={{ label: 'Kontakta oss', href: '/kontakt/' }}
+  />
+
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div class="space-y-16">
+      <div>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Mailboten läser inkommande e-post i Microsoft 365, klassificerar ärenden, föreslår svar
+          som drafts, och hjälper kansliet att arbeta konsekvent utan att tappa mänsklig kontroll.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-6">
+          {badges.map((badge) => (
+            <span class="bg-accent/10 text-accent text-sm font-medium rounded-full px-3 py-1">
+              {badge}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-6">Dokumentation</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {cards.map((card) => (
+            <a href={card.href} class="group block bg-surface rounded-lg p-5 transition-all hover:shadow-md hover:bg-surface/80">
+              <h3 class="font-semibold text-primary mb-2 group-hover:text-accent transition-colors">{card.title}</h3>
+              <p class="text-sm text-gray-600">{card.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
