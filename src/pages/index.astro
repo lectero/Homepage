@@ -2,13 +2,47 @@
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+
+const products = [
+  {
+    icon: '📧',
+    title: 'MBot',
+    description: 'Kontrollerad, AI-stödd e-posthantering för verksamheter med kansli. Läser inkommande e-post, klassificerar ärenden och föreslår svar som drafts — aldrig autoskick.',
+    href: '/products/mbot/',
+  },
+  {
+    icon: '🌱',
+    title: 'GreenOps',
+    description: 'Väderintelligent driftstyrning för robotklippare och bevattning. Vendoroberoende, spårbar och byggd för anläggningar med höga krav på tillförlitlighet.',
+    href: '/products/greenops/',
+  },
+];
 ---
 
 <Base title="Hem">
   <Hero
     title="Digitala verktyg som driver förändring"
-    subtitle="Lectero utvecklar system för intelligent automation och smart driftstyrning — så att organisationer kan fokusera på det som räknas."
+    subtitle="Lectero bygger specifika lösningar för verksamheter som värderar korrekthet, spårbarhet och ansvar — inte bara hastighet."
+    cta={{ label: 'Utforska MBot', href: '/products/mbot/' }}
   />
+
+  <!-- Products -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold text-center text-primary mb-4">Våra produkter</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      Verktyg som löser verkliga problem — inte generiska plattformar som kräver veckor av anpassning.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {products.map((product) => (
+        <FeatureCard
+          title={product.title}
+          description={product.description}
+          icon={product.icon}
+          href={product.href}
+        />
+      ))}
+    </div>
+  </section>
 
   <!-- Why Lectero -->
   <section class="bg-surface py-20">
