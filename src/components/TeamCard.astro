@@ -1,0 +1,50 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  expertise: string[];
+  bio: string;
+  photo: string;
+  linkedinUrl?: string;
+}
+
+const { name, role, expertise, bio, photo, linkedinUrl } = Astro.props;
+---
+
+<article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-all hover:shadow-md hover:border-accent/30 flex flex-col">
+  <div class="flex items-center gap-4 mb-4">
+    <img
+      src={photo}
+      alt={`Porträtt av ${name}`}
+      width="72"
+      height="72"
+      loading="lazy"
+      class="w-[72px] h-[72px] rounded-full object-cover border-2 border-accent/20"
+    />
+    <div>
+      <h3 class="text-lg font-semibold text-primary leading-tight">{name}</h3>
+      <p class="text-sm text-accent">{role}</p>
+    </div>
+  </div>
+
+  <p class="text-sm text-gray-600 leading-relaxed mb-4">{bio}</p>
+
+  <div class="flex flex-wrap gap-1.5 mb-4">
+    {expertise.map((tag) => (
+      <span class="bg-surface text-xs font-medium text-gray-700 rounded-full px-2.5 py-1">
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  {linkedinUrl && (
+    <a
+      href={linkedinUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-auto text-sm text-accent hover:underline inline-flex items-center gap-1"
+    >
+      LinkedIn →
+    </a>
+  )}
+</article>
