@@ -9,6 +9,7 @@ const badges = [
   'Riskstyrd automation',
   'Spårbarhet',
   'GDPR via arkitektur',
+  'Multi-LLM med failover',
 ];
 
 const howItWorks = [
@@ -72,8 +73,18 @@ const features = [
   },
   {
     icon: '📬',
-    title: 'Outlook-integration',
-    description: 'Task Pane-panel direkt i Outlook. Granska klassificering, läs svarsförslag och hantera ärenden utan att lämna inkorgen.',
+    title: 'Outlook Add-in',
+    description: 'Fullt fungerande Task Pane direkt i Outlook — klassificering, svarsförslag, korrigering och ärendehantering utan att lämna inkorgen.',
+  },
+  {
+    icon: '🔁',
+    title: 'Multi-LLM med failover',
+    description: 'OpenAI som primär LLM med Anthropic Claude som automatisk failover. Redundans utan konfiguration — systemet byter tyst vid fel.',
+  },
+  {
+    icon: '🚨',
+    title: 'Oförskämdhetsfilter',
+    description: 'Fyra eskaleringsniåver (ok → gränsfall → over the line → eskalerat). Olämpliga meddelanden flaggas automatiskt och hamnar aldrig i ett vanligt svarsflöde.',
   },
 ];
 
