@@ -19,6 +19,8 @@ npm run preview  # Förhandsgranska bygget
 - React-komponenter (.tsx) bara där interaktivitet behövs (formulär, animationer)
 - Tailwind utility classes — inga separata CSS-filer utöver global.css
 
-## Default repository och board
-- **Repository:** `lectero/Homepage`
-- **Project board:** Lectero Development (nummer: 1)
+## GitHub Issues & Projects
+
+- **Default repository:** lectero/Homepage
+- **Board:** lectero/projects/5 ("Homepage")
+- **Kolumner:** Backlog → Ready → In progress → In review → Done
