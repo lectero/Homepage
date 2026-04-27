@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   name: string;
   role: string;
   expertise: string[];
   bio: string;
-  photo: string;
+  photo: ImageMetadata;
   linkedinUrl?: string;
 }
 
@@ -13,11 +16,11 @@ const { name, role, expertise, bio, photo, linkedinUrl } = Astro.props;
 
 <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-all hover:shadow-md hover:border-accent/30 flex flex-col">
   <div class="flex items-center gap-4 mb-4">
-    <img
+    <Image
       src={photo}
       alt={`Porträtt av ${name}`}
-      width="72"
-      height="72"
+      width={144}
+      height={144}
       loading="lazy"
       class="w-[72px] h-[72px] rounded-full object-cover border-2 border-accent/20"
     />
