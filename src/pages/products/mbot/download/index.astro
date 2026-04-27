@@ -1,0 +1,304 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import Hero from '../../../../components/Hero.astro';
+
+const GITHUB_REPO = 'lectero/MBot';
+const RELEASES_BASE = `https://github.com/${GITHUB_REPO}/releases`;
+
+// Permanenta latest-länkar (GitHub redirectar till senaste icke-prerelease).
+// Filenames matchar build-desktop.yml release-job i MBot-repot.
+// Sätts till null tills första pilot-release är taggad — då dyker
+// "Ladda ner"-knapparna upp; tills dess visas "kommer snart".
+const LATEST_WINDOWS: string | null = null;  // → ${RELEASES_BASE}/latest/download/MBot-Setup.exe
+const LATEST_MACOS: string | null = null;    // → ${RELEASES_BASE}/latest/download/MBot.dmg
+const ALL_RELEASES = `${RELEASES_BASE}`;
+const HAS_RELEASE = LATEST_WINDOWS !== null && LATEST_MACOS !== null;
+---
+
+<Base
+  title="Ladda ner MBot — Lectero"
+  description="Ladda ner MBot-klienten för Windows och macOS. Säker installation med onboarding-wizard."
+>
+  <Hero
+    title="Ladda ner MBot"
+    subtitle="Klubbens dator hämtar mejl, AI:n föreslår svar, kansliet bestämmer. Kom igång på 10 minuter."
+  />
+
+  <!-- Pilot-status-banner -->
+  <section class="max-w-4xl mx-auto px-6 mt-12">
+    {HAS_RELEASE ? (
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+        <div class="flex items-start gap-3">
+          <span class="text-amber-500 text-2xl" aria-hidden="true">⚠</span>
+          <div>
+            <h3 class="font-semibold text-amber-900 mb-1">Pilotversion — osignerad installer</h3>
+            <p class="text-sm text-amber-800">
+              Under pilotfasen är installern <strong>inte signerad</strong>.
+              Windows visar "Mer info → Kör ändå", macOS kräver högerklick → Öppna.
+              Lectero-supporten finns tillgänglig under installation.
+              Signering kommer i nästa release.
+            </p>
+          </div>
+        </div>
+      </div>
+    ) : (
+      <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+        <div class="flex items-start gap-3">
+          <span class="text-blue-500 text-2xl" aria-hidden="true">🛠</span>
+          <div>
+            <h3 class="font-semibold text-blue-900 mb-1">MBot beta öppnar inom kort</h3>
+            <p class="text-sm text-blue-800">
+              Vi finputsar pilotbygget just nu. <a href="/contact/" class="underline font-semibold">Hör av dig</a>
+              så meddelar vi när installern är klar att ladda ner.
+            </p>
+          </div>
+        </div>
+      </div>
+    )}
+  </section>
+
+  <!-- Download-knappar (eller "kommer snart"-platshållare) -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Windows -->
+      {LATEST_WINDOWS ? (
+        <a
+          href={LATEST_WINDOWS}
+          id="download-windows"
+          class="group block bg-white rounded-2xl p-8 border-2 border-gray-100 transition-all hover:border-accent hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+              <span class="text-3xl" aria-hidden="true">🪟</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-primary">Windows</h2>
+              <p class="text-sm text-gray-500">Windows 11 (Build 22000+)</p>
+            </div>
+          </div>
+          <div class="text-3xl font-bold text-accent group-hover:text-accent-light transition-colors mb-4">
+            Ladda ner →
+          </div>
+          <p class="text-sm text-gray-600">
+            Installer med onboarding-wizard, autostart och Outlook-integration.
+          </p>
+        </a>
+      ) : (
+        <div class="block bg-gray-50 rounded-2xl p-8 border-2 border-dashed border-gray-200">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center opacity-60">
+              <span class="text-3xl" aria-hidden="true">🪟</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-gray-500">Windows</h2>
+              <p class="text-sm text-gray-400">Windows 11 (Build 22000+)</p>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-gray-400 mb-4">
+            Kommer snart
+          </div>
+          <p class="text-sm text-gray-500">
+            Installer med onboarding-wizard, autostart och Outlook-integration.
+          </p>
+        </div>
+      )}
+
+      <!-- macOS -->
+      {LATEST_MACOS ? (
+        <a
+          href={LATEST_MACOS}
+          id="download-macos"
+          class="group block bg-white rounded-2xl p-8 border-2 border-gray-100 transition-all hover:border-accent hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center">
+              <span class="text-3xl" aria-hidden="true">🍎</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-primary">macOS</h2>
+              <p class="text-sm text-gray-500">macOS 13 Ventura eller senare</p>
+            </div>
+          </div>
+          <div class="text-3xl font-bold text-accent group-hover:text-accent-light transition-colors mb-4">
+            Ladda ner →
+          </div>
+          <p class="text-sm text-gray-600">
+            Universal binary (Intel + Apple Silicon). Drag-and-drop till Applications.
+          </p>
+        </a>
+      ) : (
+        <div class="block bg-gray-50 rounded-2xl p-8 border-2 border-dashed border-gray-200">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center opacity-60">
+              <span class="text-3xl" aria-hidden="true">🍎</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-gray-500">macOS</h2>
+              <p class="text-sm text-gray-400">macOS 13 Ventura eller senare</p>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-gray-400 mb-4">
+            Kommer snart
+          </div>
+          <p class="text-sm text-gray-500">
+            Universal binary (Intel + Apple Silicon). Drag-and-drop till Applications.
+          </p>
+        </div>
+      )}
+    </div>
+
+    {HAS_RELEASE && (
+      <p class="text-center text-sm text-gray-500 mt-8">
+        Hittar du inte rätt version?
+        <a href={ALL_RELEASES} class="text-accent hover:underline">Se alla releases på GitHub</a>
+      </p>
+    )}
+  </section>
+
+  <!-- Förutsättningar -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+        Innan du installerar
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6">
+          <div class="text-2xl mb-2">🔑</div>
+          <h3 class="font-semibold text-primary mb-2">Setup-länk från Lectero</h3>
+          <p class="text-sm text-gray-600">
+            Kontakta Lectero-supporten för en personlig setup-länk.
+            Den innehåller klubbens unika tenant-ID och registreringstoken.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="text-2xl mb-2">🏢</div>
+          <h3 class="font-semibold text-primary mb-2">M365 admin-rätt</h3>
+          <p class="text-sm text-gray-600">
+            Klubbens M365-administratör behöver registrera en Azure AD-app.
+            Onboarding-wizarden guidar genom alla steg på 5–10 min.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="text-2xl mb-2">📧</div>
+          <h3 class="font-semibold text-primary mb-2">En öppen mailbox</h3>
+          <p class="text-sm text-gray-600">
+            T.ex. <code class="text-xs bg-gray-100 px-1 rounded">info@klubben.se</code>.
+            MBot bevakar inkorgen och skapar utkast i Drafts-mappen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation-steg -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+      Så installerar du
+    </h2>
+    <ol class="space-y-6">
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold">1</span>
+        <div>
+          <h3 class="font-semibold text-primary mb-1">Ladda ner installern</h3>
+          <p class="text-gray-600">
+            Klicka på Windows- eller macOS-knappen ovan. Filen är ca 50–80 MB.
+          </p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold">2</span>
+        <div>
+          <h3 class="font-semibold text-primary mb-1">Kör installern</h3>
+          <p class="text-gray-600">
+            <strong>Windows</strong>: dubbelklicka <code class="text-xs bg-gray-100 px-1 rounded">MBot-Setup.exe</code>.
+            Vid SmartScreen-varning: klicka "Mer info → Kör ändå".<br>
+            <strong>macOS</strong>: öppna .dmg-filen och dra MBot till Applications.
+            Vid Gatekeeper-varning: högerklicka → Öppna → bekräfta.
+          </p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold">3</span>
+        <div>
+          <h3 class="font-semibold text-primary mb-1">Onboarding-wizarden öppnas</h3>
+          <p class="text-gray-600">
+            Vid första körning öppnas en wizard som guidar genom Azure-registreringen.
+            Använd setup-länken från Lectero för att fylla i tenant-ID och registreringstoken automatiskt.
+          </p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold">4</span>
+        <div>
+          <h3 class="font-semibold text-primary mb-1">Klart — första utkast inom 1–2 min</h3>
+          <p class="text-gray-600">
+            När wizarden är klar börjar MBot bevaka inkorgen. Första AI-utkasten skapas i Outlook Drafts inom någon minut.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Hjälp + dokumentation -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+        Behöver du hjälp?
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/products/mbot/manual/" class="group bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+            Användarmanual
+          </h3>
+          <p class="text-sm text-gray-600">
+            Komplett guide för kanslichefer — installation, daglig drift, felsökning.
+          </p>
+        </a>
+        <a href="/products/mbot/reference/faq/" class="group bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+            Vanliga frågor
+          </h3>
+          <p class="text-sm text-gray-600">
+            FAQ: säkerhet, kostnader, AI-modeller, GDPR.
+          </p>
+        </a>
+        <a href="/contact/" class="group bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+            Kontakta support
+          </h3>
+          <p class="text-sm text-gray-600">
+            Ingen setup-länk? Frågor om Azure-registrering? Hör av dig.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IT-konsult-länk -->
+  <section class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <p class="text-gray-600">
+      <strong>IT-konsult eller fleet-deployment?</strong>
+      Silent install + Credential Manager-konfiguration finns dokumenterat på
+      <a
+        href={`https://github.com/${GITHUB_REPO}/blob/main/docs/WINDOWS-DEPLOYMENT.md`}
+        class="text-accent hover:underline"
+      >GitHub</a>.
+    </p>
+  </section>
+</Base>
+
+<!-- OS-detection: framhäv rätt knapp först -->
+<script>
+  const ua = navigator.userAgent;
+  let preferred: 'windows' | 'macos' | null = null;
+  if (ua.includes('Windows')) preferred = 'windows';
+  else if (ua.includes('Mac OS') || ua.includes('Macintosh')) preferred = 'macos';
+
+  if (preferred) {
+    const el = document.getElementById(`download-${preferred}`);
+    if (el) {
+      el.classList.add('ring-4', 'ring-accent/30');
+      el.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+    }
+  }
+</script>
