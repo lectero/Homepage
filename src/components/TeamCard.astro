@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { getStrings, type Locale } from '../i18n/strings';
 
 interface Props {
   name: string;
@@ -9,16 +10,18 @@ interface Props {
   bio: string;
   photo: ImageMetadata;
   linkedinUrl?: string;
+  locale: Locale;
 }
 
-const { name, role, expertise, bio, photo, linkedinUrl } = Astro.props;
+const { name, role, expertise, bio, photo, linkedinUrl, locale } = Astro.props;
+const t = getStrings(locale);
 ---
 
 <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-all hover:shadow-md hover:border-accent/30 flex flex-col">
   <div class="flex items-center gap-4 mb-4">
     <Image
       src={photo}
-      alt={`Porträtt av ${name}`}
+      alt={t.teamCard.portraitOf(name)}
       width={144}
       height={144}
       loading="lazy"

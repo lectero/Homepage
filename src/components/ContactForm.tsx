@@ -1,6 +1,22 @@
 import { useState, type FormEvent } from 'react';
 
-export default function ContactForm() {
+interface Labels {
+  name: string;
+  email: string;
+  company: string;
+  message: string;
+  submit: string;
+  submitting: string;
+  successTitle: string;
+  successBody: string;
+  error: string;
+}
+
+interface Props {
+  labels: Labels;
+}
+
+export default function ContactForm({ labels }: Props) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -10,7 +26,6 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // TODO: Replace with actual endpoint (Cloudflare Worker, Formspree, etc.)
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -36,8 +51,8 @@ export default function ContactForm() {
         aria-live="polite"
         className="bg-accent/10 border border-accent/30 rounded-lg p-6 text-center"
       >
-        <p className="text-accent font-semibold">Tack för ditt meddelande!</p>
-        <p className="text-sm text-gray-600 mt-1">Vi återkommer så snart vi kan.</p>
+        <p className="text-accent font-semibold">{labels.successTitle}</p>
+        <p className="text-sm text-gray-600 mt-1">{labels.successBody}</p>
       </div>
     );
   }
@@ -46,7 +61,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-          Namn
+          {labels.name}
         </label>
         <input
           type="text"
@@ -60,7 +75,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-          E-post
+          {labels.email}
         </label>
         <input
           type="email"
@@ -74,7 +89,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-          Företag
+          {labels.company}
         </label>
         <input
           type="text"
@@ -87,7 +102,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Meddelande
+          {labels.message}
         </label>
         <textarea
           id="message"
@@ -104,7 +119,7 @@ export default function ContactForm() {
         aria-busy={status === 'sending'}
         className="w-full bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-lg transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed focus:outline-2 focus:outline-offset-2 focus:outline-accent"
       >
-        {status === 'sending' ? 'Skickar...' : 'Skicka meddelande'}
+        {status === 'sending' ? labels.submitting : labels.submit}
       </button>
 
       <p
@@ -112,9 +127,7 @@ export default function ContactForm() {
         aria-live="polite"
         className={status === 'error' ? 'text-red-600 text-sm text-center' : 'sr-only'}
       >
-        {status === 'error'
-          ? 'Något gick fel. Försök igen eller kontakta oss direkt via e-post.'
-          : ''}
+        {status === 'error' ? labels.error : ''}
       </p>
     </form>
   );

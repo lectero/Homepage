@@ -1,0 +1,122 @@
+---
+import Hero from '../Hero.astro';
+import FeatureCard from '../FeatureCard.astro';
+import { getStrings, type Locale } from '../../i18n/strings';
+import { localizePath } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+---
+
+<Hero
+  title="MBot"
+  subtitle={t.mbot.heroSubtitle}
+  cta={{ label: t.mbot.heroCta, href: localizePath('/contact/', locale) }}
+/>
+
+<section class="max-w-4xl mx-auto px-6 pt-20 pb-12">
+  <p class="text-lg text-gray-600 leading-relaxed">{t.mbot.intro}</p>
+  <div class="flex flex-wrap gap-2 mt-6">
+    {t.mbot.badges.map((badge) => (
+      <span class="bg-accent/10 text-accent text-sm font-medium rounded-full px-3 py-1">
+        {badge}
+      </span>
+    ))}
+  </div>
+</section>
+
+<section class="max-w-3xl mx-auto px-6 py-12">
+  <h2 class="text-2xl font-bold text-primary mb-4">{t.mbot.problemHeading}</h2>
+  <p class="text-gray-600 leading-relaxed">{t.mbot.problemP1}</p>
+  <p class="text-gray-600 leading-relaxed mt-4">{t.mbot.problemP2}</p>
+</section>
+
+<section class="bg-surface py-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.mbot.howHeading}</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">{t.mbot.howLead}</p>
+    <ol class="grid md:grid-cols-2 gap-6">
+      {t.mbot.howSteps.map((item, index) => (
+        <li class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4">
+          <span class="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white font-bold flex items-center justify-center" aria-hidden="true">
+            {index + 1}
+          </span>
+          <div>
+            <h3 class="font-semibold text-primary mb-1">{item.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.mbot.featuresHeading}</h2>
+  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">{t.mbot.featuresLead}</p>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {t.mbot.features.map((feature) => (
+      <FeatureCard
+        title={feature.title}
+        description={feature.description}
+        icon={feature.icon}
+      />
+    ))}
+  </div>
+</section>
+
+<section class="bg-surface py-20">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-6">{t.mbot.hitlHeading}</h2>
+    <p class="text-gray-600 leading-relaxed mb-4">{t.mbot.hitlP1}</p>
+    <p class="text-gray-600 leading-relaxed">{t.mbot.hitlP2}</p>
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.mbot.diffHeading}</h2>
+  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">{t.mbot.diffLead}</p>
+  <div class="grid md:grid-cols-2 gap-6">
+    {t.mbot.differentiators.map((item) => (
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <h3 class="font-semibold text-primary mb-2">{item.title}</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="bg-surface py-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.mbot.docHeading}</h2>
+    <p class="text-center text-gray-600 mb-12">{t.mbot.docLead}</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {t.mbot.docCards.map((card) => (
+        <a
+          href={card.href}
+          class="group block bg-white rounded-xl p-5 border border-gray-100 transition-all hover:shadow-md hover:border-accent/30"
+        >
+          <h3 class="font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+            {card.title}
+          </h3>
+          <p class="text-sm text-gray-600">{card.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h2 class="text-3xl font-bold text-primary mb-4">{t.mbot.ctaHeading}</h2>
+  <p class="text-gray-600 max-w-xl mx-auto mb-8">{t.mbot.ctaText}</p>
+  <a
+    href={localizePath('/contact/', locale)}
+    class="inline-block bg-primary hover:bg-primary-light text-white font-semibold px-8 py-3 rounded-lg transition-all hover:scale-105"
+  >
+    {t.mbot.ctaButton}
+  </a>
+</section>

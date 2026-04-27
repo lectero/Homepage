@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import Hero from '../Hero.astro';
+import TeamCard from '../TeamCard.astro';
+import { getStrings, type Locale } from '../../i18n/strings';
+import { localizePath } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+
+const teamMembers = (await getCollection('team')).sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder
+);
+
+const approach = [
+  { title: t.about.approach1Title, text: t.about.approach1Text },
+  { title: t.about.approach2Title, text: t.about.approach2Text },
+  { title: t.about.approach3Title, text: t.about.approach3Text },
+];
+
+const techCategories = [
+  { label: t.about.techBackend, items: ['Python', 'FastAPI', '.NET', 'Blazor'] },
+  { label: t.about.techAi, items: ['OpenAI', 'Anthropic Claude', 'RAG'] },
+  { label: t.about.techIntegration, items: ['Microsoft Graph', 'Husqvarna Connect', 'SMHI'] },
+  { label: t.about.techInfra, items: ['PostgreSQL', 'SQLite', 'Docker', 'GitHub Actions'] },
+];
+
+function pickLocalized<T extends string>(sv: T, en?: T): T {
+  return locale === 'en' && en ? en : sv;
+}
+---
+
+<Hero title={t.about.heroTitle} subtitle={t.about.heroSubtitle} />
+
+<section class="max-w-3xl mx-auto px-6 py-20">
+  <div class="space-y-6">
+    <p class="text-lg text-gray-700 leading-relaxed">{t.about.storyP1}</p>
+    <p class="text-gray-600 leading-relaxed">{t.about.storyP2}</p>
+    <p class="text-gray-600 leading-relaxed">{t.about.storyP3}</p>
+  </div>
+</section>
+
+<section class="bg-surface py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-primary mb-4">{t.about.teamHeading}</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">{t.about.teamLead}</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      {teamMembers.map((member) => (
+        <TeamCard
+          locale={locale}
+          name={member.data.name}
+          role={pickLocalized(member.data.role, member.data.role_en)}
+          expertise={member.data.expertise}
+          bio={pickLocalized(member.data.bio, member.data.bio_en)}
+          photo={member.data.photo}
+          linkedinUrl={member.data.linkedinUrl}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-bold text-primary mb-12 text-center">{t.about.approachHeading}</h2>
+  <div class="space-y-10">
+    {approach.map((item) => (
+      <div>
+        <h3 class="text-xl font-semibold text-primary mb-3">{item.title}</h3>
+        <p class="text-gray-600 leading-relaxed">{item.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="bg-surface py-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.about.techHeading}</h2>
+    <p class="text-center text-gray-600 mb-12">{t.about.techLead}</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+      {techCategories.map((category) => (
+        <div>
+          <h3 class="text-sm font-semibold text-accent uppercase tracking-wide mb-3">
+            {category.label}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {category.items.map((item) => (
+              <span class="bg-white border border-gray-200 text-sm text-gray-700 rounded-full px-3 py-1">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h2 class="text-3xl font-bold text-primary mb-4">{t.about.ctaHeading}</h2>
+  <p class="text-gray-600 max-w-xl mx-auto mb-8">{t.about.ctaText}</p>
+  <a
+    href={localizePath('/contact/', locale)}
+    class="inline-block bg-primary hover:bg-primary-light text-white font-semibold px-8 py-3 rounded-lg transition-all hover:scale-105"
+  >
+    {t.about.ctaButton}
+  </a>
+</section>

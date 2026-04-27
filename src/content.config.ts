@@ -11,8 +11,10 @@ const team = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string(),
     role: z.string(),
+    role_en: z.string().optional(),
     expertise: z.array(z.string()),
     bio: z.string(),
+    bio_en: z.string().optional(),
     photo: image(),
     sortOrder: z.number(),
     linkedinUrl: z.string().url().optional(),

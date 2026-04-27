@@ -7,6 +7,13 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lectero.se',
+  i18n: {
+    locales: ['sv', 'en'],
+    defaultLocale: 'sv',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [react()],
 
   vite: {

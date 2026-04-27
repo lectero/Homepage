@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import AboutContent from '../../components/pages/AboutContent.astro';
+import { getStrings } from '../../i18n/strings';
+
+const t = getStrings('en');
+---
+
+<Base title={t.about.title} description={t.about.description}>
+  <AboutContent locale="en" />
+</Base>

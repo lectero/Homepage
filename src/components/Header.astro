@@ -1,26 +1,43 @@
 ---
+import { getStrings, type Locale } from '../i18n/strings';
+import { localizePath, alternateLocale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  altPath: string;
+}
+
+const { locale, altPath } = Astro.props;
+const t = getStrings(locale);
+
 const navItems = [
-  { label: 'Om oss', href: '/about/' },
-  { label: 'Nyheter', href: '/blog/' },
-  { label: 'Kontakt', href: '/contact/' },
+  { label: t.nav.about, href: localizePath('/about/', locale) },
+  { label: t.nav.news, href: '/blog/' },
+  { label: t.nav.contact, href: localizePath('/contact/', locale) },
 ];
 
 const currentPath = Astro.url.pathname;
 
-// Show product name instead of "Lectero" on product pages
 const productBranding: Record<string, { name: string; href: string }> = {
-  '/products/mbot/': { name: 'MBot', href: '/products/mbot/' },
+  '/products/mbot/': { name: 'MBot', href: localizePath('/products/mbot/', locale) },
+  '/en/products/mbot/': { name: 'MBot', href: '/en/products/mbot/' },
   '/products/greenops/': { name: 'GreenOps', href: '/products/greenops/' },
 };
 
 const matchedProduct = Object.entries(productBranding).find(([prefix]) =>
   currentPath.startsWith(prefix)
 );
-const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' };
+const brand = matchedProduct
+  ? matchedProduct[1]
+  : { name: 'Lectero', href: localizePath('/', locale) };
+
+const otherLocale = alternateLocale(locale);
+const switcherLabel =
+  otherLocale === 'en' ? t.languageSwitcher.en : t.languageSwitcher.sv;
 ---
 
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label={t.nav.products}>
     <a href={brand.href} class="text-xl font-bold text-primary">
       {brand.name}
     </a>
@@ -28,7 +45,7 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
     <!-- Desktop nav -->
     <ul class="hidden md:flex items-center gap-8">
       {navItems.map(({ label, href }) => {
-        const isActive = currentPath.startsWith(href);
+        const isActive = currentPath.startsWith(href) && href !== '/';
         return (
           <li>
             <a
@@ -44,14 +61,26 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
           </li>
         );
       })}
+      <li>
+        <a
+          href={altPath}
+          hreflang={otherLocale}
+          aria-label={`${t.languageSwitcher.label}: ${switcherLabel}`}
+          class="text-sm font-medium text-gray-500 hover:text-accent transition-colors uppercase tracking-wide"
+        >
+          {otherLocale}
+        </a>
+      </li>
     </ul>
 
     <!-- Mobile menu button -->
     <button
       id="mobile-menu-btn"
       type="button"
+      data-open-label={t.nav.openMenu}
+      data-close-label={t.nav.closeMenu}
       class="md:hidden p-2 text-gray-600 hover:text-primary focus:outline-2 focus:outline-accent rounded"
-      aria-label="Öppna meny"
+      aria-label={t.nav.openMenu}
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
@@ -65,7 +94,7 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
   <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
     <ul class="px-6 py-4 space-y-3">
       {navItems.map(({ label, href }) => {
-        const isActive = currentPath.startsWith(href);
+        const isActive = currentPath.startsWith(href) && href !== '/';
         return (
           <li>
             <a
@@ -81,6 +110,15 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
           </li>
         );
       })}
+      <li>
+        <a
+          href={altPath}
+          hreflang={otherLocale}
+          class="block text-sm font-medium text-gray-500 hover:text-accent transition-colors"
+        >
+          {switcherLabel}
+        </a>
+      </li>
     </ul>
   </div>
 </header>
@@ -91,6 +129,9 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
   btn?.addEventListener('click', () => {
     const isOpen = menu?.classList.toggle('hidden') === false;
     btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? 'Stäng meny' : 'Öppna meny');
+    btn.setAttribute(
+      'aria-label',
+      isOpen ? btn.dataset.closeLabel ?? '' : btn.dataset.openLabel ?? ''
+    );
   });
 </script>

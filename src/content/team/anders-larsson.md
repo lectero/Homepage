@@ -1,8 +1,10 @@
 ---
 name: "Anders Larsson"
 role: "Systemarkitekt & utvecklingsledare"
+role_en: "Systems architect & development manager"
 expertise: ["Inbäddade system", "Agilt ledarskap", "Java", "C", "Systemarkitektur"]
 bio: "Doktor i datorsystem med ledarerfarenhet från Saab, Qualcomm och Arriver. Tar komplexa tekniska problem och bryter ner dem till genomförbara steg."
+bio_en: "PhD in computer systems with leadership experience from Saab, Qualcomm and Arriver. Takes complex technical problems and breaks them down into actionable steps."
 photo: "../../assets/team/anders-larsson.jpeg"
 sortOrder: 3
 linkedinUrl: "https://www.linkedin.com/in/anders-larsson-3797615/"

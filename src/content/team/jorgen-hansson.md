@@ -1,8 +1,10 @@
 ---
 name: "Jörgen Hansson"
 role: "Professor & AI-arkitekt"
+role_en: "Professor & AI architect"
 expertise: ["AI/ML", "Mjukvaruteknik", "Realtidssystem", "Distribuerade system"]
 bio: "Professor i datavetenskap med bakgrund från Carnegie Mellon och Chalmers. Ger Lecteros AI-arbete den vetenskapliga stringens som krävs när automation ska vara både korrekt och transparent."
+bio_en: "Professor of computer science with a background from Carnegie Mellon and Chalmers. Gives Lectero's AI work the scientific rigour required when automation must be both correct and transparent."
 photo: "../../assets/team/jorgen-hansson.jpeg"
 sortOrder: 1
 linkedinUrl: "https://www.linkedin.com/in/jörgen-hansson-666a592/"
