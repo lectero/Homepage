@@ -118,6 +118,22 @@ type Strings = {
     ctaHeading: string;
     ctaText: string;
     ctaButton: string;
+    comparison: {
+      heading: string;
+      lead: string;
+      framingNote: string;
+      columnMbot: string;
+      columnGeneric: string;
+      columnManual: string;
+      rows: {
+        dimension: string;
+        mbot: string;
+        generic: string;
+        manual: string;
+      }[];
+      footnote: string;
+      evidenceLink: string;
+    };
   };
 };
 
@@ -307,6 +323,63 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Hör av er så bokar vi en demo och går igenom hur MBot kan passa in i er e-posthantering.',
       ctaButton: 'Boka demo',
+      comparison: {
+        heading: 'Var passar MBot — och var passar något annat?',
+        lead:
+          'Sju dimensioner som styr om en AI-stödd e-postlösning faktiskt fungerar i en delad kansli-inbox över tid.',
+        framingNote:
+          'Copilot och ChatGPT är starka verktyg för generell produktivitet. Jämförelsen nedan gäller en smalare situation: delad inbox där policy, ansvar och spårbarhet måste fungera i vardagen.',
+        columnMbot: 'MBot',
+        columnGeneric: 'Generell LLM / Copilot-typ av skrivstöd',
+        columnManual: 'Helt manuell hantering',
+        rows: [
+          {
+            dimension: 'Mänskligt slutbeslut',
+            mbot: 'Människa skickar — varje gång, som default. Autoskick är konfigurerbar undantagsbeteende per kategori.',
+            generic: 'Människa skickar, men granskning sker utanför verktyget och utan strukturellt stöd.',
+            manual: 'Människa både skriver och skickar.',
+          },
+          {
+            dimension: 'Riskstyrd eskalering',
+            mbot: 'Inbyggd riskmotor med fyra dimensioner. Vid osäkerhet faller flödet alltid tillbaka till manuell hantering.',
+            generic: 'Beror på konfiguration. Generell AI saknar oftast inbyggd risk-/eskaleringslogik för e-postärenden.',
+            manual: 'Personberoende. Eskalering sker genom att handläggaren känner igen ett känsligt fall.',
+          },
+          {
+            dimension: 'Spårbarhet och revisionsstöd',
+            mbot: 'Varje steg loggas: klassificering, riskbedömning, mall, draft, granskningsåtgärd. Spårbart per ärende.',
+            generic: 'Begränsat — användaren kan se sin egen historik, men inte verksamhetens flöde över tid.',
+            manual: 'Spårbarhet kräver separat dokumentation utöver mejlhanteringen.',
+          },
+          {
+            dimension: 'Policy- och taxonomiägarskap',
+            mbot: 'Klubbägd policy och taxonomi i YAML. Kategorier, åtgärder och regler bestäms av verksamheten — inte av modellen.',
+            generic: 'Modellbaserad. Verksamheten påverkar främst genom prompts, inte genom strukturerad policy.',
+            manual: 'Implicit i personalens kompetens. Svårt att överföra eller revidera systematiskt.',
+          },
+          {
+            dimension: 'Konsekvens över tid',
+            mbot: 'Mallbibliotek + tonhantering per avsändartyp. Samma kategori ger jämförbara svar oavsett vem som granskar.',
+            generic: 'Beror på vem som skriver prompten. Variabel kvalitet är normalfallet.',
+            manual: 'Olika personal ger olika svar på samma fråga, även med god intention.',
+          },
+          {
+            dimension: 'Organisatoriskt lärande',
+            mbot: 'Klassificeringsdata och retention-styrd utvärderingskorpus blir underlag för bättre rutiner och mallar.',
+            generic: 'Lärande sker hos individen som använder verktyget, inte i verksamhetens processer.',
+            manual: 'Lärande via informell kunskapsöverföring; svårt att skala till nya medarbetare.',
+          },
+          {
+            dimension: 'Databehandling och driftkontroll',
+            mbot: 'Anonymisering före LLM, EU-baserad orkestrering, retention-policy per fält, PUB och DSAR-stöd.',
+            generic: 'Beror på licensavtal och tenant-konfiguration. Standardupplägg behöver granskas innan procurement.',
+            manual: 'Verksamheten har full kontroll men ingen automatiserad kontrollyta.',
+          },
+        ],
+        footnote:
+          'Jämförelsen avser typiska standardupplägg för generell AI i e-post och manuell LLM-användning, april 2026. Konfigurationer och tillägg kan förändra bilden.',
+        evidenceLink: 'Fördjupning i whitepapret — avsnitt 7–8 och 11.5.',
+      },
     },
   },
   en: {
@@ -494,6 +567,63 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Get in touch and we’ll book a demo to walk through how MBot fits into your email handling.',
       ctaButton: 'Book a demo',
+      comparison: {
+        heading: 'Where does MBot fit — and where does something else?',
+        lead:
+          'Seven dimensions that determine whether an AI-supported email solution actually works in a shared back-office inbox over time.',
+        framingNote:
+          'Copilot and ChatGPT are excellent tools for general productivity. The comparison below addresses a narrower situation: a shared inbox where policy, accountability and traceability have to work day to day.',
+        columnMbot: 'MBot',
+        columnGeneric: 'Generic LLM / Copilot-type writing assistance',
+        columnManual: 'Fully manual handling',
+        rows: [
+          {
+            dimension: 'Human final decision',
+            mbot: 'Human sends — every time, by default. Auto-send is a configurable exception per category.',
+            generic: 'Human sends, but review happens outside the tool and without structural support.',
+            manual: 'Human both writes and sends.',
+          },
+          {
+            dimension: 'Risk-driven escalation',
+            mbot: 'Built-in risk engine with four dimensions. On uncertainty, the flow always falls back to manual handling.',
+            generic: 'Depends on configuration. Generic AI rarely has built-in risk/escalation logic for email cases.',
+            manual: 'Person-dependent. Escalation depends on the handler recognising a sensitive case.',
+          },
+          {
+            dimension: 'Traceability and audit support',
+            mbot: 'Every step is logged: classification, risk assessment, template, draft, review action. Traceable per case.',
+            generic: 'Limited — the user can see their own history, but not the organisation’s flow over time.',
+            manual: 'Traceability requires separate documentation beyond the email handling itself.',
+          },
+          {
+            dimension: 'Policy and taxonomy ownership',
+            mbot: 'Customer-owned policy and taxonomy in YAML. Categories, actions and rules are decided by the organisation — not the model.',
+            generic: 'Model-driven. The organisation mainly influences via prompts, not structured policy.',
+            manual: 'Implicit in staff knowledge. Hard to transfer or revise systematically.',
+          },
+          {
+            dimension: 'Consistency over time',
+            mbot: 'Template library + tone control per sender type. The same category yields comparable answers regardless of who reviews.',
+            generic: 'Depends on the prompt writer. Variable quality is the normal case.',
+            manual: 'Different staff produce different answers to the same question, even with good intentions.',
+          },
+          {
+            dimension: 'Organisational learning',
+            mbot: 'Classification data and retention-governed evaluation corpus feed back into better routines and templates.',
+            generic: 'Learning happens with the individual user, not in the organisation’s processes.',
+            manual: 'Learning via informal knowledge transfer; hard to scale to new staff.',
+          },
+          {
+            dimension: 'Data handling and operational control',
+            mbot: 'Anonymisation before LLM, EU-based orchestration, per-field retention policy, DPA and DSAR support.',
+            generic: 'Depends on licence agreement and tenant configuration. Default setups need review before procurement.',
+            manual: 'Organisation has full control but no automated control surface.',
+          },
+        ],
+        footnote:
+          'The comparison refers to typical default setups for generic AI in email and manual LLM use, April 2026. Configurations and add-ons can change the picture.',
+        evidenceLink: 'Deeper reading in the whitepaper — sections 7–8 and 11.5.',
+      },
     },
   },
 };

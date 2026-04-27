@@ -1,6 +1,7 @@
 ---
 import Hero from '../Hero.astro';
 import FeatureCard from '../FeatureCard.astro';
+import MbotComparison from '../MbotComparison.astro';
 import { getStrings, type Locale } from '../../i18n/strings';
 import { localizePath } from '../../i18n/utils';
 
@@ -101,6 +102,8 @@ const t = getStrings(locale);
     ))}
   </div>
 </section>
+
+<MbotComparison locale={locale} />
 
 <section class="bg-surface py-20">
   <div class="max-w-5xl mx-auto px-6">
