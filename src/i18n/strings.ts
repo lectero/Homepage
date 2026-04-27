@@ -124,7 +124,8 @@ type Strings = {
 export const strings: Record<Locale, Strings> = {
   sv: {
     meta: {
-      siteDescription: 'Lectero — Digitala verktyg för hållbarhet och automation',
+      siteDescription:
+        'Lectero — digitala verktyg för svenska golfklubbar. Smartare e-posthantering på kansliet med MBot.',
     },
     nav: {
       about: 'Om oss',
@@ -150,9 +151,9 @@ export const strings: Record<Locale, Strings> = {
     },
     home: {
       title: 'Hem',
-      heroTitle: 'Digitala verktyg som driver förändring',
+      heroTitle: 'AI för svenska golfklubbars kanslier',
       heroSubtitle:
-        'Lectero bygger specifika lösningar för verksamheter som värderar korrekthet, spårbarhet och ansvar — inte bara hastighet.',
+        'MBot hjälper kansliet att hantera mejl snabbare och jämnare, utan att tappa tonen eller kontrollen.',
       heroCta: 'Utforska MBot',
       productsHeading: 'Våra produkter',
       productsLead:
@@ -181,10 +182,11 @@ export const strings: Record<Locale, Strings> = {
     },
     about: {
       title: 'Om oss',
-      description: 'Om Lectero — vilka vi är, hur vi jobbar och vad vi tror på',
-      heroTitle: 'Om Lectero',
+      description:
+        'Om Lectero — ett litet team som bygger praktiska digitala verktyg för svenska golfklubbar.',
+      heroTitle: 'Vi bygger verktyg för svenska golfklubbar',
       heroSubtitle:
-        'En liten, fokuserad verkstad som bygger digitala verktyg där korrekthet och spårbarhet är viktigare än maximal automation.',
+        'Lectero är ett litet team som gör praktiska digitala verktyg för kansli och drift, med fokus på att spara tid i vardagen.',
       storyP1:
         'Lectero är ett team av erfarna utvecklare som bestämde sig för att lösa verkliga problem hos verksamheter som ofta hamnar mellan stolarna — för stora för enmansverktyg, för små för enterprise-plattformar.',
       storyP2:
@@ -235,9 +237,10 @@ export const strings: Record<Locale, Strings> = {
     },
     mbot: {
       title: 'MBot',
-      description: 'MBot — kontrollerad, AI-stödd e-posthantering för verksamheter med kansli',
+      description:
+        'MBot — AI-hjälp för golfklubbens mejl. Läser, klassificerar och föreslår svar i Outlook utan att lämna ifrån sig kontrollen.',
       heroSubtitle:
-        'Kontrollerad, AI-stödd e-posthantering för verksamheter där korrekthet, spårbarhet och ansvar är viktigare än maximal automation.',
+        'Läser inkommande mejl, föreslår svar och hjälper kansliet att ge snabba, tydliga besked direkt i Outlook.',
       heroCta: 'Kontakta oss',
       intro:
         'MBot läser inkommande e-post i Microsoft 365, klassificerar ärenden, föreslår svar som drafts, och hjälper kansliet att arbeta konsekvent utan att tappa mänsklig kontroll. Byggd för verksamheter med tydlig service-uppgift — som svenska golfklubbar — där varje svar måste vara både snabbt och rätt.',
@@ -311,7 +314,8 @@ export const strings: Record<Locale, Strings> = {
   },
   en: {
     meta: {
-      siteDescription: 'Lectero — Digital tools for sustainability and automation',
+      siteDescription:
+        'Lectero — digital tools for Swedish golf clubs. Smarter email handling for the back office with MBot.',
     },
     nav: {
       about: 'About',
@@ -337,9 +341,9 @@ export const strings: Record<Locale, Strings> = {
     },
     home: {
       title: 'Home',
-      heroTitle: 'Digital tools that drive change',
+      heroTitle: 'AI for the back office of Swedish golf clubs',
       heroSubtitle:
-        'Lectero builds purpose-built solutions for organisations that value correctness, traceability and accountability — not just speed.',
+        'MBot helps the back office handle email faster and more consistently — without losing tone or control.',
       heroCta: 'Explore MBot',
       productsHeading: 'Our products',
       productsLead:
@@ -368,10 +372,11 @@ export const strings: Record<Locale, Strings> = {
     },
     about: {
       title: 'About',
-      description: 'About Lectero — who we are, how we work and what we believe in',
-      heroTitle: 'About Lectero',
+      description:
+        'About Lectero — a small team building practical digital tools for Swedish golf clubs.',
+      heroTitle: 'We build tools for Swedish golf clubs',
       heroSubtitle:
-        'A small, focused workshop building digital tools where correctness and traceability matter more than maximum automation.',
+        'Lectero is a small team making practical digital tools for back office and operations, focused on saving time in the daily work.',
       storyP1:
         'Lectero is a team of seasoned developers who set out to solve real problems for organisations that fall between the cracks — too big for one-person tools, too small for enterprise platforms.',
       storyP2:
@@ -422,9 +427,10 @@ export const strings: Record<Locale, Strings> = {
     },
     mbot: {
       title: 'MBot',
-      description: 'MBot — controlled, AI-assisted email handling for organisations with a back office',
+      description:
+        'MBot — AI assistance for the golf club’s email. Reads, classifies and proposes replies in Outlook without giving up control.',
       heroSubtitle:
-        'Controlled, AI-assisted email handling for organisations where correctness, traceability and accountability matter more than maximum automation.',
+        'Reads incoming email, proposes replies and helps the back office give fast, clear answers directly in Outlook.',
       heroCta: 'Contact us',
       intro:
         'MBot reads incoming email in Microsoft 365, classifies cases, proposes drafts and helps the back office work consistently without losing human control. Built for organisations with a clear service mission — such as Swedish golf clubs — where every reply must be both fast and right.',
