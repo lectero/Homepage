@@ -119,6 +119,54 @@ type Strings = {
     ctaText: string;
     ctaButton: string;
   };
+  demo: {
+    heading: string;
+    lead: string;
+    disclaimerHeader: string;
+    disclaimerInline: string;
+    pickerLabel: string;
+    analyzingLabel: string;
+    emailPreviewHeading: string;
+    emailFromLabel: string;
+    emailSubjectLabel: string;
+    emailBodyLabel: string;
+    resultHeading: string;
+    categoryLabel: string;
+    subcategoryLabel: string;
+    confidenceLabel: string;
+    riskLabel: string;
+    riskScale: string;
+    riskBuckets: {
+      low: string;
+      mediumLow: string;
+      medium: string;
+      mediumHigh: string;
+      high: string;
+    };
+    actionLabel: string;
+    actionDraft: string;
+    actionForward: string;
+    actionManual: string;
+    actionEscalate: string;
+    draftHeading: string;
+    rationaleLabel: string;
+    examples: Array<{
+      id: string;
+      title: string;
+      from: string;
+      subject: string;
+      body: string;
+      result: {
+        category: string;
+        subcategory: string;
+        confidence: number;
+        risk: 1 | 2 | 3 | 4 | 5;
+        action: 'draft' | 'forward' | 'manual' | 'escalate';
+        draft: string;
+        rationale: string;
+      };
+    }>;
+  };
 };
 
 export const strings: Record<Locale, Strings> = {
@@ -308,6 +356,154 @@ export const strings: Record<Locale, Strings> = {
         'Hör av er så bokar vi en demo och går igenom hur MBot kan passa in i er e-posthantering.',
       ctaButton: 'Boka demo',
     },
+    demo: {
+      heading: 'Prova MBot — utan inloggning',
+      lead: 'Välj ett exempelmejl och se vad MBot gör med det: kategori, riskbedömning och svarsförslag.',
+      disclaimerHeader:
+        'Simulerad demo med förkomputerade exempel. Ingen livekoppling till e-post.',
+      disclaimerInline: 'Förkomputerat exempel — inte en livekörning av MBot.',
+      pickerLabel: 'Välj exempelmejl',
+      analyzingLabel: 'Analyserar…',
+      emailPreviewHeading: 'Mejl',
+      emailFromLabel: 'Från',
+      emailSubjectLabel: 'Ämne',
+      emailBodyLabel: 'Innehåll',
+      resultHeading: 'MBot-analys',
+      categoryLabel: 'Kategori',
+      subcategoryLabel: 'Underkategori',
+      confidenceLabel: 'Konfidens',
+      riskLabel: 'Risk',
+      riskScale: 'av 5',
+      riskBuckets: {
+        low: 'låg',
+        mediumLow: 'låg–medel',
+        medium: 'medel',
+        mediumHigh: 'medel–hög',
+        high: 'hög',
+      },
+      actionLabel: 'Rekommenderad åtgärd',
+      actionDraft: 'Skapa utkast till svar',
+      actionForward: 'Vidarebefordra till ansvarig funktion',
+      actionManual: 'Markera för manuell hantering',
+      actionEscalate: 'Eskalera — hantera utanför vanligt svarsflöde',
+      draftHeading: 'Förslag på svar',
+      rationaleLabel: 'Varför denna bedömning?',
+      examples: [
+        {
+          id: 'enkelt-info',
+          title: 'Enkel infofråga',
+          from: 'Anna Andersson',
+          subject: 'Var ligger banan?',
+          body:
+            'Hej! Vi planerar att åka och spela hos er nästa vecka, kommer från Stockholm. Var hittar man banan? Finns det parkering?\n\nHälsningar,\nAnna',
+          result: {
+            category: 'Bana & anläggning',
+            subcategory: 'Information',
+            confidence: 96,
+            risk: 1,
+            action: 'draft',
+            draft:
+              'Hej Anna,\n\nVälkomna till oss! Banan ligger på [adress]. Det finns kostnadsfri parkering vid klubbhuset, ca 50 platser.\n\nLåt oss veta om ni har fler frågor inför besöket.\n\nVänliga hälsningar,\nKansliet',
+            rationale:
+              'Klar fråga, ingen policykänslighet, alla svar finns i klubbens publika information. Lågt risk, draft som standard.',
+          },
+        },
+        {
+          id: 'greenfee-pris',
+          title: 'Pris på greenfee',
+          from: 'Bertil Bergström',
+          subject: 'Hur mycket kostar greenfee?',
+          body:
+            'Hej, vad kostar en runda hos er en lördag i juli för icke-medlem? Vi är två som vill spela.\n\nMvh,\nBertil',
+          result: {
+            category: 'Greenfee & gäster',
+            subcategory: 'Greenfeepris',
+            confidence: 89,
+            risk: 3,
+            action: 'draft',
+            draft:
+              'Hej Bertil,\n\nGreenfee varierar beroende på dag och säsong. Aktuella priser för helger i juli framgår av vår prislista: [länk]. Boka gärna direkt via Min Golf när ni har bestämt tid.\n\nHör gärna av dig om något är oklart.\n\nVänliga hälsningar,\nKansliet',
+            rationale:
+              'Policykänsligt (priser kan ändras under säsong). Mall hänvisar till prislista i stället för att låsa pris i mejlet. Medel risk, men hanterbar som draft för granskning.',
+          },
+        },
+        {
+          id: 'klagomal-eskalera',
+          title: 'Aggressivt klagomål',
+          from: 'Carl C.',
+          subject: 'Helt oacceptabelt',
+          body:
+            'Det här är helt oacceptabelt!! Jag har spelat i 20 år och så blir man behandlad så här!!! Jag tänker dra det till tidningen om ni inte fixar detta omedelbart!!\n\nC.',
+          result: {
+            category: 'Administration & övrigt',
+            subcategory: 'Klagomål — eskalering',
+            confidence: 78,
+            risk: 5,
+            action: 'escalate',
+            draft: '',
+            rationale:
+              'Oförskämdhetsfiltret triggar (over_the_line). MBot skapar inget draft. Ärendet hamnar utanför vanligt svarsflöde och flaggas för klubbchef. En människa läser och bestämmer ton och innehåll.',
+          },
+        },
+        {
+          id: 'medlemskap-paus',
+          title: 'Pausa medlemskap',
+          from: 'Diana Davidsson',
+          subject: 'Frysa medlemskap över vintern',
+          body:
+            'Hej! Jag undrar om det är möjligt att pausa mitt medlemskap från november till mars? Tycker det är onödigt att betala för en period jag ändå inte spelar.\n\nVänligen,\nDiana',
+          result: {
+            category: 'Medlemskap',
+            subcategory: 'Paus / vilande',
+            confidence: 91,
+            risk: 4,
+            action: 'manual',
+            draft:
+              'Hej Diana,\n\nMöjligheten att pausa medlemskap beror på medlemsform och gällande villkor. Aktuella regler för paus och eventuella avgifter framgår av medlemsvillkoren. Hör gärna av dig så kontrollerar vi vad som gäller för just dig.\n\nVänliga hälsningar,\nKansliet',
+            rationale:
+              'Policykänsligt och tidsbundet. MBot genererar ett robust draft som hänvisar till medlemsvillkor i stället för att låsa fast period eller avgift. Markeras för manuell granskning innan utskick.',
+          },
+        },
+        {
+          id: 'tavling-anmalan',
+          title: 'Tävlingsanmälan',
+          from: 'Erik Eriksson',
+          subject: 'Anmäla mig till lördagstävlingen',
+          body:
+            'Hej, jag vill anmäla mig till herr-tävlingen på lördag. HCP 18,4. Behöver ni mer info?\n\nMvh,\nErik',
+          result: {
+            category: 'Tävlingar & aktiviteter',
+            subcategory: 'Anmälningar',
+            confidence: 94,
+            risk: 2,
+            action: 'forward',
+            draft:
+              'Hej Erik,\n\nVi har vidarebefordrat din anmälan till tävlingsledningen som registrerar dig och återkommer med bekräftelse senast fredag.\n\nVänliga hälsningar,\nKansliet',
+            rationale:
+              'Tävlingsledning är ansvarig funktion. MBot vidarebefordrar och skapar samtidigt ett draft till avsändaren som bekräftar att ärendet hanteras.',
+          },
+        },
+        {
+          id: 'oklart-fortydligande',
+          title: 'Oklart ärende',
+          from: 'Felicia F.',
+          subject: 'Det blev fel förra veckan',
+          body:
+            'Hej, det blev tyvärr fel för mig förra veckan. Vad gör vi åt det?',
+          result: {
+            category: 'Administration & övrigt',
+            subcategory: 'Oklart — behöver förtydligande',
+            confidence: 62,
+            risk: 4,
+            action: 'draft',
+            draft:
+              'Hej Felicia,\n\nTack för ditt meddelande. För att kunna hjälpa dig vidare skulle jag vilja förstå lite mer om vad som hände — gäller det en bokning, betalning eller något annat? Datum och eventuellt ordernummer hjälper oss att titta på rätt ärende.\n\nVänliga hälsningar,\nKansliet',
+            rationale:
+              'Konfidensen är låg (62%) eftersom ämnet inte räcker för säker klassificering. MBot genererar ett draft som ber om förtydligande snarare än att gissa kategori — den bästa vägen när bilden är ofullständig.',
+          },
+        },
+      ],
+    },
   },
   en: {
     meta: {
@@ -494,6 +690,154 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Get in touch and we’ll book a demo to walk through how MBot fits into your email handling.',
       ctaButton: 'Book a demo',
+    },
+    demo: {
+      heading: 'Try MBot — no login',
+      lead: 'Pick an example email and see what MBot does with it: category, risk assessment and draft reply.',
+      disclaimerHeader:
+        'Simulated demo with pre-computed examples. Not connected to a live mailbox.',
+      disclaimerInline: 'Pre-computed example — not a live MBot run.',
+      pickerLabel: 'Pick an example email',
+      analyzingLabel: 'Analysing…',
+      emailPreviewHeading: 'Email',
+      emailFromLabel: 'From',
+      emailSubjectLabel: 'Subject',
+      emailBodyLabel: 'Body',
+      resultHeading: 'MBot analysis',
+      categoryLabel: 'Category',
+      subcategoryLabel: 'Sub-category',
+      confidenceLabel: 'Confidence',
+      riskLabel: 'Risk',
+      riskScale: 'of 5',
+      riskBuckets: {
+        low: 'low',
+        mediumLow: 'low–medium',
+        medium: 'medium',
+        mediumHigh: 'medium–high',
+        high: 'high',
+      },
+      actionLabel: 'Recommended action',
+      actionDraft: 'Create draft reply',
+      actionForward: 'Forward to responsible function',
+      actionManual: 'Flag for manual handling',
+      actionEscalate: 'Escalate — handle outside the regular reply flow',
+      draftHeading: 'Suggested reply',
+      rationaleLabel: 'Why this judgement?',
+      examples: [
+        {
+          id: 'enkelt-info',
+          title: 'Simple info request',
+          from: 'Anna Andersson',
+          subject: 'Where is the course located?',
+          body:
+            'Hi! We are planning to come and play at your club next week, coming from Stockholm. Where do we find the course? Is there parking?\n\nRegards,\nAnna',
+          result: {
+            category: 'Course & facility',
+            subcategory: 'Information',
+            confidence: 96,
+            risk: 1,
+            action: 'draft',
+            draft:
+              'Hi Anna,\n\nWelcome! The course is at [address]. There is free parking at the clubhouse, around 50 spaces.\n\nLet us know if you have any other questions ahead of your visit.\n\nKind regards,\nThe office',
+            rationale:
+              'Clear question, no policy sensitivity, all answers are in the club’s public information. Low risk, draft by default.',
+          },
+        },
+        {
+          id: 'greenfee-pris',
+          title: 'Greenfee pricing',
+          from: 'Bertil Bergström',
+          subject: 'How much does greenfee cost?',
+          body:
+            'Hi, what does a round cost on a Saturday in July for a non-member? There are two of us who want to play.\n\nRegards,\nBertil',
+          result: {
+            category: 'Greenfee & guests',
+            subcategory: 'Greenfee pricing',
+            confidence: 89,
+            risk: 3,
+            action: 'draft',
+            draft:
+              'Hi Bertil,\n\nGreenfee varies by day and season. Current prices for July weekends are listed in our price list: [link]. Once you have decided on a tee time, please book directly via Min Golf.\n\nDo get in touch if anything is unclear.\n\nKind regards,\nThe office',
+            rationale:
+              'Policy-sensitive (prices may change during the season). The template links to the price list rather than locking a price in the email. Medium risk, manageable as a draft for review.',
+          },
+        },
+        {
+          id: 'klagomal-eskalera',
+          title: 'Aggressive complaint',
+          from: 'Carl C.',
+          subject: 'Completely unacceptable',
+          body:
+            'This is completely unacceptable!! I have been playing for 20 years and to be treated like this!!! I am going to take this to the press if you don’t fix this immediately!!\n\nC.',
+          result: {
+            category: 'Administration & other',
+            subcategory: 'Complaint — escalation',
+            confidence: 78,
+            risk: 5,
+            action: 'escalate',
+            draft: '',
+            rationale:
+              'The rudeness filter triggers (over_the_line). MBot creates no draft. The case is taken outside the regular reply flow and flagged for the club manager. A human reads it and decides on tone and content.',
+          },
+        },
+        {
+          id: 'medlemskap-paus',
+          title: 'Pausing membership',
+          from: 'Diana Davidsson',
+          subject: 'Freeze membership for the winter',
+          body:
+            'Hi! I’m wondering if it’s possible to pause my membership from November to March? It feels unnecessary to pay for a period when I can’t play anyway.\n\nRegards,\nDiana',
+          result: {
+            category: 'Membership',
+            subcategory: 'Pause / dormant',
+            confidence: 91,
+            risk: 4,
+            action: 'manual',
+            draft:
+              'Hi Diana,\n\nWhether a membership can be paused depends on membership form and current terms. The applicable rules and any fees are described in the membership terms. Please get in touch and we will check what applies in your case.\n\nKind regards,\nThe office',
+            rationale:
+              'Policy-sensitive and time-bound. MBot generates a robust draft that points to the membership terms rather than committing to a specific period or fee. Marked for manual review before sending.',
+          },
+        },
+        {
+          id: 'tavling-anmalan',
+          title: 'Competition entry',
+          from: 'Erik Eriksson',
+          subject: 'Entry for Saturday’s competition',
+          body:
+            'Hi, I’d like to enter the men’s competition on Saturday. HCP 18.4. Do you need anything else?\n\nRegards,\nErik',
+          result: {
+            category: 'Competitions & activities',
+            subcategory: 'Entries',
+            confidence: 94,
+            risk: 2,
+            action: 'forward',
+            draft:
+              'Hi Erik,\n\nWe have forwarded your entry to the competition committee, which will register you and confirm by Friday.\n\nKind regards,\nThe office',
+            rationale:
+              'The competition committee is the responsible function. MBot forwards and at the same time creates a draft to the sender confirming that the case is being handled.',
+          },
+        },
+        {
+          id: 'oklart-fortydligande',
+          title: 'Unclear case',
+          from: 'Felicia F.',
+          subject: 'Something went wrong last week',
+          body:
+            'Hi, unfortunately something went wrong for me last week. What do we do about it?',
+          result: {
+            category: 'Administration & other',
+            subcategory: 'Unclear — needs clarification',
+            confidence: 62,
+            risk: 4,
+            action: 'draft',
+            draft:
+              'Hi Felicia,\n\nThanks for reaching out. To help you further I’d like to understand a bit more about what happened — is it about a booking, a payment or something else? A date and any order number would help us look up the right case.\n\nKind regards,\nThe office',
+            rationale:
+              'Confidence is low (62%) because the subject isn’t enough for confident classification. MBot drafts a clarification request rather than guessing the category — the right path when the picture is incomplete.',
+          },
+        },
+      ],
     },
   },
 };
