@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#EBF3FF"/><stop offset="100%" stop-color="#D0E4FF"/>
+  </linearGradient></defs>
+  <rect x="0" y="0" width="1024" height="1024" rx="220" ry="220" fill="url(#g)"/>
+  <polygon points="160,672 320,672 110,870" fill="#1B3480"/>
+  <rect x="80" y="80" width="864" height="600" rx="100" ry="100" fill="#1B3480"/>
+  <polyline points="309,350 416,502 683,292" fill="none" stroke="#FFFFFF" stroke-width="92" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="512" y="978" text-anchor="middle"
+    font-family="'Helvetica Neue',Arial,sans-serif"
+    font-weight="800" font-size="230" letter-spacing="14"
+    fill="#111111">MB</text>
+</svg>
