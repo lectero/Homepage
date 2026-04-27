@@ -1,0 +1,61 @@
+---
+import Hero from '../Hero.astro';
+import { getStrings, type Locale } from '../../i18n/strings';
+import { localizePath } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+
+const mbotSecurityPath =
+  locale === 'sv' ? '/products/mbot/security/' : '/en/products/mbot/security/';
+---
+
+<Hero title={t.security.heroTitle} subtitle={t.security.heroSubtitle} />
+
+<section class="max-w-3xl mx-auto px-6 py-16">
+  <p class="text-lg text-gray-700 leading-relaxed">{t.security.intro}</p>
+</section>
+
+<section class="bg-surface py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+      {t.security.principlesHeading}
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {t.security.principles.map((p) => (
+        <div class="bg-white rounded-xl p-6 border border-gray-100">
+          <h3 class="font-semibold text-primary mb-2">{p.title}</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="max-w-3xl mx-auto px-6 py-16">
+  <h2 class="text-2xl font-bold text-primary mb-4">{t.security.productLinkHeading}</h2>
+  <p class="text-gray-600 leading-relaxed mb-6">{t.security.productLinkBody}</p>
+  <a
+    href={mbotSecurityPath}
+    class="inline-block bg-accent hover:bg-accent-light text-white font-semibold px-6 py-2.5 rounded-lg transition-all hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-accent"
+  >
+    {t.security.productLinkCta} →
+  </a>
+</section>
+
+<section class="bg-surface py-16">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-2xl font-bold text-primary mb-4">{t.security.contactHeading}</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">{t.security.contactBody}</p>
+    <a
+      href={localizePath('/contact/', locale)}
+      class="inline-block bg-primary hover:bg-primary-light text-white font-semibold px-6 py-2.5 rounded-lg transition-all hover:scale-105"
+    >
+      {t.home.ctaButton}
+    </a>
+  </div>
+</section>

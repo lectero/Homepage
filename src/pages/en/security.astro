@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import SecurityContent from '../../components/pages/SecurityContent.astro';
+import { getStrings } from '../../i18n/strings';
+
+const t = getStrings('en');
+---
+
+<Base title={t.security.title} description={t.security.description}>
+  <SecurityContent locale="en" />
+</Base>
