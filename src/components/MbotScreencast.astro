@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { getStrings, type Locale } from '../i18n/strings';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+
+const entries = (await getCollection('mbotScreencast', ({ data }) => !data.draft)).slice(0, 1);
+const entry = entries[0];
+
+if (!entry) {
+  // Caller decides what to render when no screencast exists.
+  return null;
+}
+
+const title = locale === 'sv' ? entry.data.titleSv : entry.data.titleEn;
+const aspect = `${entry.data.width} / ${entry.data.height}`;
+---
+
+<section
+  class="max-w-5xl mx-auto px-6 mt-8"
+  data-mbot-screencast
+  data-play-label={t.mbot.media.screencastPlay}
+>
+  <h3 class="text-xl font-semibold text-primary mb-4">{t.mbot.media.screencastHeading}</h3>
+  <figure
+    class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-md"
+    style={`aspect-ratio: ${aspect};`}
+  >
+    <Image
+      src={entry.data.poster}
+      alt={title}
+      width={entry.data.width}
+      height={entry.data.height}
+      loading="lazy"
+      class="w-full h-full object-cover"
+      data-screencast-poster
+    />
+    <video
+      class="absolute inset-0 w-full h-full object-cover hidden"
+      preload="none"
+      muted
+      playsinline
+      loop
+      poster={entry.data.poster.src}
+      data-screencast-video
+      data-mp4={entry.data.mp4}
+      data-webm={entry.data.webm ?? ''}
+      aria-label={title}
+    >
+    </video>
+    <button
+      type="button"
+      class="absolute inset-0 m-auto h-16 w-16 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-2 focus:outline-accent"
+      data-screencast-play
+      aria-label={t.mbot.media.screencastPlay}
+    >
+      <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z" />
+      </svg>
+    </button>
+    <figcaption
+      class="hidden motion-reduce:block absolute bottom-3 inset-x-3 bg-black/60 text-white text-xs sm:text-sm rounded-lg px-3 py-2"
+    >
+      {t.mbot.media.screencastReducedMotion}
+    </figcaption>
+  </figure>
+</section>
+
+<script>
+  const sections = document.querySelectorAll<HTMLElement>('[data-mbot-screencast]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  sections.forEach((section) => {
+    const video = section.querySelector<HTMLVideoElement>('[data-screencast-video]');
+    const playBtn = section.querySelector<HTMLButtonElement>('[data-screencast-play]');
+    const poster = section.querySelector<HTMLElement>('[data-screencast-poster]');
+    if (!video || !playBtn || !poster) return;
+
+    const mp4 = video.dataset.mp4;
+    const webm = video.dataset.webm;
+
+    function attachSources() {
+      if (video!.querySelector('source')) return;
+      if (webm) {
+        const s = document.createElement('source');
+        s.src = webm;
+        s.type = 'video/webm';
+        video!.appendChild(s);
+      }
+      if (mp4) {
+        const s = document.createElement('source');
+        s.src = mp4;
+        s.type = 'video/mp4';
+        video!.appendChild(s);
+      }
+      video!.load();
+    }
+
+    function start() {
+      attachSources();
+      poster!.classList.add('hidden');
+      video!.classList.remove('hidden');
+      playBtn!.classList.add('hidden');
+      void video!.play().catch(() => {
+        // Autoplay was blocked — re-show poster so user can try again.
+        poster!.classList.remove('hidden');
+        video!.classList.add('hidden');
+        playBtn!.classList.remove('hidden');
+      });
+    }
+
+    playBtn.addEventListener('click', start);
+
+    if (!reducedMotion) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              start();
+              io.disconnect();
+              break;
+            }
+          }
+        },
+        { threshold: 0.5 }
+      );
+      io.observe(section);
+    }
+  });
+</script>

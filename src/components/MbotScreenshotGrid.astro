@@ -1,0 +1,179 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { getStrings, type Locale } from '../i18n/strings';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+
+const screenshots = (
+  await getCollection('mbotScreenshots', ({ data }) => !data.draft)
+).sort((a, b) => a.data.order - b.data.order);
+
+if (screenshots.length === 0) {
+  return null;
+}
+
+const items = screenshots.map((entry, index) => ({
+  id: entry.id,
+  index,
+  image: entry.data.image,
+  alt: locale === 'sv' ? entry.data.altSv : entry.data.altEn,
+  caption: locale === 'sv' ? entry.data.captionSv : entry.data.captionEn,
+}));
+---
+
+<section
+  class="max-w-6xl mx-auto px-6 mt-12"
+  data-mbot-screenshot-grid
+  data-close-label={t.mbot.media.lightboxClose}
+  data-prev-label={t.mbot.media.lightboxPrev}
+  data-next-label={t.mbot.media.lightboxNext}
+>
+  <h3 class="text-xl font-semibold text-primary mb-6">{t.mbot.media.screenshotsHeading}</h3>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {items.map((item) => (
+      <li>
+        <button
+          type="button"
+          class="group block w-full text-left rounded-xl overflow-hidden border border-gray-100 bg-white transition-all hover:shadow-md hover:border-accent/30 focus:outline-2 focus:outline-accent"
+          data-shot-trigger
+          data-index={item.index}
+          aria-label={t.mbot.media.lightboxOpen}
+        >
+          <Image
+            src={item.image}
+            alt={item.alt}
+            widths={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+            loading="lazy"
+            class="w-full h-auto"
+          />
+          {item.caption && (
+            <p class="text-sm text-gray-700 leading-relaxed px-4 py-3 border-t border-gray-100">
+              {item.caption}
+            </p>
+          )}
+        </button>
+      </li>
+    ))}
+  </ul>
+
+  <dialog
+    data-shot-dialog
+    class="bg-transparent p-0 max-w-none w-screen h-screen backdrop:bg-black/80 m-0"
+    aria-label={t.mbot.media.screenshotsHeading}
+  >
+    <div class="flex flex-col items-center justify-center w-full h-full p-4 sm:p-8">
+      <div class="flex justify-end w-full max-w-5xl mb-3">
+        <button
+          type="button"
+          class="text-white bg-white/10 hover:bg-white/20 rounded-full px-3 py-1 text-sm focus:outline-2 focus:outline-accent"
+          data-shot-close
+          aria-label={t.mbot.media.lightboxClose}
+        >
+          {t.mbot.media.lightboxClose} ✕
+        </button>
+      </div>
+      <figure class="bg-white rounded-xl overflow-hidden shadow-2xl max-w-5xl w-full">
+        <div class="relative">
+          <img
+            data-shot-image
+            src=""
+            alt=""
+            class="w-full h-auto block"
+          />
+          <button
+            type="button"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-2 focus:outline-accent"
+            data-shot-prev
+            aria-label={t.mbot.media.lightboxPrev}
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-2 focus:outline-accent"
+            data-shot-next
+            aria-label={t.mbot.media.lightboxNext}
+          >
+            →
+          </button>
+        </div>
+        <figcaption
+          data-shot-caption
+          class="text-sm text-gray-700 leading-relaxed px-4 py-3 border-t border-gray-100 hidden"
+        ></figcaption>
+      </figure>
+    </div>
+  </dialog>
+</section>
+
+<script is:inline define:vars={{ items }}>
+  document.querySelectorAll('[data-mbot-screenshot-grid]').forEach((root) => {
+    const dialog = root.querySelector('[data-shot-dialog]');
+    const img = root.querySelector('[data-shot-image]');
+    const caption = root.querySelector('[data-shot-caption]');
+    const closeBtn = root.querySelector('[data-shot-close]');
+    const prevBtn = root.querySelector('[data-shot-prev]');
+    const nextBtn = root.querySelector('[data-shot-next]');
+    if (!dialog || !img || !caption || !closeBtn || !prevBtn || !nextBtn) return;
+
+    let current = 0;
+
+    function show(index) {
+      const item = items[index];
+      if (!item) return;
+      current = index;
+      img.src = item.image.src ?? item.image;
+      img.alt = item.alt;
+      if (item.caption) {
+        caption.textContent = item.caption;
+        caption.classList.remove('hidden');
+      } else {
+        caption.textContent = '';
+        caption.classList.add('hidden');
+      }
+    }
+
+    function open(index) {
+      show(index);
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute('open', '');
+      }
+    }
+
+    function close() {
+      if (typeof dialog.close === 'function') {
+        dialog.close();
+      } else {
+        dialog.removeAttribute('open');
+      }
+    }
+
+    root.querySelectorAll('[data-shot-trigger]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.getAttribute('data-index'));
+        open(idx);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', () => show((current - 1 + items.length) % items.length));
+    nextBtn.addEventListener('click', () => show((current + 1) % items.length));
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) close();
+    });
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show((current - 1 + items.length) % items.length);
+      if (e.key === 'ArrowRight') show((current + 1) % items.length);
+    });
+  });
+</script>

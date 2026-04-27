@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import MbotScreencast from './MbotScreencast.astro';
+import MbotScreenshotGrid from './MbotScreenshotGrid.astro';
+import { getStrings, type Locale } from '../i18n/strings';
+import { localizePath } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+
+const [screencastEntries, screenshotEntries] = await Promise.all([
+  getCollection('mbotScreencast', ({ data }) => !data.draft),
+  getCollection('mbotScreenshots', ({ data }) => !data.draft),
+]);
+
+const hasMedia = screencastEntries.length > 0 || screenshotEntries.length > 0;
+---
+
+<section class="bg-surface py-20" id="mbot-media">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.mbot.media.heading}</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">{t.mbot.media.lead}</p>
+  </div>
+
+  {hasMedia ? (
+    <Fragment>
+      <MbotScreencast locale={locale} />
+      <MbotScreenshotGrid locale={locale} />
+    </Fragment>
+  ) : (
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="bg-white rounded-xl p-8 border border-gray-100 text-center">
+        <h3 class="text-xl font-semibold text-primary mb-3">{t.mbot.media.teaserHeading}</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">{t.mbot.media.teaserBody}</p>
+        <a
+          href={localizePath('/contact/', locale)}
+          class="inline-block bg-accent hover:bg-accent-light text-white font-semibold px-6 py-2.5 rounded-lg transition-all hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-accent"
+        >
+          {t.mbot.media.teaserCta}
+        </a>
+      </div>
+    </div>
+  )}
+</section>
