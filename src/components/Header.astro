@@ -26,28 +26,35 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
 
     <!-- Desktop nav -->
     <ul class="hidden md:flex items-center gap-8">
-      {navItems.map(({ label, href }) => (
-        <li>
-          <a
-            href={href}
-            class:list={[
-              'text-sm font-medium transition-colors hover:text-accent',
-              currentPath.startsWith(href) ? 'text-accent' : 'text-gray-600',
-            ]}
-          >
-            {label}
-          </a>
-        </li>
-      ))}
+      {navItems.map(({ label, href }) => {
+        const isActive = currentPath.startsWith(href);
+        return (
+          <li>
+            <a
+              href={href}
+              aria-current={isActive ? 'page' : undefined}
+              class:list={[
+                'text-sm font-medium transition-colors hover:text-accent',
+                isActive ? 'text-accent' : 'text-gray-600',
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        );
+      })}
     </ul>
 
     <!-- Mobile menu button -->
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-gray-600 hover:text-primary"
-      aria-label="Meny"
+      type="button"
+      class="md:hidden p-2 text-gray-600 hover:text-primary focus:outline-2 focus:outline-accent rounded"
+      aria-label="Öppna meny"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
@@ -56,19 +63,23 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
   <!-- Mobile nav -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
     <ul class="px-6 py-4 space-y-3">
-      {navItems.map(({ label, href }) => (
-        <li>
-          <a
-            href={href}
-            class:list={[
-              'block text-sm font-medium transition-colors hover:text-accent',
-              currentPath.startsWith(href) ? 'text-accent' : 'text-gray-600',
-            ]}
-          >
-            {label}
-          </a>
-        </li>
-      ))}
+      {navItems.map(({ label, href }) => {
+        const isActive = currentPath.startsWith(href);
+        return (
+          <li>
+            <a
+              href={href}
+              aria-current={isActive ? 'page' : undefined}
+              class:list={[
+                'block text-sm font-medium transition-colors hover:text-accent',
+                isActive ? 'text-accent' : 'text-gray-600',
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        );
+      })}
     </ul>
   </div>
 </header>
@@ -77,6 +88,8 @@ const brand = matchedProduct ? matchedProduct[1] : { name: 'Lectero', href: '/' 
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Stäng meny' : 'Öppna meny');
   });
 </script>

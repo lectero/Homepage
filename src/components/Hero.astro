@@ -27,7 +27,7 @@ const { title, subtitle, cta } = Astro.props;
   </div>
 
   <!-- Background decoration -->
-  <div class="absolute inset-0 opacity-10">
+  <div class="absolute inset-0 opacity-10" aria-hidden="true">
     <div class="absolute top-10 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"></div>
     <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
   </div>
@@ -40,5 +40,10 @@ const { title, subtitle, cta } = Astro.props;
   }
   .animate-fade-in {
     animation: fade-in 0.8s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in {
+      animation: none;
+    }
   }
 </style>
