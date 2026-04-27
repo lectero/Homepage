@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import ContactContent from '../../components/pages/ContactContent.astro';
+import { getStrings } from '../../i18n/strings';
+
+const t = getStrings('en');
+---
+
+<Base title={t.contact.title} description={t.contact.description}>
+  <ContactContent locale="en" />
+</Base>

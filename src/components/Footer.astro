@@ -1,4 +1,13 @@
 ---
+import { getStrings, type Locale } from '../i18n/strings';
+import { localizePath } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
 const year = new Date().getFullYear();
 ---
 
@@ -6,31 +15,33 @@ const year = new Date().getFullYear();
   <div class="max-w-6xl mx-auto px-6 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
-        <a href="/" class="text-white font-bold text-lg mb-3 block hover:text-accent transition-colors">Lectero</a>
-        <p class="text-sm leading-relaxed">
-          Digitala verktyg som driver hållbarhet och effektivitet.
-        </p>
+        <a
+          href={localizePath('/', locale)}
+          class="text-white font-bold text-lg mb-3 block hover:text-accent transition-colors"
+          >Lectero</a
+        >
+        <p class="text-sm leading-relaxed">{t.footer.tagline}</p>
       </div>
 
       <div>
-        <h4 class="text-white font-semibold mb-3">Våra produkter</h4>
+        <h2 class="text-white font-semibold mb-3">{t.footer.products}</h2>
         <ul class="space-y-2 text-sm">
           <li><a href="/products/greenops/" class="hover:text-accent transition-colors">GreenOps</a></li>
-          <li><a href="/products/mbot/" class="hover:text-accent transition-colors">MBot</a></li>
+          <li><a href={localizePath('/products/mbot/', locale)} class="hover:text-accent transition-colors">MBot</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-white font-semibold mb-3">Kontakt</h4>
+        <h2 class="text-white font-semibold mb-3">{t.footer.contact}</h2>
         <ul class="space-y-2 text-sm">
-          <li><a href="/contact/" class="hover:text-accent transition-colors">Kontakta oss</a></li>
-          <li><a href="/about/" class="hover:text-accent transition-colors">Om Lectero</a></li>
+          <li><a href={localizePath('/contact/', locale)} class="hover:text-accent transition-colors">{t.footer.contactUs}</a></li>
+          <li><a href={localizePath('/about/', locale)} class="hover:text-accent transition-colors">{t.footer.aboutLectero}</a></li>
         </ul>
       </div>
     </div>
 
     <div class="mt-10 pt-6 border-t border-gray-700 text-sm text-center">
-      &copy; {year} Lectero. Alla rättigheter förbehållna.
+      &copy; {year} Lectero. {t.footer.rightsReserved}
     </div>
   </div>
 </footer>

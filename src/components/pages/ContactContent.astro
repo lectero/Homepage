@@ -1,0 +1,31 @@
+---
+import Hero from '../Hero.astro';
+import ContactForm from '../ContactForm.tsx';
+import { getStrings, type Locale } from '../../i18n/strings';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+---
+
+<Hero title={t.contact.heroTitle} subtitle={t.contact.heroSubtitle} />
+
+<section class="max-w-2xl mx-auto px-6 py-20">
+  <ContactForm
+    client:visible
+    labels={{
+      name: t.contact.formName,
+      email: t.contact.formEmail,
+      company: t.contact.formCompany,
+      message: t.contact.formMessage,
+      submit: t.contact.formSubmit,
+      submitting: t.contact.formSubmitting,
+      successTitle: t.contact.formSuccessTitle,
+      successBody: t.contact.formSuccessBody,
+      error: t.contact.formError,
+    }}
+  />
+</section>

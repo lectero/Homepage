@@ -1,0 +1,11 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import MbotLandingContent from '../../../../components/pages/MbotLandingContent.astro';
+import { getStrings } from '../../../../i18n/strings';
+
+const t = getStrings('en');
+---
+
+<Base title={t.mbot.title} description={t.mbot.description}>
+  <MbotLandingContent locale="en" />
+</Base>
