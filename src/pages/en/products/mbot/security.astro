@@ -1,0 +1,25 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import MbotSecurityContent from '../../../../components/pages/MbotSecurityContent.astro';
+import { getStrings } from '../../../../i18n/strings';
+
+const t = getStrings('en');
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: t.mbotSecurity.faq.map((entry) => ({
+    '@type': 'Question',
+    name: entry.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: entry.a,
+    },
+  })),
+};
+---
+
+<Base title={t.mbotSecurity.title} description={t.mbotSecurity.description}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+  <MbotSecurityContent locale="en" />
+</Base>

@@ -119,6 +119,65 @@ type Strings = {
     ctaText: string;
     ctaButton: string;
   };
+  security: {
+    title: string;
+    description: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    intro: string;
+    principlesHeading: string;
+    principles: { title: string; text: string }[];
+    productLinkHeading: string;
+    productLinkBody: string;
+    productLinkCta: string;
+    contactHeading: string;
+    contactBody: string;
+  };
+  mbotSecurity: {
+    title: string;
+    description: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    audienceNote: string;
+    modelHeading: string;
+    modelLead: string;
+    modelBoundaries: { title: string; text: string }[];
+    flowHeading: string;
+    flowLead: string;
+    flowSteps: { step: string; description: string }[];
+    storageHeading: string;
+    storageLead: string;
+    storageOpsTitle: string;
+    storageOpsAllowed: string[];
+    storageOpsForbidden: string[];
+    storageEvalTitle: string;
+    storageEvalBody: string;
+    retentionHeading: string;
+    retentionLead: string;
+    retentionRows: { field: string; rule: string }[];
+    processorsHeading: string;
+    processorsLead: string;
+    processors: { name: string; role: string; region: string; transferBasis: string }[];
+    gdprOpsHeading: string;
+    gdprOpsLead: string;
+    pubTitle: string;
+    pubBody: string;
+    dsarTitle: string;
+    dsarBody: string;
+    incidentTitle: string;
+    incidentBody: string;
+    statusHeading: string;
+    statusLead: string;
+    statusToday: string[];
+    statusRoadmap: string[];
+    faqHeading: string;
+    faqLead: string;
+    faq: { q: string; a: string }[];
+    contactHeading: string;
+    contactBody: string;
+    contactCta: string;
+    lastReviewed: string;
+  };
 };
 
 export const strings: Record<Locale, Strings> = {
@@ -299,7 +358,7 @@ export const strings: Record<Locale, Strings> = {
         { title: 'Manual', description: 'Extern dokumentation som beskriver arbetsflöde, arkitektur, tillstånd och mallarbete.', href: '/products/mbot/manual/' },
         { title: 'Ladda ner', description: 'Installera MBot-klienten på Windows eller macOS. Onboarding-wizard guidar genom Azure-registreringen på 5–10 min.', href: '/products/mbot/download/' },
         { title: 'Whitepaper', description: 'Whitepaper som webbsidor, med möjlighet att ladda ner PDF för arkivering och delning.', href: '/products/mbot/whitepaper/' },
-        { title: 'GDPR', description: 'Dataskydd genom design: ingen personidentifierande information skickas till AI-tjänsten.', href: '/products/mbot/overview/gdpr/' },
+        { title: 'Säkerhet & dataskydd', description: 'Procurement-grade dokumentation: säkerhetsmodell, dataflöde, leverantörer, retention, PUB och DSAR.', href: '/products/mbot/security/' },
         { title: 'Priser', description: 'Erbjudande, kvotnivåer, rollover, buffert, och hur överkapacitet hanteras.', href: '/products/mbot/business/offer/' },
         { title: 'FAQ', description: 'Vanliga frågor, begränsningar, och vad som är ett rimligt användningssätt.', href: '/products/mbot/reference/faq/' },
       ],
@@ -307,6 +366,229 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Hör av er så bokar vi en demo och går igenom hur MBot kan passa in i er e-posthantering.',
       ctaButton: 'Boka demo',
+    },
+    security: {
+      title: 'Säkerhet & dataskydd',
+      description:
+        'Hur Lectero arbetar med säkerhet, integritet och dataskydd — sammanfattat på en sida för IT-ansvariga och upphandlare.',
+      heroTitle: 'Säkerhet & dataskydd',
+      heroSubtitle:
+        'Hur vi arbetar med integritet och säkerhet, vad våra produkter får göra och vad de inte kan göra ens om de skulle vilja.',
+      intro:
+        'Lectero bygger verktyg som hanterar verksamhetsdata. Det innebär att säkerhet och dataskydd inte är en separat tillvalsfunktion — utan en arkitektonisk gräns som styr vad varje del av systemet får göra. Den här sidan beskriver de gemensamma principerna. För produktspecifika svar på vad systemet faktiskt rör, lagrar och skickar vidare hänvisar vi till respektive produkt.',
+      principlesHeading: 'Gemensamma principer',
+      principles: [
+        {
+          title: 'Arkitektoniska gränser, inte goda intentioner',
+          text: 'Säkerhet bygger vi in genom att vissa förmågor inte finns i vissa delar av systemet. När serverdelen saknar både autentiseringsuppgifter och förmågan att läsa kundens data kan en bugg eller incident inte avslöja något som inte finns där.',
+        },
+        {
+          title: 'Mänsklig kontroll som standard',
+          text: 'Inget skickas, ingen åtgärd vidtas och inget beslut låses utan att en människa godkänner det. Det är inte en spärr ovanpå automation — det är hur produkten fungerar normalt. Automation utan mänsklig granskning är en explicit konfiguration, inte en default.',
+        },
+        {
+          title: 'Dataminimering på riktigt',
+          text: 'Vi loggar det vi behöver för att driva och felsöka systemet. Inte mer. Operativa loggar är inte ett sekundärt arkiv av kundkommunikation, och innehåll som behövs för utvärdering hanteras separat med striktare åtkomst.',
+        },
+        {
+          title: 'Transparenta gränser för AI',
+          text: 'När vi använder LLM-tjänster är det tydligt vad de ser, vad de inte ser och vad som händer om de inte svarar. Vi anonymiserar innan extern bearbetning och vi tränar inte modeller på kunddata.',
+        },
+      ],
+      productLinkHeading: 'Produktspecifika säkerhetssidor',
+      productLinkBody:
+        'För procurement-frågor med konkreta svar om dataflöden, leverantörer, retention, PUB och DSAR — gå till produktens egen säkerhetssida.',
+      productLinkCta: 'MBot — säkerhet & dataskydd',
+      contactHeading: 'Säkerhetskontakt',
+      contactBody:
+        'Frågor om säkerhet, sårbarhetsrapporter eller PUB-avtal hanteras via vår vanliga kontaktväg under upphandling. Akuta säkerhetsincidenter eskaleras direkt till teamet.',
+    },
+    mbotSecurity: {
+      title: 'MBot — säkerhet & dataskydd',
+      description:
+        'Procurement-grade dokumentation om MBots säkerhetsmodell, dataflöden, leverantörer, retention, PUB och DSAR.',
+      heroTitle: 'MBot — säkerhet & dataskydd',
+      heroSubtitle:
+        'Hur MBot är byggt, vad systemet får göra, vilka leverantörer som är involverade och vad vi faktiskt kan lova idag.',
+      audienceNote:
+        'Sidan är skriven för IT-ansvariga och upphandlare som behöver konkreta svar innan demo eller pilot. Tonen är teknisk och saklig — inte marknadsmässig. Saker vi inte kan lova står inte här.',
+      modelHeading: 'Säkerhetsmodell i korthet',
+      modelLead:
+        'Säkerheten i MBot bygger på fyra arkitektoniska gränser. De är inte policies — de är begränsningar i vad varje komponent har förmåga att göra.',
+      modelBoundaries: [
+        {
+          title: 'Servern kan inte läsa klubbens brevlåda',
+          text: 'All Microsoft 365-autentisering sker i klienten, med behörigheter klubben själv tilldelar. MBot-servern har inga tokens, inga lösenord och ingen mekanism för att initiera kontakt med Exchange. Detta är en arkitektonisk avgränsning, inte en policyfråga.',
+        },
+        {
+          title: 'Identitet skiljs från innehåll innan LLM',
+          text: 'Klienten anonymiserar avsändare, mottagare och andra identifierande uppgifter innan innehåll skickas vidare för LLM-bearbetning. Servern och AI-tjänsten ser endast avidentifierad text. Kopplingen mellan analysresultat och faktisk avsändare återupprättas i klienten.',
+        },
+        {
+          title: 'Mänsklig granskning är obligatorisk',
+          text: 'Default i MBot är "skapa utkast", inte "skicka". Personalen läser, justerar och beslutar. Eventuell autoskick kräver explicit konfiguration per ärendekategori — och även då är riskmotorn ett aktivt veto.',
+        },
+        {
+          title: 'Operativa loggar separeras från utvärderingskorpus',
+          text: 'Det vi loggar för drift och felsökning är skiljt från det vi behåller för produktutvärdering. Två datatyper, två retention-policys, två åtkomstnivåer. Operativa loggar får inte bli ett sekundärt arkiv över kundkommunikation.',
+        },
+      ],
+      flowHeading: 'Datapath: från inkorg till svarsförslag',
+      flowLead:
+        'Stegen nedan visar exakt vad som händer med ett inkommande mejl, vad som överförs vart, och var identifierande information avlägsnas.',
+      flowSteps: [
+        { step: '1. Mejl anländer i Microsoft 365', description: 'Mejlet ligger i klubbens egen Microsoft 365-miljö. MBot-servern har inte sett det och kan inte se det.' },
+        { step: '2. Klienten hämtar mejlet via Microsoft Graph', description: 'Klienten autentiserar mot M365 med behörigheter klubben tilldelat. Tokens lämnar aldrig klientmiljön.' },
+        { step: '3. Klienten anonymiserar innehåll', description: 'Avsändarens namn, e-postadress och andra identifierande uppgifter ersätts eller tas bort. En avsändar-hash genereras för intern korrelering vid behov.' },
+        { step: '4. Avidentifierat innehåll skickas till MBot-servern', description: 'MBot-servern tar emot ett rensat textinnehåll utan koppling till en identifierbar person.' },
+        { step: '5. MBot-servern anropar LLM', description: 'OpenAI är primär; Anthropic Claude är automatisk failover. Ingen LLM-leverantör tränar modeller på kunddata.' },
+        { step: '6. Klassificering, riskbedömning, draft-utkast genereras', description: 'Resultatet returneras till klienten — inte direkt till mottagaren.' },
+        { step: '7. Klienten kopplar samman draft med faktisk avsändare', description: 'Endast i klienten existerar identitet och innehåll tillsammans. Personalen ser draft i Outlook, granskar och beslutar.' },
+        { step: '8. Mänsklig granskning före utskick', description: 'Inget skickas utan att personalen aktivt godkänt det. Detta är default i alla konfigurationer.' },
+      ],
+      storageHeading: 'Lagring, loggar och retention',
+      storageLead:
+        'MBot skiljer mellan operativa loggar (för drift, felsökning och audit) och en utvärderingskorpus (för produktförbättring). De har olika regler.',
+      storageOpsTitle: 'Operativa loggar — vad får finnas',
+      storageOpsAllowed: [
+        'sender_hash (avsändar-hash, ej fullständig adress)',
+        'tidsstämplar',
+        'kategori och underkategori',
+        'medlemsstatus',
+        'åtgärdstyp',
+        'workflow-tillstånd',
+        'modellversion',
+        'prompt-versionsidentifierare',
+        'statuskoder',
+      ],
+      storageOpsForbidden: [
+        'fullständig e-postadress',
+        'rå e-postkropp',
+        'fullständig ämnesrad',
+        'rå användar-redigerad svarstext',
+        'fritextundantag som citerar kundinnehåll',
+        'fullständiga LLM-prompts som citerar kundinnehåll',
+      ],
+      storageEvalTitle: 'Utvärderingskorpus — vad och varför',
+      storageEvalBody:
+        'För längsgående analys, prompt-jämförelser och förbättring av drafts kan rikare innehåll behållas under explicit, granskad governance. Korpusen har striktare åtkomst än operativa loggar, har egen retention-policy, och täcks av DSAR. Den är ett medvetet datalager — inte ett sidoeffekt-arkiv.',
+      retentionHeading: 'Retention',
+      retentionLead:
+        'Aktuell policy. Tider kan ändras inom ramen för en uppdaterad GDPR-policy och dokumenteras då här.',
+      retentionRows: [
+        { field: 'archived_emails.body_text', rule: 'anonymisera efter 30 dagar, radera rad efter 180 dagar' },
+        { field: 'archived_emails.subject', rule: 'anonymisera efter 30 dagar, radera rad efter 180 dagar' },
+        { field: 'archived_drafts.draft_body', rule: 'radera efter 90 dagar' },
+        { field: 'events.payload_json', rule: 'sanering vid skrivning, radera efter 90 dagar' },
+        { field: 'jobs.message_json', rule: 'behålls bara så länge det behövs operativt; terminala jobb raderas efter 30 dagar' },
+        { field: 'rudeness_analysis.reasoning', rule: 'radera efter 30 dagar' },
+        { field: 'rudeness_analysis.suggested_responses_json', rule: 'radera efter 30 dagar' },
+        { field: 'sender_rudeness_history.previous_scores_json', rule: 'radera eller sammanfatta efter 90 dagar' },
+        { field: 'clients (klient-installationer)', rule: 'behålls under aktiv användning; inaktiva tas bort efter 180 dagar' },
+        { field: 'llm_token_usage', rule: 'aggregerad användning behålls långsiktigt; person-länkbar detaljnivå undviks bortom 90 dagar' },
+        { field: 'evaluation corpus', rule: 'separat schema, godkänt per användning' },
+      ],
+      processorsHeading: 'Underbiträden och tredjelandsöverföring',
+      processorsLead:
+        'Tjänster som MBot använder och deras roll i dataflödet. Personuppgiftsbiträdesavtal (PUB) finns eller kan ingås per leverantör.',
+      processors: [
+        {
+          name: 'Microsoft 365 (Exchange / Graph)',
+          role: 'Mejl- och identitetstjänst — klubbens egen miljö',
+          region: 'EU (klubbens M365-region)',
+          transferBasis: 'Direktrelation klubben↔Microsoft; ingen Lectero-pass',
+        },
+        {
+          name: 'OpenAI',
+          role: 'Primär LLM (klassificering, draft-generering)',
+          region: 'USA (DPA inkluderar SCC)',
+          transferBasis: 'Avidentifierat innehåll; inget träning på kunddata enligt avtal',
+        },
+        {
+          name: 'Anthropic',
+          role: 'LLM-failover när OpenAI är otillgänglig',
+          region: 'USA (DPA inkluderar SCC)',
+          transferBasis: 'Avidentifierat innehåll; inget träning på kunddata enligt avtal',
+        },
+        {
+          name: 'Lectero (MBot-server)',
+          role: 'Orkestrering, riskbedömning, retention-styrning',
+          region: 'EU',
+          transferBasis: 'Behandlar endast avidentifierat innehåll',
+        },
+      ],
+      gdprOpsHeading: 'PUB, DSAR och incidenthantering',
+      gdprOpsLead:
+        'Det praktiska. Vad ni får, vad ni kan begära och vad som händer om något går fel.',
+      pubTitle: 'PUB / personuppgiftsbiträdesavtal',
+      pubBody:
+        'Lectero ingår PUB med kund för MBot-användning. Avtalet definierar oss som biträde, klubben som personuppgiftsansvarig, beskriver behandlingar, listar underbiträden och stipulerar audit-rätt. Vi delar mall-PUB på begäran inför upphandling.',
+      dsarTitle: 'DSAR — begäran om utdrag, rättelse, radering',
+      dsarBody:
+        'En registrerad person har rätt att få veta vilken information om hen som finns och kan begära radering eller anonymisering. För MBot innebär det: primär uppslagsnyckel är e-postadress, korrelering sker via sender_hash, export omfattar både operativa data och utvärderingskorpus, och radering tillämpar field-level-anonymisering enligt retention-policy. Vi behåller endast PII-fri audit av att DSAR-begäran utförts.',
+      incidentTitle: 'Incidenthantering',
+      incidentBody:
+        'Vid säkerhetsincident kontaktas klubben utan onödigt dröjsmål och senast inom 72 timmar efter att vi blivit medvetna. Vi tillhandahåller den information som krävs för att klubben (som personuppgiftsansvarig) ska kunna anmäla till IMY enligt GDPR artikel 33. Process, kontaktväg och tidsfönster definieras i PUB.',
+      statusHeading: 'Vad vi kan lova idag',
+      statusLead:
+        'Honest list över vad som är skarpt nu och vad som ligger på roadmap. Vi listar inte certifieringar vi inte har.',
+      statusToday: [
+        'Mänsklig granskning som default; ingen autoskick utan explicit konfiguration',
+        'Klient-side anonymisering före LLM-bearbetning',
+        'Separation mellan operativa loggar och utvärderingskorpus',
+        'PUB-avtal kan ingås med varje kund',
+        'DSAR-stöd över båda dataklasserna',
+        'OpenAI och Anthropic enligt avtal som utesluter modellträning på kunddata',
+        'Incidentnotifiering inom 72 timmar',
+      ],
+      statusRoadmap: [
+        'ISO 27001-certifiering — under utvärdering, ej beslutat',
+        'SOC 2 Type II — utanför nuvarande scope',
+        'Krypterad lokal SQLite-databas — under utvärdering',
+        'Single sign-on för admin-UI mot kundens identity provider',
+        'Externt pen-test publicerat med åtgärds-rapport',
+      ],
+      faqHeading: 'Vanliga procurement-frågor',
+      faqLead: 'Direkta svar på de frågor IT-ansvariga ställer först.',
+      faq: [
+        {
+          q: 'Tränar ni AI-modeller på vår data?',
+          a: 'Nej. Avtalen med både OpenAI och Anthropic utesluter modellträning på kunddata. Vi själva tränar inga modeller på kundinnehåll.',
+        },
+        {
+          q: 'Kan er server läsa vår brevlåda?',
+          a: 'Nej. Microsoft 365-autentisering sker i klienten med behörigheter ni själva tilldelar. MBot-servern har inga tokens och kan inte initiera kontakt med Exchange.',
+        },
+        {
+          q: 'Var lagras data?',
+          a: 'Mejlet stannar i klubbens M365-miljö (EU). Avidentifierat innehåll behandlas av MBot-server (EU) och LLM-leverantör (USA, under SCC). Operativa loggar lagras i EU.',
+        },
+        {
+          q: 'Vad händer vid incident?',
+          a: 'Vi notifierar klubben utan onödigt dröjsmål och senast inom 72 timmar och ger den information som krävs för anmälan till IMY enligt artikel 33. Process detaljeras i PUB.',
+        },
+        {
+          q: 'Hur hanterar ni en DSAR-begäran?',
+          a: 'E-postadress används som primär uppslagsnyckel. Vi exporterar retention-täckta operativa data och utvärderingskorpus, och tillämpar field-level-radering enligt vår policy. Endast PII-fri audit av DSAR-utförandet behålls.',
+        },
+        {
+          q: 'Vilka underbiträden är inblandade?',
+          a: 'Microsoft 365 (klubbens direktrelation), OpenAI (primär LLM), Anthropic (LLM-failover). Vi uppdaterar listan här om något ändras.',
+        },
+        {
+          q: 'Kan vi få ett PUB-avtal innan pilot?',
+          a: 'Ja. Mall-PUB delas på begäran. Det signeras innan produktiv pilot startar.',
+        },
+        {
+          q: 'Vad krypteras hur?',
+          a: 'All transport mellan klient ↔ MBot-server ↔ LLM-leverantör går över TLS. Vi gör inte påståenden om "krypterat i vila" som vi inte kan stå för fullt ut — den lokala SQLite-databasen är inte explicit krypterad i nuläget. Det är på roadmap.',
+        },
+      ],
+      contactHeading: 'Säkerhetskontakt',
+      contactBody:
+        'För upphandlingsfrågor, sårbarhetsrapporter eller begäran om PUB/DPA: använd den vanliga kontaktvägen. Akuta säkerhetsincidenter eskaleras direkt till teamet och hanteras enligt PUB.',
+      contactCta: 'Kontakta oss',
+      lastReviewed: 'Senast granskad: april 2026.',
     },
   },
   en: {
@@ -486,7 +768,7 @@ export const strings: Record<Locale, Strings> = {
         { title: 'Manual', description: 'External documentation describing workflow, architecture, states and template work.', href: '/products/mbot/manual/' },
         { title: 'Download', description: 'Install the MBot client on Windows or macOS. The onboarding wizard guides you through Azure registration in 5–10 min.', href: '/products/mbot/download/' },
         { title: 'Whitepaper', description: 'Whitepaper as web pages, with PDF download for archiving and sharing.', href: '/products/mbot/whitepaper/' },
-        { title: 'GDPR', description: 'Data protection by design: no personally identifying information is sent to the AI service.', href: '/products/mbot/overview/gdpr/' },
+        { title: 'Security & data protection', description: 'Procurement-grade documentation: security model, data flow, processors, retention, DPA and DSAR.', href: '/products/mbot/security/' },
         { title: 'Pricing', description: 'Offer, quota tiers, rollover, buffer and how excess capacity is handled.', href: '/products/mbot/business/offer/' },
         { title: 'FAQ', description: 'Frequent questions, limitations and what counts as reasonable use.', href: '/products/mbot/reference/faq/' },
       ],
@@ -494,6 +776,229 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Get in touch and we’ll book a demo to walk through how MBot fits into your email handling.',
       ctaButton: 'Book a demo',
+    },
+    security: {
+      title: 'Security & data protection',
+      description:
+        'How Lectero approaches security, privacy and data protection — summarised on one page for IT leads and procurement.',
+      heroTitle: 'Security & data protection',
+      heroSubtitle:
+        'How we approach privacy and security, what our products are allowed to do and what they cannot do even if they wanted to.',
+      intro:
+        'Lectero builds tools that handle business data. That means security and data protection are not optional add-ons — they are architectural boundaries that constrain what each part of the system is allowed to do. This page describes the shared principles. For product-specific answers about what the system actually touches, stores and forwards, see the relevant product page.',
+      principlesHeading: 'Shared principles',
+      principles: [
+        {
+          title: 'Architectural boundaries, not good intentions',
+          text: 'We build security in by ensuring certain capabilities simply do not exist in certain parts of the system. When the server lacks both authentication credentials and the ability to read customer data, a bug or incident cannot expose what isn’t there.',
+        },
+        {
+          title: 'Human control by default',
+          text: 'Nothing is sent, no action taken, no decision locked without a human approving it. It is not a guard on top of automation — it is how the product normally works. Automation without human review is an explicit configuration, not a default.',
+        },
+        {
+          title: 'Real data minimisation',
+          text: 'We log what we need to operate and troubleshoot. Not more. Operational logs are not a secondary archive of customer communications, and content needed for evaluation is handled separately under stricter access.',
+        },
+        {
+          title: 'Transparent boundaries for AI',
+          text: 'When we use LLM services it is clear what they see, what they don’t see and what happens if they fail. We anonymise before external processing and we do not train models on customer data.',
+        },
+      ],
+      productLinkHeading: 'Product-specific security pages',
+      productLinkBody:
+        'For procurement-grade answers about data flows, processors, retention, DPA and DSAR — go to the product’s own security page.',
+      productLinkCta: 'MBot — security & data protection',
+      contactHeading: 'Security contact',
+      contactBody:
+        'Security questions, vulnerability reports and DPA requests are handled via our normal contact channel during procurement. Urgent security incidents are escalated directly to the team.',
+    },
+    mbotSecurity: {
+      title: 'MBot — security & data protection',
+      description:
+        'Procurement-grade documentation of MBot’s security model, data flows, processors, retention, DPA and DSAR.',
+      heroTitle: 'MBot — security & data protection',
+      heroSubtitle:
+        'How MBot is built, what the system is allowed to do, which providers are involved, and what we can credibly commit to today.',
+      audienceNote:
+        'This page is written for IT leads and procurement teams that need concrete answers before a demo or pilot. The tone is technical and factual — not marketing. Things we cannot commit to are not on this page.',
+      modelHeading: 'Security model in brief',
+      modelLead:
+        'MBot’s security rests on four architectural boundaries. They are not policies — they are constraints on what each component is capable of doing.',
+      modelBoundaries: [
+        {
+          title: 'The server cannot read the club’s mailbox',
+          text: 'All Microsoft 365 authentication happens in the client, with permissions the club itself grants. The MBot server has no tokens, no passwords and no mechanism to initiate contact with Exchange. This is an architectural constraint, not a policy.',
+        },
+        {
+          title: 'Identity is separated from content before LLM',
+          text: 'The client anonymises sender, recipient and other identifying information before content is forwarded for LLM processing. The server and AI service only see de-identified text. The mapping between analysis result and actual sender is reconstructed in the client.',
+        },
+        {
+          title: 'Human review is mandatory',
+          text: 'The default in MBot is "create draft", not "send". Staff read, adjust and decide. Any auto-send requires explicit per-category configuration — and even then the risk engine actively vetoes when warranted.',
+        },
+        {
+          title: 'Operational logs are separated from evaluation corpus',
+          text: 'What we log for operations and troubleshooting is separate from what we keep for product evaluation. Two data classes, two retention policies, two access levels. Operational logs are not allowed to become a secondary archive of customer communications.',
+        },
+      ],
+      flowHeading: 'Data path: from inbox to draft reply',
+      flowLead:
+        'The steps below show exactly what happens to an incoming email, what is transferred where, and where identifying information is stripped.',
+      flowSteps: [
+        { step: '1. Email arrives in Microsoft 365', description: 'The email lives in the club’s own M365 environment. The MBot server has not seen it and cannot see it.' },
+        { step: '2. The client fetches the email via Microsoft Graph', description: 'The client authenticates against M365 with the permissions the club has granted. Tokens never leave the client.' },
+        { step: '3. The client anonymises content', description: 'Sender name, email address and other identifying fields are replaced or removed. A sender hash is generated for internal correlation when needed.' },
+        { step: '4. De-identified content is sent to the MBot server', description: 'The MBot server receives a cleaned text payload with no link to an identifiable person.' },
+        { step: '5. The MBot server invokes the LLM', description: 'OpenAI is primary; Anthropic Claude is automatic failover. No LLM provider trains models on customer data.' },
+        { step: '6. Classification, risk assessment and draft are generated', description: 'The result returns to the client — not directly to the recipient.' },
+        { step: '7. The client reconnects draft with actual sender', description: 'Identity and content only exist together in the client. Staff see the draft in Outlook, review and decide.' },
+        { step: '8. Human review before sending', description: 'Nothing is sent without staff actively approving it. This is the default in every configuration.' },
+      ],
+      storageHeading: 'Storage, logging and retention',
+      storageLead:
+        'MBot distinguishes operational logs (for operation, troubleshooting and audit) from an evaluation corpus (for product improvement). They have different rules.',
+      storageOpsTitle: 'Operational logs — what is allowed',
+      storageOpsAllowed: [
+        'sender_hash (sender hash, not the full address)',
+        'timestamps',
+        'category and sub-category',
+        'membership status',
+        'action type',
+        'workflow state',
+        'model version',
+        'prompt version identifiers',
+        'status codes',
+      ],
+      storageOpsForbidden: [
+        'full email address',
+        'raw email body',
+        'full subject line',
+        'raw user-edited reply text',
+        'free-text exception dumps containing customer content',
+        'full LLM prompts that quote customer content',
+      ],
+      storageEvalTitle: 'Evaluation corpus — what and why',
+      storageEvalBody:
+        'For longitudinal analysis, prompt comparison and draft improvement, richer content can be retained under explicit governed governance. The corpus has stricter access than operational logs, has its own retention policy, and is covered by DSAR. It is a deliberate data store — not an accidental archive.',
+      retentionHeading: 'Retention',
+      retentionLead:
+        'Current policy. Times can change as part of an updated GDPR policy and would be documented here.',
+      retentionRows: [
+        { field: 'archived_emails.body_text', rule: 'anonymise after 30 days, delete row after 180 days' },
+        { field: 'archived_emails.subject', rule: 'anonymise after 30 days, delete row after 180 days' },
+        { field: 'archived_drafts.draft_body', rule: 'delete after 90 days' },
+        { field: 'events.payload_json', rule: 'sanitised on write, delete after 90 days' },
+        { field: 'jobs.message_json', rule: 'kept only as long as operationally needed; terminal jobs deleted after 30 days' },
+        { field: 'rudeness_analysis.reasoning', rule: 'delete after 30 days' },
+        { field: 'rudeness_analysis.suggested_responses_json', rule: 'delete after 30 days' },
+        { field: 'sender_rudeness_history.previous_scores_json', rule: 'delete or summarise after 90 days' },
+        { field: 'clients (client installations)', rule: 'kept while in active use; inactive entries removed after 180 days' },
+        { field: 'llm_token_usage', rule: 'aggregated usage retained long-term; person-linkable detail avoided beyond 90 days' },
+        { field: 'evaluation corpus', rule: 'separate schedule, approved per use' },
+      ],
+      processorsHeading: 'Processors and third-country transfers',
+      processorsLead:
+        'Services that MBot uses and their role in the data flow. Data Processing Agreements (DPA) are signed or signable per provider.',
+      processors: [
+        {
+          name: 'Microsoft 365 (Exchange / Graph)',
+          role: 'Mail and identity service — the club’s own environment',
+          region: 'EU (the club’s M365 region)',
+          transferBasis: 'Direct relationship club↔Microsoft; not via Lectero',
+        },
+        {
+          name: 'OpenAI',
+          role: 'Primary LLM (classification, draft generation)',
+          region: 'US (DPA includes SCC)',
+          transferBasis: 'De-identified content; no model training on customer data per contract',
+        },
+        {
+          name: 'Anthropic',
+          role: 'LLM failover when OpenAI is unavailable',
+          region: 'US (DPA includes SCC)',
+          transferBasis: 'De-identified content; no model training on customer data per contract',
+        },
+        {
+          name: 'Lectero (MBot server)',
+          role: 'Orchestration, risk assessment, retention enforcement',
+          region: 'EU',
+          transferBasis: 'Processes only de-identified content',
+        },
+      ],
+      gdprOpsHeading: 'DPA, DSAR and incident handling',
+      gdprOpsLead:
+        'The practical bits. What you get, what you can request, and what happens if something goes wrong.',
+      pubTitle: 'DPA / data processing agreement',
+      pubBody:
+        'Lectero signs a DPA with the customer for MBot use. The agreement defines us as processor and the club as controller, describes the processing, lists subprocessors and grants audit rights. We share the template DPA on request during procurement.',
+      dsarTitle: 'DSAR — access, rectification, erasure',
+      dsarBody:
+        'A data subject has the right to know what information about them exists and can request erasure or anonymisation. For MBot this means: primary lookup key is email address, correlation uses sender_hash, export covers both operational data and evaluation corpus, and erasure applies field-level anonymisation per the retention policy. Only PII-free audit of DSAR execution itself is retained.',
+      incidentTitle: 'Incident handling',
+      incidentBody:
+        'In the event of a security incident the club is contacted without undue delay and within 72 hours of our becoming aware. We provide the information needed for the club (as controller) to notify IMY under GDPR article 33. Process, contact channel and time window are defined in the DPA.',
+      statusHeading: 'What we can commit to today',
+      statusLead:
+        'Honest list of what is in production today and what is on the roadmap. We do not list certifications we do not have.',
+      statusToday: [
+        'Human review by default; no auto-send without explicit configuration',
+        'Client-side anonymisation before LLM processing',
+        'Separation between operational logs and evaluation corpus',
+        'DPA available with every customer',
+        'DSAR support across both data classes',
+        'OpenAI and Anthropic under contract that excludes model training on customer data',
+        'Incident notification within 72 hours',
+      ],
+      statusRoadmap: [
+        'ISO 27001 certification — under evaluation, not committed',
+        'SOC 2 Type II — outside current scope',
+        'Encrypted local SQLite database — under evaluation',
+        'Single sign-on for admin UI against the customer’s identity provider',
+        'External pen-test published with remediation report',
+      ],
+      faqHeading: 'Common procurement questions',
+      faqLead: 'Direct answers to the questions IT leads ask first.',
+      faq: [
+        {
+          q: 'Do you train AI models on our data?',
+          a: 'No. Our agreements with both OpenAI and Anthropic exclude training on customer data. We do not train any models on customer content ourselves.',
+        },
+        {
+          q: 'Can your server read our mailbox?',
+          a: 'No. Microsoft 365 authentication happens in the client with permissions you grant. The MBot server has no tokens and cannot initiate contact with Exchange.',
+        },
+        {
+          q: 'Where is data stored?',
+          a: 'Email stays in the club’s M365 environment (EU). De-identified content is processed by the MBot server (EU) and the LLM provider (US, under SCC). Operational logs are stored in the EU.',
+        },
+        {
+          q: 'What happens in an incident?',
+          a: 'We notify the club without undue delay and within 72 hours and provide the information needed for IMY notification under article 33. Process is detailed in the DPA.',
+        },
+        {
+          q: 'How do you handle a DSAR request?',
+          a: 'Email address is the primary lookup key. We export retention-covered operational data and evaluation corpus, and apply field-level erasure per our policy. Only PII-free audit of the DSAR execution is retained.',
+        },
+        {
+          q: 'Which subprocessors are involved?',
+          a: 'Microsoft 365 (your direct relationship), OpenAI (primary LLM), Anthropic (LLM failover). We update the list here if anything changes.',
+        },
+        {
+          q: 'Can we get a DPA before piloting?',
+          a: 'Yes. The template DPA is shared on request and signed before a productive pilot starts.',
+        },
+        {
+          q: 'What is encrypted how?',
+          a: 'All transport between client ↔ MBot server ↔ LLM provider goes over TLS. We do not make claims about "encrypted at rest" that we cannot fully stand behind — the local SQLite database is not explicitly encrypted today. That is on the roadmap.',
+        },
+      ],
+      contactHeading: 'Security contact',
+      contactBody:
+        'For procurement questions, vulnerability reports or DPA requests use the normal contact channel. Urgent security incidents are escalated directly to the team and handled per the DPA.',
+      contactCta: 'Contact us',
+      lastReviewed: 'Last reviewed: April 2026.',
     },
   },
 };
