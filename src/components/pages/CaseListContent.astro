@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Hero from '../Hero.astro';
+import { getStrings, type Locale } from '../../i18n/strings';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getStrings(locale);
+
+const cases = (await getCollection('cases', ({ data }) => data.locale === locale && !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const dateFormatter = new Intl.DateTimeFormat(locale === 'sv' ? 'sv-SE' : 'en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+function caseHref(slug: string): string {
+  return locale === 'sv' ? `/cases/${slug}/` : `/en/cases/${slug}/`;
+}
+---
+
+<Hero title={t.cases.heroTitle} subtitle={t.cases.heroSubtitle} />
+
+<section class="max-w-4xl mx-auto px-6 py-16">
+  {cases.length === 0 ? (
+    <p class="text-gray-600 text-center max-w-2xl mx-auto leading-relaxed">{t.cases.indexEmpty}</p>
+  ) : (
+    <ol class="space-y-8">
+      {cases.map((entry) => {
+        const customerLabel = entry.data.customer.anonymous
+          ? entry.data.customer.anonymousLabel ?? t.cases.anonymousFallback
+          : entry.data.customer.displayName;
+        return (
+          <li class="border-b border-gray-100 pb-8 last:border-0">
+            <article>
+              <p class="text-sm text-gray-500 mb-2">
+                <time datetime={entry.data.date.toISOString()}>
+                  {dateFormatter.format(entry.data.date)}
+                </time>
+                <span class="mx-2" aria-hidden="true">·</span>
+                <span>{customerLabel}</span>
+              </p>
+              <h2 class="text-2xl font-bold text-primary mb-3">
+                <a href={caseHref(entry.data.slug)} class="hover:text-accent transition-colors">
+                  {entry.data.title}
+                </a>
+              </h2>
+              <p class="text-gray-600 leading-relaxed mb-4">{entry.data.summary}</p>
+              <a
+                href={caseHref(entry.data.slug)}
+                class="text-sm font-medium text-accent hover:underline"
+              >
+                {t.cases.readCase} →
+              </a>
+            </article>
+          </li>
+        );
+      })}
+    </ol>
+  )}
+</section>

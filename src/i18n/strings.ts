@@ -119,6 +119,22 @@ type Strings = {
     ctaText: string;
     ctaButton: string;
   };
+  cases: {
+    title: string;
+    description: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    indexEmpty: string;
+    backToList: string;
+    metricsHeading: string;
+    quoteHeading: string;
+    customerHeading: string;
+    anonymousFallback: string;
+    teaserHeading: string;
+    teaserCta: string;
+    readCase: string;
+    publishedDate: (date: string) => string;
+  };
 };
 
 export const strings: Record<Locale, Strings> = {
@@ -308,6 +324,25 @@ export const strings: Record<Locale, Strings> = {
         'Hör av er så bokar vi en demo och går igenom hur MBot kan passa in i er e-posthantering.',
       ctaButton: 'Boka demo',
     },
+    cases: {
+      title: 'Kundcase',
+      description:
+        'Verkliga resultat från verksamheter som använder Lectero — siffror, citat och vad som faktiskt förändras i kansliet.',
+      heroTitle: 'Resultat hos våra kunder',
+      heroSubtitle:
+        'Konkreta siffror och citat från kanslier som arbetar med MBot i sin dagliga e-posthantering.',
+      indexEmpty:
+        'Det finns inga publicerade kundcase ännu. Vi väljer ut piloter med omsorg och publicerar först när siffrorna är verifierade och kunden har godkänt texten.',
+      backToList: '← Alla kundcase',
+      metricsHeading: 'Mätbara resultat',
+      quoteHeading: 'Så säger kunden',
+      customerHeading: 'Om kunden',
+      anonymousFallback: 'Verksamheten har valt att vara anonym',
+      teaserHeading: 'Resultat hos våra kunder',
+      teaserCta: 'Läs hela kundcaset',
+      readCase: 'Läs kundcaset',
+      publishedDate: (date) => `Publicerat ${date}`,
+    },
   },
   en: {
     meta: {
@@ -494,6 +529,25 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Get in touch and we’ll book a demo to walk through how MBot fits into your email handling.',
       ctaButton: 'Book a demo',
+    },
+    cases: {
+      title: 'Customer cases',
+      description:
+        'Real-world results from organisations using Lectero — numbers, quotes and what actually changes in the back office.',
+      heroTitle: 'Results from our customers',
+      heroSubtitle:
+        'Concrete numbers and quotes from back offices working with MBot every day.',
+      indexEmpty:
+        'No published customer cases yet. We select pilots carefully and publish only after the numbers are verified and the customer has approved the text.',
+      backToList: '← All cases',
+      metricsHeading: 'Measurable results',
+      quoteHeading: 'In their words',
+      customerHeading: 'About the customer',
+      anonymousFallback: 'The customer chose to remain anonymous',
+      teaserHeading: 'Results from our customers',
+      teaserCta: 'Read the full case',
+      readCase: 'Read the case',
+      publishedDate: (date) => `Published ${date}`,
     },
   },
 };

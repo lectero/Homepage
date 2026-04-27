@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CaseContent from '../../components/pages/CaseContent.astro';
+import { getStrings } from '../../i18n/strings';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('cases', ({ data }) => data.locale === 'sv' && !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const t = getStrings('sv');
+
+const seoTitle = entry.data.seo?.title ?? entry.data.title;
+const seoDescription = entry.data.seo?.description ?? entry.data.summary;
+
+const customerLabel = entry.data.customer.anonymous
+  ? entry.data.customer.anonymousLabel ?? t.cases.anonymousFallback
+  : entry.data.customer.displayName;
+
+const siteOrigin = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const articleUrl = `${siteOrigin}/cases/${entry.data.slug}/`;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: entry.data.title,
+  description: entry.data.summary,
+  datePublished: entry.data.date.toISOString(),
+  inLanguage: 'sv-SE',
+  url: articleUrl,
+  about: customerLabel,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Lectero',
+    url: siteOrigin || 'https://lectero.se',
+  },
+};
+---
+
+<Base title={seoTitle} description={seoDescription}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleJsonLd)} />
+  <CaseContent entry={entry} locale="sv" />
+</Base>

@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import { getStrings, type Locale } from '../i18n/strings';
 import { localizePath } from '../i18n/utils';
 
@@ -9,6 +10,12 @@ interface Props {
 const { locale } = Astro.props;
 const t = getStrings(locale);
 const year = new Date().getFullYear();
+
+const publishedCases = await getCollection(
+  'cases',
+  ({ data }) => data.locale === locale && !data.draft
+);
+const casesPath = locale === 'sv' ? '/cases/' : '/en/cases/';
 ---
 
 <footer class="bg-primary-dark text-gray-300">
@@ -36,6 +43,9 @@ const year = new Date().getFullYear();
         <ul class="space-y-2 text-sm">
           <li><a href={localizePath('/contact/', locale)} class="hover:text-accent transition-colors">{t.footer.contactUs}</a></li>
           <li><a href={localizePath('/about/', locale)} class="hover:text-accent transition-colors">{t.footer.aboutLectero}</a></li>
+          {publishedCases.length > 0 && (
+            <li><a href={casesPath} class="hover:text-accent transition-colors">{t.cases.title}</a></li>
+          )}
         </ul>
       </div>
     </div>

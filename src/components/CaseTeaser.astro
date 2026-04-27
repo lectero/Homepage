@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import { getStrings, type Locale } from '../i18n/strings';
+
+interface Props {
+  locale: Locale;
+  product?: 'mbot' | 'greenops';
+  limit?: number;
+}
+
+const { locale, product, limit = 1 } = Astro.props;
+const t = getStrings(locale);
+
+const cases = (
+  await getCollection('cases', ({ data }) => {
+    if (data.locale !== locale || data.draft) return false;
+    if (product && data.product !== product) return false;
+    return true;
+  })
+)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, limit);
+
+function caseHref(slug: string): string {
+  return locale === 'sv' ? `/cases/${slug}/` : `/en/cases/${slug}/`;
+}
+---
+
+{cases.length > 0 && (
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold text-primary mb-4 text-center">{t.cases.teaserHeading}</h2>
+    <div class="grid md:grid-cols-1 gap-6 mt-8">
+      {cases.map((entry) => {
+        const customerLabel = entry.data.customer.anonymous
+          ? entry.data.customer.anonymousLabel ?? t.cases.anonymousFallback
+          : entry.data.customer.displayName;
+        const headlineMetrics = entry.data.metrics.slice(0, 3);
+        return (
+          <a
+            href={caseHref(entry.data.slug)}
+            class="group block bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-all hover:shadow-md hover:border-accent/30"
+          >
+            <p class="text-xs font-medium text-accent uppercase tracking-wide mb-2">
+              {customerLabel}
+            </p>
+            <h3 class="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
+              {entry.data.title}
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">{entry.data.summary}</p>
+            {headlineMetrics.length > 0 && (
+              <dl class="grid grid-cols-3 gap-4 mt-4 mb-4 border-t border-gray-100 pt-4">
+                {headlineMetrics.map((metric) => (
+                  <div>
+                    <dt class="text-xs text-gray-500 mb-1">{metric.label}</dt>
+                    <dd class="text-lg font-bold text-primary">
+                      {metric.value}
+                      {metric.unit && <span class="text-xs font-medium text-gray-500 ml-1">{metric.unit}</span>}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+            <span class="text-sm font-medium text-accent">{t.cases.teaserCta} →</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+)}

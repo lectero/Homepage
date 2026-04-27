@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Hero from '../Hero.astro';
+import { getStrings, type Locale } from '../../i18n/strings';
+import { localizePath } from '../../i18n/utils';
+
+interface Props {
+  entry: CollectionEntry<'cases'>;
+  locale: Locale;
+}
+
+const { entry, locale } = Astro.props;
+const t = getStrings(locale);
+const { Content } = await render(entry);
+
+const customerLabel = entry.data.customer.anonymous
+  ? entry.data.customer.anonymousLabel ?? t.cases.anonymousFallback
+  : entry.data.customer.displayName;
+
+const dateFormatter = new Intl.DateTimeFormat(locale === 'sv' ? 'sv-SE' : 'en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const indexPath = locale === 'sv' ? '/cases/' : '/en/cases/';
+---
+
+<Hero title={entry.data.title} subtitle={entry.data.summary} />
+
+<section class="max-w-3xl mx-auto px-6 pt-10">
+  <p class="text-sm text-gray-500">
+    <a href={indexPath} class="hover:text-accent transition-colors">{t.cases.backToList}</a>
+  </p>
+  <p class="text-sm text-gray-500 mt-2">
+    <time datetime={entry.data.date.toISOString()}>
+      {t.cases.publishedDate(dateFormatter.format(entry.data.date))}
+    </time>
+    <span class="mx-2" aria-hidden="true">·</span>
+    <span>{customerLabel}</span>
+  </p>
+</section>
+
+{entry.data.metrics.length > 0 && (
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-primary mb-6">{t.cases.metricsHeading}</h2>
+    <dl class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {entry.data.metrics.map((metric) => (
+        <div class="bg-surface rounded-xl p-5 border border-gray-100">
+          <dt class="text-sm font-medium text-gray-600 mb-2">{metric.label}</dt>
+          <dd class="text-2xl font-bold text-primary">
+            {metric.value}
+            {metric.unit && <span class="text-base font-medium text-gray-500 ml-1">{metric.unit}</span>}
+          </dd>
+          {metric.context && (
+            <p class="text-xs text-gray-500 mt-2 leading-relaxed">{metric.context}</p>
+          )}
+        </div>
+      ))}
+    </dl>
+  </section>
+)}
+
+{entry.data.quote && (
+  <section class="bg-surface py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-primary mb-6">{t.cases.quoteHeading}</h2>
+      <figure>
+        <blockquote class="text-xl text-gray-800 leading-relaxed border-l-4 border-accent pl-6 italic">
+          „{entry.data.quote.text}”
+        </blockquote>
+        {!entry.data.quote.anonymous && (entry.data.quote.authorName || entry.data.quote.authorRole) && (
+          <figcaption class="mt-4 text-sm text-gray-600 pl-6">
+            {entry.data.quote.authorName && (
+              <span class="font-semibold text-primary">{entry.data.quote.authorName}</span>
+            )}
+            {entry.data.quote.authorRole && (
+              <span>{entry.data.quote.authorName ? ', ' : ''}{entry.data.quote.authorRole}</span>
+            )}
+            {entry.data.quote.authorOrg && (
+              <span> — {entry.data.quote.authorOrg}</span>
+            )}
+          </figcaption>
+        )}
+      </figure>
+    </div>
+  </section>
+)}
+
+<section class="max-w-3xl mx-auto px-6 py-16">
+  <article class="prose prose-lg max-w-none prose-headings:text-primary prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
+    <Content />
+  </article>
+</section>
+
+{!entry.data.customer.anonymous && entry.data.customer.legalName && (
+  <section class="max-w-3xl mx-auto px-6 pb-16">
+    <h2 class="text-xl font-bold text-primary mb-3">{t.cases.customerHeading}</h2>
+    <div class="flex items-center gap-4">
+      {entry.data.customer.logo && (
+        <Image
+          src={entry.data.customer.logo}
+          alt={`Logotyp för ${entry.data.customer.displayName}`}
+          width={80}
+          height={80}
+          class="rounded-lg"
+        />
+      )}
+      <div>
+        <p class="font-semibold text-primary">{entry.data.customer.displayName}</p>
+        <p class="text-sm text-gray-600">{entry.data.customer.legalName}</p>
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <a
+    href={localizePath('/contact/', locale)}
+    class="inline-block bg-primary hover:bg-primary-light text-white font-semibold px-8 py-3 rounded-lg transition-all hover:scale-105"
+  >
+    {t.home.ctaButton}
+  </a>
+</section>
