@@ -3,7 +3,7 @@ name: "Dennis Johansson"
 role: "Agil coach & fullstack-arkitekt"
 expertise: [".NET", "Java", "Agilt arbetssätt", "Arkitektur", "AI"]
 bio: "Agil coach, tillförordnad CIO och fullstack-arkitekt med 25+ års erfarenhet. Bryggan mellan teknik och verksamhet — förstår inte bara *hur* system byggs, utan *varför*."
-photo: "/team/dennis-johansson.jpeg"
+photo: "../../assets/team/dennis-johansson.jpeg"
 sortOrder: 2
 linkedinUrl: "https://www.linkedin.com/in/dennisjohansson/"
 ---
