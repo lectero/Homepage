@@ -6,11 +6,13 @@ const GITHUB_REPO = 'lectero/MBot';
 const RELEASES_BASE = `https://github.com/${GITHUB_REPO}/releases`;
 
 // Permanenta latest-länkar (GitHub redirectar till senaste icke-prerelease).
-// Filenames matchar build-desktop.yml release-job (#1036) i MBot-repot.
-const LATEST_WINDOWS = `${RELEASES_BASE}/latest/download/HMB-Setup.exe`;
-const LATEST_MACOS = `${RELEASES_BASE}/latest/download/HMB-Mailbot.dmg`;
-const VERSION_JSON = `${RELEASES_BASE}/latest/download/version.json`;
+// Filenames matchar build-desktop.yml release-job i MBot-repot.
+// Sätts till null tills första pilot-release är taggad — då dyker
+// "Ladda ner"-knapparna upp; tills dess visas "kommer snart".
+const LATEST_WINDOWS: string | null = null;  // → ${RELEASES_BASE}/latest/download/MBot-Setup.exe
+const LATEST_MACOS: string | null = null;    // → ${RELEASES_BASE}/latest/download/MBot.dmg
 const ALL_RELEASES = `${RELEASES_BASE}`;
+const HAS_RELEASE = LATEST_WINDOWS !== null && LATEST_MACOS !== null;
 ---
 
 <Base
@@ -24,76 +26,133 @@ const ALL_RELEASES = `${RELEASES_BASE}`;
 
   <!-- Pilot-status-banner -->
   <section class="max-w-4xl mx-auto px-6 mt-12">
-    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-      <div class="flex items-start gap-3">
-        <span class="text-amber-500 text-2xl" aria-hidden="true">⚠</span>
-        <div>
-          <h3 class="font-semibold text-amber-900 mb-1">Pilotversion — osignerad installer</h3>
-          <p class="text-sm text-amber-800">
-            Under pilotfasen är installern <strong>inte signerad</strong>.
-            Windows visar "Mer info → Kör ändå", macOS kräver högerklick → Öppna.
-            Lectero-supporten finns tillgänglig under installation.
-            Signering kommer i nästa release.
-          </p>
+    {HAS_RELEASE ? (
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+        <div class="flex items-start gap-3">
+          <span class="text-amber-500 text-2xl" aria-hidden="true">⚠</span>
+          <div>
+            <h3 class="font-semibold text-amber-900 mb-1">Pilotversion — osignerad installer</h3>
+            <p class="text-sm text-amber-800">
+              Under pilotfasen är installern <strong>inte signerad</strong>.
+              Windows visar "Mer info → Kör ändå", macOS kräver högerklick → Öppna.
+              Lectero-supporten finns tillgänglig under installation.
+              Signering kommer i nästa release.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    ) : (
+      <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+        <div class="flex items-start gap-3">
+          <span class="text-blue-500 text-2xl" aria-hidden="true">🛠</span>
+          <div>
+            <h3 class="font-semibold text-blue-900 mb-1">MBot beta öppnar inom kort</h3>
+            <p class="text-sm text-blue-800">
+              Vi finputsar pilotbygget just nu. <a href="/contact/" class="underline font-semibold">Hör av dig</a>
+              så meddelar vi när installern är klar att ladda ner.
+            </p>
+          </div>
+        </div>
+      </div>
+    )}
   </section>
 
-  <!-- Download-knappar -->
+  <!-- Download-knappar (eller "kommer snart"-platshållare) -->
   <section class="max-w-5xl mx-auto px-6 py-16">
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Windows -->
-      <a
-        href={LATEST_WINDOWS}
-        id="download-windows"
-        class="group block bg-white rounded-2xl p-8 border-2 border-gray-100 transition-all hover:border-accent hover:shadow-lg"
-      >
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
-            <span class="text-3xl" aria-hidden="true">🪟</span>
+      {LATEST_WINDOWS ? (
+        <a
+          href={LATEST_WINDOWS}
+          id="download-windows"
+          class="group block bg-white rounded-2xl p-8 border-2 border-gray-100 transition-all hover:border-accent hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+              <span class="text-3xl" aria-hidden="true">🪟</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-primary">Windows</h2>
+              <p class="text-sm text-gray-500">Windows 11 (Build 22000+)</p>
+            </div>
           </div>
-          <div>
-            <h2 class="text-2xl font-bold text-primary">Windows</h2>
-            <p class="text-sm text-gray-500">Windows 11 (Build 22000+)</p>
+          <div class="text-3xl font-bold text-accent group-hover:text-accent-light transition-colors mb-4">
+            Ladda ner →
           </div>
+          <p class="text-sm text-gray-600">
+            Installer med onboarding-wizard, autostart och Outlook-integration.
+          </p>
+        </a>
+      ) : (
+        <div class="block bg-gray-50 rounded-2xl p-8 border-2 border-dashed border-gray-200">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center opacity-60">
+              <span class="text-3xl" aria-hidden="true">🪟</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-gray-500">Windows</h2>
+              <p class="text-sm text-gray-400">Windows 11 (Build 22000+)</p>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-gray-400 mb-4">
+            Kommer snart
+          </div>
+          <p class="text-sm text-gray-500">
+            Installer med onboarding-wizard, autostart och Outlook-integration.
+          </p>
         </div>
-        <div class="text-3xl font-bold text-accent group-hover:text-accent-light transition-colors mb-4">
-          Ladda ner →
-        </div>
-        <p class="text-sm text-gray-600">
-          Installer med onboarding-wizard, autostart och Outlook-integration.
-        </p>
-      </a>
+      )}
 
       <!-- macOS -->
-      <a
-        href={LATEST_MACOS}
-        id="download-macos"
-        class="group block bg-white rounded-2xl p-8 border-2 border-gray-100 transition-all hover:border-accent hover:shadow-lg"
-      >
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center">
-            <span class="text-3xl" aria-hidden="true">🍎</span>
+      {LATEST_MACOS ? (
+        <a
+          href={LATEST_MACOS}
+          id="download-macos"
+          class="group block bg-white rounded-2xl p-8 border-2 border-gray-100 transition-all hover:border-accent hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center">
+              <span class="text-3xl" aria-hidden="true">🍎</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-primary">macOS</h2>
+              <p class="text-sm text-gray-500">macOS 13 Ventura eller senare</p>
+            </div>
           </div>
-          <div>
-            <h2 class="text-2xl font-bold text-primary">macOS</h2>
-            <p class="text-sm text-gray-500">macOS 13 Ventura eller senare</p>
+          <div class="text-3xl font-bold text-accent group-hover:text-accent-light transition-colors mb-4">
+            Ladda ner →
           </div>
+          <p class="text-sm text-gray-600">
+            Universal binary (Intel + Apple Silicon). Drag-and-drop till Applications.
+          </p>
+        </a>
+      ) : (
+        <div class="block bg-gray-50 rounded-2xl p-8 border-2 border-dashed border-gray-200">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center opacity-60">
+              <span class="text-3xl" aria-hidden="true">🍎</span>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-gray-500">macOS</h2>
+              <p class="text-sm text-gray-400">macOS 13 Ventura eller senare</p>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-gray-400 mb-4">
+            Kommer snart
+          </div>
+          <p class="text-sm text-gray-500">
+            Universal binary (Intel + Apple Silicon). Drag-and-drop till Applications.
+          </p>
         </div>
-        <div class="text-3xl font-bold text-accent group-hover:text-accent-light transition-colors mb-4">
-          Ladda ner →
-        </div>
-        <p class="text-sm text-gray-600">
-          Universal binary (Intel + Apple Silicon). Drag-and-drop till Applications.
-        </p>
-      </a>
+      )}
     </div>
 
-    <p class="text-center text-sm text-gray-500 mt-8">
-      Hittar du inte rätt version?
-      <a href={ALL_RELEASES} class="text-accent hover:underline">Se alla releases på GitHub</a>
-    </p>
+    {HAS_RELEASE && (
+      <p class="text-center text-sm text-gray-500 mt-8">
+        Hittar du inte rätt version?
+        <a href={ALL_RELEASES} class="text-accent hover:underline">Se alla releases på GitHub</a>
+      </p>
+    )}
   </section>
 
   <!-- Förutsättningar -->
@@ -151,9 +210,9 @@ const ALL_RELEASES = `${RELEASES_BASE}`;
         <div>
           <h3 class="font-semibold text-primary mb-1">Kör installern</h3>
           <p class="text-gray-600">
-            <strong>Windows</strong>: dubbelklicka <code class="text-xs bg-gray-100 px-1 rounded">HMB-Setup.exe</code>.
+            <strong>Windows</strong>: dubbelklicka <code class="text-xs bg-gray-100 px-1 rounded">MBot-Setup.exe</code>.
             Vid SmartScreen-varning: klicka "Mer info → Kör ändå".<br>
-            <strong>macOS</strong>: öppna .dmg-filen och dra HMBClient till Applications.
+            <strong>macOS</strong>: öppna .dmg-filen och dra MBot till Applications.
             Vid Gatekeeper-varning: högerklicka → Öppna → bekräfta.
           </p>
         </div>
