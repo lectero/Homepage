@@ -118,6 +118,21 @@ type Strings = {
     ctaHeading: string;
     ctaText: string;
     ctaButton: string;
+    media: {
+      heading: string;
+      lead: string;
+      teaserHeading: string;
+      teaserBody: string;
+      teaserCta: string;
+      screencastHeading: string;
+      screencastPlay: string;
+      screencastReducedMotion: string;
+      screenshotsHeading: string;
+      lightboxClose: string;
+      lightboxPrev: string;
+      lightboxNext: string;
+      lightboxOpen: string;
+    };
   };
 };
 
@@ -307,6 +322,23 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Hör av er så bokar vi en demo och går igenom hur MBot kan passa in i er e-posthantering.',
       ctaButton: 'Boka demo',
+      media: {
+        heading: 'Se MBot i bruk',
+        lead: 'Skärmbilder och en kort skärminspelning från Outlook Add-in:en — så att du ser produkten innan du bokar demo.',
+        teaserHeading: 'Visuellt material kommer snart',
+        teaserBody:
+          'Vi förbereder skärmbilder och en kort skärminspelning från Outlook Add-in:en. Vill du se MBot i drift redan nu? Boka en demo med teamet — det tar 20 minuter.',
+        teaserCta: 'Boka demo',
+        screencastHeading: 'Skärminspelning',
+        screencastPlay: 'Spela upp skärminspelning',
+        screencastReducedMotion:
+          'Eftersom du har valt reducerad rörelse i ditt operativsystem visas en stillbild i stället för en automatuppspelad inspelning. Klicka på spela-knappen om du vill se den ändå.',
+        screenshotsHeading: 'Skärmbilder från Add-in:en',
+        lightboxClose: 'Stäng',
+        lightboxPrev: 'Föregående bild',
+        lightboxNext: 'Nästa bild',
+        lightboxOpen: 'Öppna bilden i större vy',
+      },
     },
   },
   en: {
@@ -494,6 +526,23 @@ export const strings: Record<Locale, Strings> = {
       ctaText:
         'Get in touch and we’ll book a demo to walk through how MBot fits into your email handling.',
       ctaButton: 'Book a demo',
+      media: {
+        heading: 'See MBot in use',
+        lead: 'Screenshots and a short screencast from the Outlook Add-in — so you can see the product before booking a demo.',
+        teaserHeading: 'Visual material coming soon',
+        teaserBody:
+          'We are preparing screenshots and a short screencast from the Outlook Add-in. Want to see MBot live right now? Book a demo with the team — it takes 20 minutes.',
+        teaserCta: 'Book a demo',
+        screencastHeading: 'Screencast',
+        screencastPlay: 'Play screencast',
+        screencastReducedMotion:
+          'Because you have requested reduced motion in your operating system, we show a still image instead of an auto-playing screencast. Press play if you want to watch it.',
+        screenshotsHeading: 'Screenshots from the Add-in',
+        lightboxClose: 'Close',
+        lightboxPrev: 'Previous image',
+        lightboxNext: 'Next image',
+        lightboxOpen: 'Open the image in a larger view',
+      },
     },
   },
 };
