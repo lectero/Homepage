@@ -1,0 +1,11 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CaseListContent from '../../../components/pages/CaseListContent.astro';
+import { getStrings } from '../../../i18n/strings';
+
+const t = getStrings('en');
+---
+
+<Base title={t.cases.title} description={t.cases.description}>
+  <CaseListContent locale="en" />
+</Base>

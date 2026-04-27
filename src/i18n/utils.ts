@@ -29,6 +29,7 @@ const translationMap: Record<string, Record<Locale, string>> = {
   '/contact/': { sv: '/contact/', en: '/en/contact/' },
   '/products/mbot/': { sv: '/products/mbot/', en: '/en/products/mbot/' },
   '/blog/': { sv: '/blog/', en: '/blog/' },
+  '/cases/': { sv: '/cases/', en: '/en/cases/' },
 };
 
 export function translatePath(currentPath: string, targetLocale: Locale): string {
