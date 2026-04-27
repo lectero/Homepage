@@ -18,16 +18,30 @@ const navItems = [
 
 const currentPath = Astro.url.pathname;
 
-const productBranding: Record<string, { name: string; href: string }> = {
-  '/products/mbot/': { name: 'MBot', href: localizePath('/products/mbot/', locale) },
-  '/en/products/mbot/': { name: 'MBot', href: '/en/products/mbot/' },
+interface Brand {
+  name: string;
+  href: string;
+  iconSrc?: string;
+}
+
+const productBranding: Record<string, Brand> = {
+  '/products/mbot/': {
+    name: 'MBot',
+    href: localizePath('/products/mbot/', locale),
+    iconSrc: '/mbot/icon.svg',
+  },
+  '/en/products/mbot/': {
+    name: 'MBot',
+    href: '/en/products/mbot/',
+    iconSrc: '/mbot/icon.svg',
+  },
   '/products/greenops/': { name: 'GreenOps', href: '/products/greenops/' },
 };
 
 const matchedProduct = Object.entries(productBranding).find(([prefix]) =>
   currentPath.startsWith(prefix)
 );
-const brand = matchedProduct
+const brand: Brand = matchedProduct
   ? matchedProduct[1]
   : { name: 'Lectero', href: localizePath('/', locale) };
 
@@ -38,8 +52,11 @@ const switcherLabel =
 
 <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label={t.nav.products}>
-    <a href={brand.href} class="text-xl font-bold text-primary">
-      {brand.name}
+    <a href={brand.href} class="flex items-center gap-2 text-xl font-bold text-primary">
+      {brand.iconSrc && (
+        <img src={brand.iconSrc} alt="" width="28" height="28" class="rounded-md" aria-hidden="true" />
+      )}
+      <span>{brand.name}</span>
     </a>
 
     <!-- Desktop nav -->

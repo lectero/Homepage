@@ -19,13 +19,25 @@ const t = getStrings(locale);
 />
 
 <section class="max-w-4xl mx-auto px-6 pt-20 pb-12">
-  <p class="text-lg text-gray-600 leading-relaxed">{t.mbot.intro}</p>
-  <div class="flex flex-wrap gap-2 mt-6">
-    {t.mbot.badges.map((badge) => (
-      <span class="bg-accent/10 text-accent text-sm font-medium rounded-full px-3 py-1">
-        {badge}
-      </span>
-    ))}
+  <div class="flex items-start gap-6">
+    <img
+      src="/mbot/icon.svg"
+      alt=""
+      width="80"
+      height="80"
+      class="hidden sm:block flex-shrink-0 rounded-2xl shadow-sm"
+      aria-hidden="true"
+    />
+    <div>
+      <p class="text-lg text-gray-600 leading-relaxed">{t.mbot.intro}</p>
+      <div class="flex flex-wrap gap-2 mt-6">
+        {t.mbot.badges.map((badge) => (
+          <span class="bg-accent/10 text-accent text-sm font-medium rounded-full px-3 py-1">
+            {badge}
+          </span>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
 
